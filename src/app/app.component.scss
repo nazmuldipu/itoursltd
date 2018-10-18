@@ -1,0 +1,22 @@
+.page-stroke.top {
+  top: 0px;
+}
+.page-stroke.bottom {
+  bottom: 0px;
+}
+.page-stroke {
+  width: 100%;
+  height: 15px;
+  position: fixed;
+  z-index: 99;
+  background-color: #333;
+}
+.page {
+  background-color: #333;
+  min-height: 100vh;
+}
+.page-block {
+  margin: 15px;
+  background-color: white;
+  min-height: 100vh;
+}
