@@ -1,34 +1,82 @@
-<div class="container-fluid">
+<div class="container-fluid p-0">
   <div class="section-title">PACKAGES</div>
-</div>
-<div class="container">
 
-  <div>
-    <button class="btn btn-sm btn-success" (click)="scrollLeft()">left</button>
+  <div class="packages-content">
+    <div class="blur-background">
+      <div #widgetsContent class="middle">
+        <div class="info-widget">
+          <div class="myCard">
+            <img class="myCard-img" src="assets/images/0rome.jpg" alt="Card image cap">
+            <div class="myCard-text">
+              <div class="myCard-text-left">
+                Italy
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="info-widget">
+          <div class="myCard">
+            <img class="myCard-img" src="assets/images/0paris.jpg" alt="Card image cap">
+            <div class="myCard-text">
+              <div class="myCard-text-left">
+                France
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="info-widget">
+          <div class="myCard">
+            <img class="myCard-img" src="assets/images/0barcelona.jpg" alt="Card image cap">
+            <div class="myCard-text">
+              <div class="myCard-text-left">
+                Spain
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="info-widget">
+          <div class="myCard">
+            <img class="myCard-img" src="assets/images/0prague.jpg" alt="Card image cap">
+            <div class="myCard-text">
+              <div class="myCard-text-left">
+                Czech Republic
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="info-widget">
+          <div class="myCard">
+            <img class="myCard-img" src="assets/images/0amsterdam.jpg" alt="Card image cap">
+            <div class="myCard-text">
+              <div class="myCard-text-left">
+                Netherlands
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="info-widget">
+          <div class="myCard">
+            <img class="myCard-img" src="assets/images/0stuttgart.jpg" alt="Card image cap">
+            <div class="myCard-text">
+              <div class="myCard-text-left">
+                Germany
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
   </div>
 
-  <div #widgetsContent class="middle">
-    <div class="info-widget">
-      WIDGET 1
-    </div>
-    <div class="info-widget">
-      WIDGET 2
-    </div>
-    <div class="info-widget">
-      WIDGET 3
-    </div>
-    <div class="info-widget">
-      WIDGET 4
-    </div>
-    <div class="info-widget">
-      WIDGET 5
-    </div>
-    <div class="info-widget">
-      WIDGET 6
-    </div>
-  </div>
+  <div class="hot-button">
+    <button class="hot-button-left" (click)="scrollLeft()">
+      <i class="fa fa-chevron-left"></i>
+    </button>
 
-  <div>
-    <button class="btn btn-sm btn-success" (click)="scrollRight()">right</button>
+    <button class="hot-button-right" (click)="scrollRight()">
+      <i class="fa fa-chevron-right"></i>
+    </button>
   </div>
+  <div style="margin-top: 300px;"></div>
 </div>

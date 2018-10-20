@@ -1,14 +1,95 @@
 @import '../../containers/index/index.component.scss';
+.packages-content {
+  min-height: 500px;
+  background-image: url(/assets/images/0amsterdam.jpg);
+  margin: 30px 0px;
+  overflow: auto;
+}
+
+.blur-background {
+  background: rgba(54, 25, 25, 0.5);
+  padding-left: 100px;
+  padding-right: 100px;
+  height: 500px;
+}
+
 .info-widget {
-  width: 31.75%;
-  border: 1px solid black;
+  width: 33.33%;
+  margin-top: 70px;
+  padding: 15px;
   display: inline-block;
 }
 
 .middle {
   float: left;
-  width: 90%;
-  overflow: auto;
+  width: 100%;
+  overflow: hidden;
   /*will change this to hidden later to deny scolling to user*/
   white-space: nowrap;
+}
+
+.hot-deals-row {
+  float: left;
+  margin: 0;
+  width: 100%;
+  height: 330px;
+  font-size: 0;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.myCard {
+  cursor: pointer;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #fff;
+  width: 100%;
+  height: 330px;
+  &-img {
+    width: 100%;
+    height: 260px;
+  }
+  &-text {
+    padding: 10px 10px 0 10px;
+    text-align: center;
+    font-size: 28px;
+    font-weight: 600;
+    color: #707080;
+    text-transform: uppercase;
+  }
+}
+
+.hot-button {
+  margin-left: -15px;
+  margin-right: -15px;
+  margin-top: -300px;
+  margin-bottom: 0;
+  &-left {
+    cursor: pointer;
+    position: relative;
+    width: 55px;
+    height: 55px;
+    background-color: #4674e7;
+    border-color: #4674e7;
+    color: white;
+    padding-top: 8px;
+    font-size: 12px;
+    // margin-top: -200px;
+    // z-index: 1050;
+    text-align: center;
+  }
+  &-right {
+    cursor: pointer;
+    float: right;
+    position: relative;
+    width: 55px;
+    height: 55px;
+    background-color: #4674e7;
+    border-color: #4674e7;
+    color: white;
+    padding-top: 8px;
+    font-size: 12px;
+    // margin-top: -200px;
+    // z-index: 1050;
+    text-align: center;
+  }
 }

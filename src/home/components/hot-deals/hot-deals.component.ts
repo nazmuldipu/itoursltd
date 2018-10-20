@@ -12,7 +12,9 @@ export class HotDealsComponent implements OnInit {
 
   ngOnInit() {
     this.innerWidth = window.innerWidth;
-    this.divWidth = Math.round((this.innerWidth - 30) / 4);
+    this.divWidth = Math.round(
+      this.widgetsContent.nativeElement.offsetWidth / 4
+    );
   }
 
   @ViewChild('widgetsContent', { read: ElementRef })

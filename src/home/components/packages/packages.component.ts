@@ -1,28 +1,35 @@
-import { Component, ViewChild, ElementRef } from '@angular/core';
+import { Component, ViewChild, ElementRef, OnInit } from '@angular/core';
 
 @Component({
   selector: 'packages',
   templateUrl: './packages.component.html',
   styleUrls: ['./packages.component.scss']
 })
-export class PackagesComponent {
-  constructor() {}
+export class PackagesComponent implements OnInit {
+  innerWidth;
+  divWidth: number;
 
   @ViewChild('widgetsContent', { read: ElementRef })
   public widgetsContent: ElementRef<any>;
 
+  constructor() {}
+
+  ngOnInit() {
+    this.divWidth = Math.round(
+      this.widgetsContent.nativeElement.offsetWidth / 3
+    );
+  }
+
   scrollRight() {
-    console.log('right');
     this.widgetsContent.nativeElement.scrollTo({
-      left: this.widgetsContent.nativeElement.scrollLeft + 150,
+      left: this.widgetsContent.nativeElement.scrollLeft + this.divWidth,
       behavior: 'smooth'
     });
   }
 
   scrollLeft() {
-    console.log('left');
     this.widgetsContent.nativeElement.scrollTo({
-      left: this.widgetsContent.nativeElement.scrollLeft - 150,
+      left: this.widgetsContent.nativeElement.scrollLeft - this.divWidth,
       behavior: 'smooth'
     });
   }

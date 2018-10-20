@@ -7,6 +7,9 @@
   overflow: hidden;
   white-space: nowrap;
 }
+.hot-deal-content-row::-webkit-scrollbar {
+  display: none;
+}
 .info-widget {
   width: 25%;
   // border: 1px solid black;
@@ -16,7 +19,7 @@
 .middle {
   float: left;
   width: 100%;
-  overflow: auto;
+  overflow: hidden;
   /*will change this to hidden later to deny scolling to user*/
   white-space: nowrap;
 }
