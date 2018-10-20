@@ -9,13 +9,13 @@ import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 })
 export class CarouselComponent {
   images = [1, 2, 3, 4].map(i => `assets/images/carousel-${i}.jpg`);
-  constructor(private router: Router, config: NgbCarouselConfig) {
+  constructor(config: NgbCarouselConfig) {
     config.interval = 5000;
     config.keyboard = false;
     config.pauseOnHover = true;
   }
 
-  navigate(url) {
-    this.router.navigateByUrl(url);
-  }
+  // navigate(url) {
+  //   this.router.navigateByUrl(url);
+  // }
 }

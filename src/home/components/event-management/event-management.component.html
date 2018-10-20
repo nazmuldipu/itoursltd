@@ -1,3 +1,46 @@
-<div class="container-fluid">
+<div class="container-fluid p-0">
   <div class="section-title">EVENT-MANGEMENT</div>
+  <!-- TODO:all captions should be linked -->
+  <div class="my-4">
+    <ngb-carousel *ngIf="images">
+      <ng-template ngbSlide>
+        <img class="carousel-image" [src]="images[0]" alt="Random first slide">
+        <div class="carousel-caption">
+          <h2>CORPORATE EVENTS</h2>
+          <p>In line with corporate events i Tours Ltd</p>
+        </div>
+      </ng-template>
+
+
+      <ng-template ngbSlide>
+        <img class="carousel-image" [src]="images[1]" alt="Random third slide">
+        <div class="carousel-caption">
+          <h2>CEREMONIES</h2>
+          <p> In line with corporate events i Tours Ltd.</p>
+
+        </div>
+      </ng-template>
+      <ng-template ngbSlide>
+        <img class="carousel-image" [src]="images[2]" alt="Random third slide">
+        <div class="carousel-caption">
+          <h2>ARTIST </h2>
+          <p>In line with corporate events i Tours Ltd.</p>
+        </div>
+      </ng-template>
+      <ng-template ngbSlide>
+        <img class="carousel-image" [src]="images[3]" alt="Random third slide">
+        <div class="carousel-caption">
+          <h2>EXHIBITION</h2>
+          <p>In line with corporate events i Tours Ltd.</p>
+        </div>
+      </ng-template>
+      <ng-template ngbSlide>
+        <img class="carousel-image" [src]="images[4]" alt="Random third slide">
+        <div class="carousel-caption">
+          <h2>PHOTOGRAPHY</h2>
+          <p>In line with corporate events i Tours Ltd.</p>
+        </div>
+      </ng-template>
+    </ngb-carousel>
+  </div>
 </div>
