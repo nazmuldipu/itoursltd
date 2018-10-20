@@ -10,6 +10,7 @@ import { PackagesComponent } from './components/packages/packages.component';
 import { EventManagementComponent } from './components/event-management/event-management.component';
 import { GalleryComponent } from './components/gallery/gallery.component';
 import { OurPartnersComponent } from './components/our-partners/our-partners.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 export const ROUTES: Routes = [
   {
@@ -26,6 +27,6 @@ export const ROUTES: Routes = [
 
 @NgModule({
   imports: [CommonModule, NgbModule, RouterModule.forChild(ROUTES)],
-  declarations: [HomeComponent, IndexComponent, CarouselComponent, HotDealsComponent, PackagesComponent, EventManagementComponent, GalleryComponent, OurPartnersComponent]
+  declarations: [HomeComponent, IndexComponent, CarouselComponent, HotDealsComponent, PackagesComponent, EventManagementComponent, GalleryComponent, OurPartnersComponent, FooterComponent]
 })
 export class HomeModule {}
