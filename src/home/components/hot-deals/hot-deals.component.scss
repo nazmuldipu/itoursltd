@@ -1,0 +1,135 @@
+@import '../../containers/index/index.component.scss';
+.hot-deal-content-row {
+  float: left;
+  width: 100%;
+  height: 330px;
+  font-size: 0;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.info-widget {
+  width: 25%;
+  // border: 1px solid black;
+  display: inline-block;
+}
+
+.middle {
+  float: left;
+  width: 100%;
+  overflow: auto;
+  /*will change this to hidden later to deny scolling to user*/
+  white-space: nowrap;
+}
+
+.hot-deals-row {
+  float: left;
+  margin: 0;
+  width: 100%;
+  height: 330px;
+  font-size: 0;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.myCard {
+  cursor: pointer;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 0.25rem;
+  background-color: #fff;
+  border: 1px solid #dee2e6;
+  border-radius: 0.25rem;
+  width: 100%;
+  height: 330px;
+  &-img {
+    width: 100%;
+    height: 260px;
+  }
+  &-text {
+    padding: 5px 10px 0 10px;
+    &-left {
+      width: 50%;
+      display: inline-block;
+      //   font-size: 30px;
+      &-place {
+        font-size: 20px;
+        font-weight: 800;
+        text-transform: uppercase;
+      }
+      &-duration {
+        margin-bottom: 9px;
+        font-weight: 500;
+        font-size: 14px;
+        color: #777777;
+      }
+    }
+    &-right {
+      width: 50%;
+      text-align: right;
+      display: inline-block;
+      font-size: 30px;
+      &-text {
+        font-size: 15px;
+        color: grey;
+      }
+      &-price {
+        color: #4692e7;
+        font-size: 22px;
+        font-weight: 800;
+        line-height: 1;
+      }
+    }
+  }
+}
+
+.hot-button {
+  margin-left: -15px;
+  margin-right: -15px;
+  margin-top: -190px;
+  margin-bottom: 0;
+  &-left {
+    cursor: pointer;
+    position: relative;
+    width: 55px;
+    height: 55px;
+    background-color: #4674e7;
+    border-color: #4674e7;
+    color: white;
+    padding-top: 8px;
+    font-size: 12px;
+    // margin-top: -200px;
+    // z-index: 1050;
+    text-align: center;
+  }
+  &-right {
+    cursor: pointer;
+    float: right;
+    position: relative;
+    width: 55px;
+    height: 55px;
+    background-color: #4674e7;
+    border-color: #4674e7;
+    color: white;
+    padding-top: 8px;
+    font-size: 12px;
+    // margin-top: -200px;
+    // z-index: 1050;
+    text-align: center;
+  }
+}
+
+// Floating buttons
+.float {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 40px;
+  right: 40px;
+  background-color: #0c9;
+  color: #fff;
+  border-radius: 50px;
+  text-align: center;
+  box-shadow: 2px 2px 3px #999;
+}
+
+.my-float {
+  margin-top: 22px;
+}
