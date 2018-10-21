@@ -1,3 +1,411 @@
-<p>
-  maldives works!
-</p>
+<div class="destination-content">
+  <div class="destination-image">
+
+    <!--<img src="assets/images/destinations/bangladesh/nilachol.jpg" class="img-responsive wp-post-image"  alt="">-->
+    <ngb-carousel *ngIf="images" [showNavigationArrows]="showNavigationArrows">
+      <ng-template ngbSlide>
+        <img class="carousel-image" [src]="images[0]" alt="Random first slide">
+
+      </ng-template>
+      <ng-template ngbSlide>
+        <img class="carousel-image" [src]="images[1]" alt="Random second slide">
+
+      </ng-template>
+      <ng-template ngbSlide>
+        <img class="carousel-image" [src]="images[2]" alt="Random third slide">
+
+      </ng-template>
+    </ngb-carousel>
+  </div>
+  <div class="destination-title">
+    Maldives
+  </div>
+  <p>
+    The Maldives is a tropical nation in the Indian Ocean composed of 26 ring-shaped atolls, which are made up of more than 1,000
+    coral islands. It’s known for its beaches, blue lagoons and extensive reefs. The capital, Malé, has a busy fish market,
+    restaurants and shops on the main road, Majeedhee Magu, and 17th-century Hukuru Miskiy (also known as Friday Mosque)
+    made of carved white coral.
+  </p>
+
+  <!--location 1-->
+  <div class="row row-location">
+    <div class="col-md-12 location-title">
+      Malé - the capital
+    </div>
+    <div class="col-md-4 location-image">
+      <img src="assets/images/destinations/Malethecapital.jpg" class="img-responsive wp-post-image" alt="">
+    </div>
+    <div class="col-md-8 location-text">
+      <p>
+        Malé is the densely populated capital of the Maldives, an island nation in the Indian Ocean. It used to be called ‘Mahal’
+        for being the abode of the ‘Royal Dynasties’ and is now famous as the King’s Island. Malé has a tropical monsoon
+        climate with rains occurring through most months in the year. It's known for its historic mosques and colorful buildings.
+        The National Museum, in Sultan Park, showcases regional artifacts like ancient weapons and sultans' thrones. In the
+        north of the city, Huskuru Miskiiy is a 17th-century mosque built of coral stone and housing intricate wood carvings.
+        The best thing about Male is its consistently moderate temperature, round the year.
+      </p>
+    </div>
+  </div>
+  <!--End location 1-->
+  <!--location 2-->
+  <div class="row row-location">
+    <div class="col-md-12 location-title">
+      Banana Reef
+    </div>
+    <div class="col-md-4 location-image">
+      <img src="assets/images/destinations/BananaReef.jpg" class="img-responsive wp-post-image" alt="">
+    </div>
+    <div class="col-md-8 location-text">
+      <p>
+        Banana Reef is globally renowned for being one of the best diving sites in the world. It was, in fact, the very first diving
+        spot in Maldives to get recognition for licensed diving and training. It is called Banana Reef because it has the
+        shape of a banana that extends 300 meters from north to south. The reef is choc-a-block with exuberant marine life,
+        fantastic corals, amazing cliffs, overhangs, and caves. It is one of the favorite places to visit in Maldives for
+        the adventure lover.
+      </p>
+    </div>
+  </div>
+  <!--End location 2-->
+  <!--location 3-->
+  <div class="row row-location">
+    <div class="col-md-12 location-title">
+      Alimatha Island
+    </div>
+    <div class="col-md-4 location-image">
+      <img src="assets/images/destinations/AlimathaIsland.jpg" class="img-responsive wp-post-image" alt="">
+    </div>
+    <div class="col-md-8 location-text">
+      <p>
+        Alimatha Island located at the Vaavu Atoll on the eastern side of the Maldives. It is a complete Maldivian destination for
+        tourists, as it offers world-class diving, aquarium-like snorkeling as well as a central beach complete with great
+        facilities. The island itself has rich green vegetation surrounded by beaches and many stunning sites. The island
+        is a perfect spot for a family vacation and for honeymoon too. Volleyball matches in the sun-kissed beaches and the
+        dazzling sand, here, are great fun. The Ayurvedic massage centre, spa, bars, and restaurants make it a revitalising
+        option among the popular tourist places in Maldives. With many more things to discover throughout the island, it
+        happily describes itself as a place with a 5-star atmosphere.
+      </p>
+    </div>
+  </div>
+  <!--End location 3-->
+  <!--location 4-->
+  <div class="row row-location">
+    <div class="col-md-12 location-title">
+      Sun Island
+    </div>
+    <div class="col-md-4 location-image">
+      <img src="assets/images/destinations/SunIsland.jpg" class="img-responsive wp-post-image" alt="">
+    </div>
+    <div class="col-md-8 location-text">
+      <p>
+        Sun Island is located on South Ari Atoll with some stunning beaches, beautiful tropical flowers, and lavish greenery that
+        pulls a great number of tourists wanting to bask in the lap of nature. With its extremely charming blue waters, sparkling
+        beaches, the island guarantees immense joy to its guests. It is considered the most luxurious resort in the Maldives
+        with Villa Hotels that offers modern comfort with great facilities. Choose from different beach and water bungalows.
+        Given its serenity and beauty, it is the perfect escape for honeymooners and lovelorn couples.
+      </p>
+    </div>
+  </div>
+  <!--End location 4-->
+  <!--location 5-->
+  <div class="row row-location">
+    <div class="col-md-12 location-title">
+      HP Reef
+    </div>
+    <div class="col-md-4 location-image">
+      <img src="assets/images/destinations/HPReef.jpg" class="img-responsive wp-post-image" alt="">
+    </div>
+    <div class="col-md-8 location-text">
+      <p>
+        Stationed in North Malé Atoll, HP Reef is among the top-rated tourist attractions in Maldives. This is one of the best diving
+        sites where you can explore different kinds of superb coral reef formations and colorful fish underwater. But it's
+        a protected marine location that witnesses widespread presence of a variety of marine creatures. From small, harmful
+        and colorful fishes to multi-hued corals, caves and overhangs. The sea here is bustling with the vivacity of marine
+        life. With utmost care, the marine beings are protected here while making sure that ardent swimmers and divers only
+        spring into waters when it is completely secure.
+      </p>
+    </div>
+  </div>
+  <!--End location 5-->
+  <!--location 6-->
+  <div class="row row-location">
+    <div class="col-md-12 location-title">
+      Utheemu
+    </div>
+    <div class="col-md-4 location-image">
+      <img src="assets/images/destinations/Utheemu.jpg" class="img-responsive wp-post-image" alt="">
+    </div>
+    <div class="col-md-8 location-text">
+      <p>
+        Located in the Northern part of Maldives, Utheemu is a small island that resembles a small green jellyfish. One of the historical
+        significant tourist places in Maldives, it is the birthplace of Sultan Mohamed Thakurufaanu. Revered in Maldivian
+        history for chasing away Portuguese intruders. The place has got a monument in its name. Utheemu Ganduvaru, a heritage
+        building that you must see. Home of the Sultan Mohamed, this palace is made of wood and a major tourist attraction
+        in Maldives.
+      </p>
+    </div>
+  </div>
+  <!--End location 6-->
+  <!--location 7-->
+  <div class="row row-location">
+    <div class="col-md-12 location-title">
+      Biyadhoo Island
+    </div>
+    <div class="col-md-4 location-image">
+      <img src="assets/images/destinations/BiyadhooIsland.jpg" class="img-responsive wp-post-image" alt="">
+    </div>
+    <div class="col-md-8 location-text">
+      <p>
+        Biyadhoo Island is situated in South Malé Atoll. The island has abundant vegetation of bananas, coconuts and mangoes along
+        with cucumbers, cabbage and tomatoes. It is popular for its sparkling waters and adventurous water sports and hence
+        got the name — ‘the Scuba-diving Island’. There are more than 35 diving spots available in the area, and you can
+        dive in different ways depending on weather conditions and currents. Whether you are craving for water adventure
+        or are simply looking for a place to relax where you could rest in calm and serenity, Biyadhoo Island would be the
+        place for you. With great accommodation, dining and facilities, it would sure be worth it to put Biyadhoo Island
+        on your itinerary.
+      </p>
+    </div>
+  </div>
+  <!--End location 7-->
+  <!--location 8-->
+  <div class="row row-location">
+    <div class="col-md-12 location-title">
+      Artificial Beach
+    </div>
+    <div class="col-md-4 location-image">
+      <img src="assets/images/destinations/ArtificialBeach.jpg" class="img-responsive wp-post-image" alt="">
+    </div>
+    <div class="col-md-8 location-text">
+      <p>
+        It is the favorite haunt of the swimming enthusiasts among the top places to visit in Maldives which is located in the North
+        Malé Atoll. It's also known as 'Carnival Beach'. This is the favorite haunt of the swimming enthusiasts among the
+        top places to visit in Maldives. The Artificial Beach is an open area and has certain restrictions for clothing as
+        per the local law. The beach also hosts several carnivals, water sports, and peaceful walks. The evenings here turn
+        beautiful as music groups gather to jam and perform.
+      </p>
+    </div>
+  </div>
+  <!--End location 8-->
+  <!--location 9-->
+  <div class="row row-location">
+    <div class="col-md-12 location-title">
+      Fihalhohi Island
+    </div>
+    <div class="col-md-4 location-image">
+      <img src="assets/images/destinations/FihalhohiIsland.jpg" class="img-responsive wp-post-image" alt="">
+    </div>
+    <div class="col-md-8 location-text">
+      <p>
+        Fihalhohi Island, situated at the South Kaafu Atoll in Malé, is one of the most attractive and gorgeous places in Maldives
+        to spend your hard earned holidays. The island is beautifully surrounded with shady coconut palm trees, pristine
+        beaches, and clear waters. You must visit this island if you are looking for a romantic getaway or planning your
+        honeymoon.
+      </p>
+    </div>
+  </div>
+  <!--End location 9-->
+  <!--location 10-->
+  <div class="row row-location">
+    <div class="col-md-12 location-title">
+      Veligandu Island Beach
+    </div>
+    <div class="col-md-4 location-image">
+      <img src="assets/images/destinations/VeliganduIslandBeach.jpg" class="img-responsive wp-post-image" alt="">
+    </div>
+    <div class="col-md-8 location-text">
+      <p>
+        Located in North Ari Atoll, Veligandu Island is a reasonably small island. But in spite of being small, it has its own glory
+        for vacationers. The island is filled with astonishing greenery that provides immense serenity in this land of shimmering
+        waters. Also, the lagoons here provide great opportunities for diving and snorkeling. Being in close proximity to
+        a fishing village, the island also promises to serve you delicious food.
+      </p>
+    </div>
+  </div>
+  <!--End location 10-->
+  <!--location 11-->
+  <div class="row row-location">
+    <div class="col-md-12 location-title">
+      Hukuru Miskiiy
+    </div>
+    <div class="col-md-4 location-image">
+      <img src="assets/images/destinations/HukuruMiskiiy.jpg" class="img-responsive wp-post-image" alt="">
+    </div>
+    <div class="col-md-8 location-text">
+      <p>
+        It is the oldest mosque that can be found on the island. It's also known as 'Old Friday Mosque' The interior of the mosque
+        is superb, and its coral stone walls with carvings of different kinds of patterns and Arabic scripts is truly remarkable.
+        It also houses tombs that have been erected for the memory of sultans, heroes and nobles. The calm and quiet place
+        would be great for people to discover the Islamic culture the Maldivians follow.
+      </p>
+    </div>
+  </div>
+  <!--End location 11-->
+  <!--location 12-->
+  <div class="row row-location">
+    <div class="col-md-12 location-title">
+      National Museum
+    </div>
+    <div class="col-md-4 location-image">
+      <img src="assets/images/destinations/NationalMuseumMaldives.jpg" class="img-responsive wp-post-image" alt="">
+    </div>
+    <div class="col-md-8 location-text">
+      <p>
+        It's located in the capital of Maldives. The building houses a lot of different kinds of historical artifacts that reflect
+        the history of the country. The original museum was the old 3-story museum that is the only remaining part of the
+        Maldivian Royal Palace. The new museum is built and designed by the Chinese Government, and is where eventually the
+        artifacts from the old museum would move to. It was declared as the official National Museum on July 26, 2010. If
+        you want to know more about Maldivian artifacts and the rich story behind each, this is the perfect place to go.
+      </p>
+    </div>
+  </div>
+  <!--End location 12-->
+  <!--location 13-->
+  <div class="row row-location">
+    <div class="col-md-12 location-title">
+      Manta Point
+    </div>
+    <div class="col-md-4 location-image">
+      <img src="assets/images/destinations/MantaPoint.jpg" class="img-responsive wp-post-image" alt="">
+    </div>
+    <div class="col-md-8 location-text">
+      <p>
+        Manta Point is a diving area where you can enjoy seeing large numbers of manta rays being fed and cleaned by wrasses. Manta
+        rays circle several large coral rocks, and wait their turn to be cleaned. After being cleaned, they swim gracefully
+        to the reef feeding on shallow water where you can find plankton. Whether you are an experienced diver or a novice
+        one, you will surely enjoy this unique and exciting diving experience that Manta Point offers.
+      </p>
+    </div>
+  </div>
+  <!--End location 13-->
+  <!--location 14-->
+  <div class="row row-location">
+    <div class="col-md-12 location-title">
+      Bluetribe Moofushi
+    </div>
+    <div class="col-md-4 location-image">
+      <img src="assets/images/destinations/BluetribeMoofushi.jpg" class="img-responsive wp-post-image" alt="">
+    </div>
+    <div class="col-md-8 location-text">
+      <p>
+        Since the highlights of the Maldives are its great waters and marine life, the Bluetribe Moofushi diving center offers the
+        best experience in terms of water sports activities such as windsurfing, diving, snorkeling, kayaking, riding on
+        catamarans/pedal boats, and many more activities. Moofushi is also known for the excursions that it offers, where
+        you can spot whale sharks, manta rays and a lot of fish from the shore. Whether you want to enjoy a romantic cruise
+        or just want to discover traditional Maldivian marine life and enjoy great memories within your stay in the Maldives,
+        it will definitely give you that unforgettable vacation of a lifetime.
+      </p>
+    </div>
+  </div>
+  <!--End location 14-->
+  <!--location 15-->
+  <div class="row row-location">
+    <div class="col-md-12 location-title">
+      Hulhumale Island
+    </div>
+    <div class="col-md-4 location-image">
+      <img src="assets/images/destinations/HulhumaleIsland.jpg" class="img-responsive wp-post-image" alt="">
+    </div>
+    <div class="col-md-8 location-text">
+      <p>
+        Hulhulemale is a reclaimed island located in the south of North Male Atoll. The island of Hulhumale is forever growing and
+        growing as more and more land is reclaimed to house the sprawling urban tendrils of the city. It’s also the home
+        of the Velana International Airport, which is the main gateway to these paradisiacal islands for most. Hulhumale
+        is actually a charming place. It’s got a gorgeous, if artificial beach on its eastern haunch, a clutch of leafy neighborhoods,
+        a glass-topped mosque, and planned promenade walkways above the Indian Ocean.
+      </p>
+    </div>
+  </div>
+  <!--End location 15-->
+  <!--location 16-->
+  <div class="row row-location">
+    <div class="col-md-12 location-title">
+      Malé Fish Market
+    </div>
+    <div class="col-md-4 location-image">
+      <img src="assets/images/destinations/MaleFishMarket.jpg" class="img-responsive wp-post-image" alt="">
+    </div>
+    <div class="col-md-8 location-text">
+      <p>
+        If you wish to catch a glimpse of Maldivians' daily lives, look no further than the Male' Fish Market. This is the commercial
+        epicenter of arguably the country's most important industry—fishing. Here, the foot traffic peaks in the afternoon
+        as fishermen from the entire country sail right up to the edge of the market and unload the daily catch. Tuna is
+        the most popular fish for sale, but you'll find some other types as well. Just an idea: You could pick up some fresh
+        fruit and fish for dinner, if you have a facility to prepare a meal.
+      </p>
+    </div>
+  </div>
+  <!--End location 16-->
+  <!--location 17-->
+  <div class="row row-location">
+    <div class="col-md-12 location-title">
+      Veligandu Island
+    </div>
+    <div class="col-md-4 location-image">
+      <img src="assets/images/destinations/VeliganduIsland.jpg" class="img-responsive wp-post-image" alt="">
+    </div>
+    <div class="col-md-8 location-text">
+      <p>
+        Romantic sunsets glow red and yellow over the lapping waters of the Indian Ocean, cocktails clink in the resort’s luxurious
+        bar, sea kayaks bob on the turquoise shoreline, and crystal clear waves roll in softly from the inland lagoon. Welcome
+        to uber-beautiful Veligandu Island, which has long been championed as one of the top destinations in the Maldives
+        for couples. Honeymooners and newly weds are a common site on this long, thin finger of land on the western edge
+        of the North Ari Atoll, and there are plenty of opulent seaside villas and suites to match.
+      </p>
+    </div>
+  </div>
+  <!--End location 17-->
+  <!--location 18-->
+  <div class="row row-location">
+    <div class="col-md-12 location-title">
+      Fuvahmulah
+    </div>
+    <div class="col-md-4 location-image">
+      <img src="assets/images/destinations/Fuvahmulah.jpg" class="img-responsive wp-post-image" alt="">
+    </div>
+    <div class="col-md-8 location-text">
+      <p>
+        Fuvahmulah is an island in the Maldives. Fuvahmulah is one of the leargest island in the country. Fuvahmulah promises something
+        a little different to the rest of the Maldivian atolls. Fuvahmulah promises something a little different to the rest
+        of the Maldivian atolls. For starters, this speck on the map of the Indian Ocean doesn’t really have any near neighbors,
+        and it occupies an atoll all of its own. It’s also peppered with the occasional inland lake, which is a rare sight
+        to see in this flat-lying country.
+      </p>
+    </div>
+  </div>
+  <!--End location 18-->
+  <!--location 19-->
+  <div class="row row-location">
+    <div class="col-md-12 location-title">
+      Gan
+    </div>
+    <div class="col-md-4 location-image">
+      <img src="assets/images/destinations/GanMaldives.jpg" class="img-responsive wp-post-image" alt="">
+    </div>
+    <div class="col-md-8 location-text">
+      <p>
+        Gan is primarily known for its airport, which is the second largest airport in the entire Maldives and a famous former airbase
+        for the British Royal Air Force during WWII. Today, the island has shed its old military importance in favor of tourism,
+        and it’s slowly rising to become one of the most popular spots in the Addu Atoll. It’s not just the accessibility
+        that draws the crowds either, because Gan has earthy little fishing restaurants and small stretches of shimmering
+        sand that are usually totally empty of visitors.
+      </p>
+    </div>
+  </div>
+  <!--End location 19-->
+  <!--location 20-->
+  <div class="row row-location">
+    <div class="col-md-12 location-title">
+      Hithadhoo
+    </div>
+    <div class="col-md-4 location-image">
+      <img src="assets/images/destinations/Maldives3.jpg" class="img-responsive wp-post-image" alt="">
+    </div>
+    <div class="col-md-8 location-text">
+      <p>
+        Large and highly-populated this sub-section of Addu City in the old Seenu Atoll can be reached on the same causeways that
+        connect Gan to Maradhoo. On its southern edge, the place is given away to mangroves and marshes and shrub land, while
+        the north side of the island is packed with cafes and bakeries and the occasional set of looming minarets that rise
+        from the local mosques. More than anything, Hithadhoo oozes a charming lived in vibe.
+      </p>
+    </div>
+  </div>
+</div>

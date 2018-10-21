@@ -6,10 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./cherrapunjee.component.scss']
 })
 export class CherrapunjeeComponent implements OnInit {
+  showNavigationArrows = false;
+  images = [1, 2, 3].map(
+    i => `assets/images/destinations/india/Cherrapunjee${i}.jpg`
+  );
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }

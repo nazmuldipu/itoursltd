@@ -6,10 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./cox-bazar.component.scss']
 })
 export class CoxBazarComponent implements OnInit {
+  showNavigationArrows = false;
+  images = [1, 2, 3].map(
+    i => `assets/images/destinations/bangladesh/coxbazar${i}.jpg`
+  );
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }

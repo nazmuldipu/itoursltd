@@ -1,3 +1,75 @@
-<p>
-  saint-martin works!
-</p>
+<div class="destination-content">
+  <div class="destination-image">
+
+    <!--<img src="assets/images/destinations/bangladesh/nilachol.jpg" class="img-responsive wp-post-image"  alt="">-->
+    <ngb-carousel *ngIf="images" [showNavigationArrows]="showNavigationArrows">
+      <ng-template ngbSlide>
+        <img class="carousel-image" [src]="images[0]" alt="Random first slide">
+
+      </ng-template>
+      <ng-template ngbSlide>
+        <img class="carousel-image" [src]="images[1]" alt="Random second slide">
+
+      </ng-template>
+      <ng-template ngbSlide>
+        <img class="carousel-image" [src]="images[2]" alt="Random third slide">
+
+      </ng-template>
+    </ngb-carousel>
+  </div>
+  <div class="destination-title">
+      Saint Martin’s Island
+  </div>
+  <p>
+      Saint Martin’s Island is the only coral island in Bangladesh. It is situated in the northeast part of the Bay of Bengal, about 9 km south of the tip of the Cox's Bazar-Teknaf peninsula. This island is one of the most visited tourist spots of the country.<br/><br/>
+      If a person wants to visit the island he or she has to reach Teknaf Ship Ghat before 9.00am. There are a few ships (right now 6) that start from Teknaf Ghat for Saint Martin all at the same time and it is the only way for the visitors to go there. There are also some local boats for the route but these are not suitable for guests who want to visit there.<br/><br/>
+      There are some exquisite spots to look for while visiting the island.<br/><br/>
+  </p>
+
+  <!--location 1-->
+  <div class="row row-location">
+      <div class="col-md-12 location-title">
+          Beaches:
+      </div>
+      <div class="col-md-4 location-image">
+          <img th:src="@{/images/destinations/bangladesh/saintmartinbeachs.jpg" class="img-responsive wp-post-image"  alt="">
+      </div>
+      <div class="col-md-8 location-text">
+          <p>
+              As it is an island in the Bay of Bengal, the core area is surrounded by all sandy beaches & coral reefs. One can walk the whole island around within two hours. This is also suitable for beach cycling.
+          </p>
+      </div>
+  </div>
+  <!--End location 1-->
+
+  <!--location 2-->
+  <div class="row row-location">
+      <div class="col-md-12 location-title">
+          Shamudra Bilash
+      </div>
+      <div class="col-md-4 location-image">
+          <img th:src="@{/images/destinations/bangladesh/ShamudraBilash.jpg" class="img-responsive wp-post-image"  alt="">
+      </div>
+      <div class="col-md-8 location-text">
+          <p>
+              Shamudra Bilash is the former rest house of the most popular Bangladeshi writer Humayun Ahmed. He used to go there to spend time & do his literary work. This place is now rented to the guests as a paid residence.
+          </p>
+      </div>
+  </div>
+  <!--End location 2-->
+
+  <!--location 3-->
+  <div class="row row-location">
+      <div class="col-md-12 location-title">
+          Chera Dweep
+      </div>
+      <div class="col-md-4 location-image">
+          <img th:src="@{/images/destinations/bangladesh/CheraDweep.jpg" class="img-responsive wp-post-image"  alt="">
+      </div>
+      <div class="col-md-8 location-text">
+          <p>
+              Chera Dweep is the place to go if you visit Saint Martin. This is an extension of the island itself which gets detached during the time of up tides. There are several boats that start from Saint Martin Jetty everyday in the morning & afternoon. The all blue water will take a visitor’s heart who go there.
+          </p>
+      </div>
+  </div>
+</div>

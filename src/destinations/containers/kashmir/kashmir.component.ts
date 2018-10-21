@@ -6,10 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./kashmir.component.scss']
 })
 export class KashmirComponent implements OnInit {
+  showNavigationArrows = false;
+  images = [1, 2, 3].map(
+    i => `assets/images/destinations/india/Kashmir${i}.jpg`
+  );
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }

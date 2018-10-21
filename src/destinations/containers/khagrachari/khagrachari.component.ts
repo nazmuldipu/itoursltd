@@ -6,10 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./khagrachari.component.scss']
 })
 export class KhagrachariComponent implements OnInit {
+  showNavigationArrows = false;
+  images = [1, 2, 3].map(
+    i => `assets/images/destinations/bangladesh/Khagrachari${i}.jpg`
+  );
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }

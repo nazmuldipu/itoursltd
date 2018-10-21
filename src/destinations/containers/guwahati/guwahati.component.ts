@@ -6,10 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./guwahati.component.scss']
 })
 export class GuwahatiComponent implements OnInit {
+  showNavigationArrows = false;
+  images = [1, 2, 3].map(
+    i => `assets/images/destinations/india/Guwahati${i}.jpg`
+  );
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }

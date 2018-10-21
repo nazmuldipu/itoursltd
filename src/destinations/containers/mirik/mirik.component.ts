@@ -6,10 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./mirik.component.scss']
 })
 export class MirikComponent implements OnInit {
+  showNavigationArrows = false;
+  images = [1, 2, 3].map(i => `assets/images/destinations/india/Mirik${i}.jpg`);
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }

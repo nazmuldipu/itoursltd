@@ -1,3 +1,421 @@
-<p>
-  thailand works!
-</p>
+<div class="destination-content">
+  <div class="destination-image">
+
+    <!--<img src="assets/images/destinations/bangladesh/nilachol.jpg" class="img-responsive wp-post-image"  alt="">-->
+    <ngb-carousel *ngIf="images" [showNavigationArrows]="showNavigationArrows">
+      <ng-template ngbSlide>
+        <img class="carousel-image" [src]="images[0]" alt="Random first slide">
+
+      </ng-template>
+      <ng-template ngbSlide>
+        <img class="carousel-image" [src]="images[1]" alt="Random second slide">
+
+      </ng-template>
+      <ng-template ngbSlide>
+        <img class="carousel-image" [src]="images[2]" alt="Random third slide">
+
+      </ng-template>
+    </ngb-carousel>
+  </div>
+  <div class="destination-title">
+    Thailand
+    <span style="font-size: 13px; text-transform:lowercase">- the county of smile</span>
+  </div>
+  <p>
+    One of the most popular tourism destinations in Southeast Asia, Thailand is a country with a fascinating history, a devout
+    Buddhist culture and beautiful scenery that lures travelers from all over the world. You can find almost anything here:
+    crystal blue beaches, thick jungle, great food, cheap beach front bungalows and some of the best luxury hotels in the
+    world. There is something for every interest and every budget.
+  </p>
+
+  <!--location 1-->
+  <div class="row row-location">
+    <div class="col-md-12 location-title">
+      Phuket
+    </div>
+    <div class="col-md-4 location-image">
+      <img src="assets/images/destinations/Phuket.jpg" class="img-responsive wp-post-image" alt="">
+    </div>
+    <div class="col-md-8 location-text">
+      <p>
+        Phuket, a rainforested, mountainous island in the Andaman Sea, has some of Thailand’s most popular beaches, mostly situated
+        along the clear waters of the western shore. The island is home to many high-end seaside resorts, spas and restaurants.
+        Blue lagoons and salmon sunsets make for a dream-like atmosphere, and indeed, a vacation here can feel a bit surreal.
+        Watersports are the most popular activities, though once you’ve had enough sun there’s still plenty to explore at
+        the island’s aquariums, gardens, and Buddhist temples.
+      </p>
+    </div>
+  </div>
+  <!--End location 1-->
+  <!--location 2-->
+  <div class="row row-location">
+    <div class="col-md-12 location-title">
+      Ko Samui
+    </div>
+    <div class="col-md-4 location-image">
+      <img src="assets/images/destinations/KoSamui.jpg" class="img-responsive wp-post-image" alt="">
+    </div>
+    <div class="col-md-8 location-text">
+      <p>
+        Ko Samui, Thailand’s second largest island, lies in the Gulf of Thailand off the east coast of the Kra Isthmus. It's known
+        for its palm-fringed beaches, coconut groves and dense, mountainous rainforest, plus luxury resorts and posh spas.
+        The landmark 12m-tall golden Big Buddha statue at Wat Phra Yai Temple is located on a tiny island connected to Ko
+        Samui by a causeway. Ko Samui was once a Thai fishing community, and that charming sensibility is still present today.
+        Spending time in Bophut is a wonderful way to soak up local culture.
+      </p>
+    </div>
+  </div>
+  <!--End location 2-->
+  <!--location 3-->
+  <div class="row row-location">
+    <div class="col-md-12 location-title">
+      Bangkok - the capital
+    </div>
+    <div class="col-md-4 location-image">
+      <img src="assets/images/destinations/Bangkokthecapital.jpg" class="img-responsive wp-post-image" alt="">
+    </div>
+    <div class="col-md-8 location-text">
+      <p>
+        Bangkok is a large city known for ornate shrines and vibrant street life. The boat-filled Chao Phraya River feeds its network
+        of canals, flowing past the Rattanakosin royal district, home to opulent Grand Palace and its sacred Wat Phra Kaew
+        Temple. Nearby is Wat Pho Temple with an enormous reclining Buddha and, on the opposite shore, Wat Arun Temple with
+        its steep steps and Khmer-style spire. Bangkok's colourful floating markets are familiar to many through the ubiquitous
+        photos in tourist guides and travel books.
+      </p>
+    </div>
+  </div>
+  <!--End location 3-->
+  <!--location 4-->
+  <div class="row row-location">
+    <div class="col-md-12 location-title">
+      Ciang Mai
+    </div>
+    <div class="col-md-4 location-image">
+      <img src="assets/images/destinations/CiangMai.jpg" class="img-responsive wp-post-image" alt="">
+    </div>
+    <div class="col-md-8 location-text">
+      <p>
+        Chiang Mai is a city in mountainous northern Thailand. Founded in 1296, it was capital of the independent Lanna Kingdom until
+        1558. Its Old City area still retains vestiges of walls and moats from its history as a cultural and religious center.
+        It’s also home to hundreds of elaborate Buddhist temples, including 14th-century Wat Phra Singh and 15th-century
+        Wat Chedi Luang, adorned with carved serpents. You could spend your whole Chiang Mai vacation exploring the famous
+        Night Bazaar. Once you’ve exhausted the art of the cheerful haggle, however, there’s plenty more to explore. The
+        National Museum and Botanic Garden are great places to soak up some local culture and to breathe in the delicate
+        fragrance of Thai orchids.
+      </p>
+    </div>
+  </div>
+  <!--End location 4-->
+  <!--location 5-->
+  <div class="row row-location">
+    <div class="col-md-12 location-title">
+      Ko Tao
+    </div>
+    <div class="col-md-4 location-image">
+      <img src="assets/images/destinations/KoTao.jpg" class="img-responsive wp-post-image" alt="">
+    </div>
+    <div class="col-md-8 location-text">
+      <p>
+        Ko Tao is an island in Thailand and forms part of the Chumphon Archipelago on the western shore of the Gulf of Thailand.
+        White sand beaches sheltered by steep hills – some only accessible with four-wheel drive vehicles – and 300 days
+        of sun per year invite long afternoons of lounging. It's also known as 'Turtle Island'. With crystal clear water
+        and stunning greenery, the island of Ko Tao is seen as a backpackers' paradise.
+      </p>
+    </div>
+  </div>
+  <!--End location 5-->
+  <!--location 6-->
+  <div class="row row-location">
+    <div class="col-md-12 location-title">
+      Krabi
+    </div>
+    <div class="col-md-4 location-image">
+      <img src="assets/images/destinations/Krabi.jpg" class="img-responsive wp-post-image" alt="">
+    </div>
+    <div class="col-md-8 location-text">
+      <p>
+        Krabi, the capital of southern Thailand's Krabi Province, is a resort town near the Andaman coast. It lies in an area of
+        limestone karsts and mangrove forest. On a hilltop reached by stairs, the Tiger Cave Temple is a Buddhist site with
+        panoramic views. Khao Kanab Nam, 2 slanting hills rising out of water, form a local landmark. The riverside pier
+        links travelers with ferries and longboats to the best scuba diving, rock climbing and white sand beaches on the
+        coast. Andaman Sea destinations like the Phi Phi Islands are accessible by ferry.
+      </p>
+    </div>
+  </div>
+  <!--End location 6-->
+  <!--location 7-->
+  <div class="row row-location">
+    <div class="col-md-12 location-title">
+      Ko Pha Ngan
+    </div>
+    <div class="col-md-4 location-image">
+      <img src="assets/images/destinations/KoPhaNgan.jpg" class="img-responsive wp-post-image" alt="">
+    </div>
+    <div class="col-md-8 location-text">
+      <p>
+        Ko Pha Ngan is an island in southeast Thailand that’s renowned for its monthly Full Moon Party. This boisterous night-long
+        celebration, which is tied to the lunar calendar, draws revelers to its southeastern peninsula, Haad Rin. Most festivities
+        center on Sunrise Beach, whose beach bungalows attract a backpacker crowd. On the north coast lie quieter, white-sand
+        beaches including Hat Khuat and Hat Thian. If you're a diver, visit Sailrock for a spectacular wall dive.
+      </p>
+    </div>
+  </div>
+  <!--End location 7-->
+  <!--location 8-->
+  <div class="row row-location">
+    <div class="col-md-12 location-title">
+      Khao Lak
+    </div>
+    <div class="col-md-4 location-image">
+      <img src="assets/images/destinations/KhaoLak.jpg" class="img-responsive wp-post-image" alt="">
+    </div>
+    <div class="col-md-8 location-text">
+      <p>
+        Khao Lak is a series of villages, now tourist-oriented, mainly in the Takua Pa District and partly in the Thai Mueang District
+        of Phang Nga Province, Thailand. It's situated just 80 kilometers north of Phuket. The name "Khao Lak" literally
+        means "Lak mountain". Khao Lak was essentially erased by the 2004 tsunami. But the town, and the tourist industry
+        it relies on, has rebounded. It remains quieter than other coastal destinations, offering secluded beaches, tranquil
+        nights and family-oriented activities. You want full moon parties and besotted nights? You’re out of luck. But if
+        you’re looking for unparalleled scuba diving in the Similan Islands, you’ve hit the jackpot.
+      </p>
+    </div>
+  </div>
+  <!--End location 8-->
+  <!--location 9-->
+  <div class="row row-location">
+    <div class="col-md-12 location-title">
+      Sukhothai
+    </div>
+    <div class="col-md-4 location-image">
+      <img src="assets/images/destinations/Sukhothai.jpg" class="img-responsive wp-post-image" alt="">
+    </div>
+    <div class="col-md-8 location-text">
+      <p>
+        Sukhothai is a province in central Thailand, around 400 km north of Bangkok. The modern town of new Sukhothai is the capital
+        of the province. The Sukhothai Historical Park, 12 km west of new S ukhothai, contains the partially restored 13th-
+        and 14th-century palaces and temples of the Kingdom of Siam’s first capital within its walls. This classic ‘Sukhothai
+        style’ of architecture left Thailand a lasting legacy. Ruins of this old city still stand proud despite enduring
+        centuries of battle and exposure to the elements. Sukhothai's Old City is a UNESCO World Heritage site, and much
+        has been invested to restore and preserve one of Thailand's most significant historical sites.
+      </p>
+    </div>
+  </div>
+  <!--End location 9-->
+  <!--location 10-->
+  <div class="row row-location">
+    <div class="col-md-12 location-title">
+      Ayutthaya
+    </div>
+    <div class="col-md-4 location-image">
+      <img src="assets/images/destinations/Ayutthaya.jpg" class="img-responsive wp-post-image" alt="">
+    </div>
+    <div class="col-md-8 location-text">
+      <p>
+        Once considered the most spectacular city on Earth, the ruins of the capital of the Kingdom Ayutthaya are now a major tourist
+        attraction easily accessible from Bangkok by car, train, or boat as either a daytrip or overnight excursion. A regional
+        power for 417 years, the ancient city its apex in the 16th century, when the Kingdom’s territory extended into and
+        beyond present-day Laos, Cambodia, and Myanmar. Ayutthaya had diplomatic relations with Louis XIV of France and was
+        courted by Dutch, Portuguese, English, Chinese and Japanese merchants.
+      </p>
+    </div>
+  </div>
+  <!--End location 10-->
+  <!--location 11-->
+  <div class="row row-location">
+    <div class="col-md-12 location-title">
+      Pai
+    </div>
+    <div class="col-md-4 location-image">
+      <img src="assets/images/destinations/Pai.jpg" class="img-responsive wp-post-image" alt="">
+    </div>
+    <div class="col-md-8 location-text">
+      <p>
+        Pai is a town in the Mae Hong Soon Province of northern Thailand. It sits in a valley on the banks of the Pai River. It's
+        known for its nearby gorges, hot springs like the Tha Pai Hot Spring and waterfalls like Mo Paeng Waterfall. Downtown,
+        food stalls and handicraft shops line Pai Walking Street. West of town lies Baan Santichon, a traditional Chinese
+        village with clay houses and eateries serving Yunnan cuisine. Pai is now a booming town that is part of the Mae Hong
+        Son Loop stretching between Chiang Mai and Mae Hong Son. Noted for its picturesque valley and relaxed atmosphere,
+        Pai is a favored destination among backpackers and tourists wishing to explore the region. With Pai’s location in
+        the foothills of the mountains there are several options for trekking and visiting hill tribes.
+      </p>
+    </div>
+  </div>
+  <!--End location 11-->
+  <!--location 12-->
+  <div class="row row-location">
+    <div class="col-md-12 location-title">
+      Phi Phi
+    </div>
+    <div class="col-md-4 location-image">
+      <img src="assets/images/destinations/PhiPhi.jpg" class="img-responsive wp-post-image" alt="">
+    </div>
+    <div class="col-md-8 location-text">
+      <p>
+        The Phi Phi Islands are an island group in Thailand, between the large island of Phuket and the west Strait of Malacca coast
+        of the mainland. The islands are administratively part of Krabi province. The Phi Phi Islands are some of the loveliest
+        in Southeast Asia. Just a 45-minute speedboat jaunt and a 90-minute ferryboat ride from Phuket, these picture-postcard
+        islands offer the ultimate tropical getaway. Classic beaches, stunning rock formations, and vivid turquoise waters
+        teeming with colourful marine life - it's paradise perfected. There are two islands, Phi Phi Don and Phi Phi Leh.
+        The larger and inhabited, Phi Phi Don attracts hundreds of visitors to stay on its lovely shores. For many, Phi Phi
+        Don is the last word in hedonistic nightlife. Starting when the sun sets and lasting throughout the night, the whole
+        village is party central, with its bars, pubs and clubs filled with young and carefree partygoers.
+      </p>
+    </div>
+  </div>
+  <!--End location 12-->
+  <!--location 13-->
+  <div class="row row-location">
+    <div class="col-md-12 location-title">
+      Railay
+    </div>
+    <div class="col-md-4 location-image">
+      <img src="assets/images/destinations/Railay.jpg" class="img-responsive wp-post-image" alt="">
+    </div>
+    <div class="col-md-8 location-text">
+      <p>
+        Railay is a small peninsula that is only accessible by boat due to the high limestone cliffs cutting off mainland access.
+        These cliffs attract rock climbers from all over the world, but the area is also a popular attraction in Thailand
+        due to its beautiful beaches and quiet relaxing atmosphere. Almost every patch of buildable land fronting in the
+        eastern and western part of the peninsula has been taken over by bungalow resorts, and development is creeping up
+        into the forest behind. But at least there are no high-rise buildings, and much of the construction is hidden among
+        trees or set amid prettily landscaped gardens.
+      </p>
+    </div>
+  </div>
+  <!--End location 13-->
+  <!--location 14-->
+  <div class="row row-location">
+    <div class="col-md-12 location-title">
+      Khao Yai National Park
+    </div>
+    <div class="col-md-4 location-image">
+      <img src="assets/images/destinations/KhaoYaiNationalPark.jpg" class="img-responsive wp-post-image" alt="">
+    </div>
+    <div class="col-md-8 location-text">
+      <p>
+        A UNESCO World Heritage Site, Khao Yai is Thailand’s second largest (2,168sqkm) and one of the most visited national parks.
+        It spreads across four provinces, namely Saraburi (west), Nakhon Nayok (east), Nakhon Ratchasima (north) and Prachinburi
+        (east). The highest peak, at Khao Rom, is 1,351 metres above sea level. Blessed with a lush, mountainous landscape,
+        with fertile valleys, pounding waterfalls and rich biodiversity, Khao Yai is a year-round getaway destination just
+        three hours’ drive from Bangkok. Khao Yai is also home to a rich diversity of animal life with 320 species of birds,
+        67 species of mammals and thousands of different types of plants.
+      </p>
+    </div>
+  </div>
+  <!--End location 14-->
+  <!--location 15-->
+  <div class="row row-location">
+    <div class="col-md-12 location-title">
+      Thai-Burma Railway (Death Railway)
+    </div>
+    <div class="col-md-4 location-image">
+      <img src="assets/images/destinations/ThaiBurmaRailway.jpg" class="img-responsive wp-post-image" alt="">
+    </div>
+    <div class="col-md-8 location-text">
+      <p>
+        The two-hour train journey along the notorious Thailand–Burma Death Railway from Kanchanaburi, via the Bridge over the River
+        Kwai, to Nam Tok is one of Thailand’s most scenic and most popular train rides. Though the views are lovely, it’s
+        the history that makes the ride so special. During WWII, the Japanese built the railroad to connect Yangon, the then-capital
+        of Burma, with Bangkok, enlisting POWs and Asian laborers in a horrifying and deadly race to the finish. Today, only
+        a portion of the original rail line is in operation.
+      </p>
+    </div>
+  </div>
+  <!--End location 15-->
+  <!--location 16-->
+  <div class="row row-location">
+    <div class="col-md-12 location-title">
+      Chiang Rai
+    </div>
+    <div class="col-md-4 location-image">
+      <img src="assets/images/destinations/ChiangRai.jpg" class="img-responsive wp-post-image" alt="">
+    </div>
+    <div class="col-md-8 location-text">
+      <p>
+        The northernmost city in Thailand, Chiang Rai serves as the main commercial hub of the Golden Triangle, which contains the
+        borders of Thailand, Laos and Myanmar. A busy town offering something for everyone, Chiang Rai is often used as a
+        base for exploring the surrounding region. The town itself is quiet during the day, when most of its package tourists
+        are out on day trips, but at night the neon lights flash on and souvenir stalls and restaurants spring into action.
+        Nearby, the Navel City Pillar is a monument made of more than 100 Khmer-style pillars. Mae Fah Luang Art and Cultural
+        Park is a museum showcasing Lanna artifacts.
+      </p>
+    </div>
+  </div>
+  <!--End location 16-->
+  <!--location 17-->
+  <div class="row row-location">
+    <div class="col-md-12 location-title">
+      Khao Sok National Park
+    </div>
+    <div class="col-md-4 location-image">
+      <img src="assets/images/destinations/KhaoSokNationalPark.jpg" class="img-responsive wp-post-image" alt="">
+    </div>
+    <div class="col-md-8 location-text">
+      <p>
+        Khao Sok National Park is a nature reserve in southern Thailand containing dense virgin jungle, towerlike limestone karst
+        formations and the man-made Cheow Lan Lake. It’s home to rare species such as the giant parasitic Rafflesia flower,
+        hornbill birds, gibbons and tigers. The park can be explored by elephant-back safari, hiking trail, and raft, canoe
+        or kayak via the Sok river. There are several trails in the park from which visitors can choose to enjoy trekking
+        through the jungle to spot wildlife, photograph beautiful waterfalls, swim in natural pools and admire stunning vistas
+        from elevated viewpoints.
+      </p>
+    </div>
+  </div>
+  <!--End location 17-->
+  <!--location 18-->
+  <div class="row row-location">
+    <div class="col-md-12 location-title">
+      Kanchanaburi
+    </div>
+    <div class="col-md-4 location-image">
+      <img src="assets/images/destinations/Kanchanaburi.jpg" class="img-responsive wp-post-image" alt="">
+    </div>
+    <div class="col-md-8 location-text">
+      <p>
+        Located in western Thailand and admired for its beautiful scenery and accessibility to national parks and waterfalls, Kanchanaburi
+        is best known for the Bridge over the River Kwai that is linked with the historic Death Railway to Burma in which
+        thousands of Asian laborers and POWS died during its construction under Japanese occupation during WWII. Several
+        museums and war cemeteries all present information about the city and its bridge during the 1940s Japan occupation.
+        Outside of Kanchanaburi are several national parks, including Erawan and Srinakarind National Parks, which offer
+        beautiful scenery, waterfalls and caves.
+      </p>
+    </div>
+  </div>
+  <!--End location 18-->
+  <!--location 19-->
+  <div class="row row-location">
+    <div class="col-md-12 location-title">
+      Phang Nga Bay
+    </div>
+    <div class="col-md-4 location-image">
+      <img src="assets/images/destinations/PhangNgaBay.jpg" class="img-responsive wp-post-image" alt="">
+    </div>
+    <div class="col-md-8 location-text">
+      <p>
+        Phang Nga Bay lies between southern Thailand's mainland and Phuket Island. Also known as Ao Phang Nga National Park, it's
+        characterized by limestone cliffs and rock formations, as well as mangrove forests and small islands. Among the islands
+        are Koh Tapu, known as James Bond Island for its appearance in a Bond film. Koh Phanak Island is known for its caves
+        and lagoons. The bay's waters are dotted with coral reefs. The bay is extremely sheltered and therefore ideal for
+        expeditions on sea kayaks to explore the many fascinating caverns and islands throughout the bay.
+      </p>
+    </div>
+  </div>
+  <!--End location 19-->
+  <!--location 20-->
+  <div class="row row-location">
+    <div class="col-md-12 location-title">
+      Pattaya
+    </div>
+    <div class="col-md-4 location-image">
+      <img src="assets/images/destinations/Thailand3.jpg" class="img-responsive wp-post-image" alt="">
+    </div>
+    <div class="col-md-8 location-text">
+      <p>
+        Pattaya is a city on Thailand’s eastern Gulf coast known for its beaches. A quiet fishing village as recently as the 1960s,
+        it’s now lined with resort hotels, high-rise condos, shopping malls, cabaret bars and 24-hour clubs. Nearby, hillside
+        Wat Phra Yai Temple features an 18m-tall golden Buddha. The area also features several designer golf courses, some
+        with views of Pattaya Bay.
+      </p>
+    </div>
+  </div>
+</div>

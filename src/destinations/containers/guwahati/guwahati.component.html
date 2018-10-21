@@ -1,3 +1,72 @@
-<p>
-  guwahati works!
-</p>
+<div class="destination-content">
+  <div class="destination-image">
+
+    <!--<img src="assets/images/destinations/bangladesh/nilachol.jpg" class="img-responsive wp-post-image"  alt="">-->
+    <ngb-carousel *ngIf="images" [showNavigationArrows]="showNavigationArrows">
+      <ng-template ngbSlide>
+        <img class="carousel-image" [src]="images[0]" alt="Random first slide">
+
+      </ng-template>
+      <ng-template ngbSlide>
+        <img class="carousel-image" [src]="images[1]" alt="Random second slide">
+
+      </ng-template>
+      <ng-template ngbSlide>
+        <img class="carousel-image" [src]="images[2]" alt="Random third slide">
+
+      </ng-template>
+    </ngb-carousel>
+  </div>
+  <div class="destination-title">
+    Guwahati
+  </div>
+  <p>
+    Guwahati is the largest city of Assam and Northeastern India, a major riverine port city and one of the fastest growing cities
+    in India, situated on the South Bank of the Brahmaputra River.
+  </p>
+
+  <!--location 1-->
+  <div class="row row-location">
+    <div class="col-md-12 location-title">
+      Pabitora Wildlife Sanctuary
+    </div>
+    <div class="col-md-4 location-image">
+      <img src="assets/images/destinations/india/PabitoraWildlifeSanctuary.jpg" class="img-responsive wp-post-image" alt="">
+    </div>
+    <div class="col-md-8 location-text">
+      <p>
+        Pabitora Wildlife Sanctuary is a wildlife reserve in the Morigaon district of the state of Assam in India. It is located
+        about 30 km east of Guwahati. The Pobitora Wildlife Sanctuary is about 48 km by road from Guwahati. It is a 1-hour
+        drive through a road passing by River Brahmaputra, and a small portion of the village of Mayong. It has a dense population
+        of the Great Indian one-horned rhinoceros. It covers 38.8 km2. Though the total notified area of the park is 38.80
+        square kilometres, only 16 square kilometres is the effective rhino habitat. Pobitora was declared a reserved forest
+        in 1971 and a wildlife sanctuary in 1987. It covers flat flood plains and a hillock (Raja Mayong).
+      </p>
+    </div>
+  </div>
+  <!--End location 1-->
+
+  <!--location 2-->
+  <div class="row row-location">
+    <div class="col-md-12 location-title">
+      The Kamakhya Temple
+    </div>
+    <div class="col-md-4 location-image">
+      <img src="assets/images/destinations/india/TheKamakhyaTemple.jpg" class="img-responsive wp-post-image" alt="">
+    </div>
+    <div class="col-md-8 location-text">
+      <p>
+        Kamakhya Temple is a Hindu temple dedicated to the mother goddessKamakhya. It is one of the oldest of the 51 Shakti Pithas.
+        Situated on the Nilachal Hill in western part of Guwahati city in Assam, India, it is the main temple in a complex
+        of individual temples dedicated to the ten Mahavidyas: Kali, Tara, Sodashi, Bhuvaneshwari, Bhairavi, Chhinnamasta,
+        Dhumavati, Bagalamukhi, Matangi and Kamala. Among these, Tripurasundari, Matangi and Kamala reside inside the main
+        temple whereas the other seven reside in individual temples. It is an important pilgrimage destination for general
+        Hindu and especially for Tantric worshipers. A scholarly study of the Kamakhya Temple was authored by Kali Prasad
+        Goswami.
+        <br/>
+        <br/> In July 2015, the Supreme Court of India transferred the administration of the Temple from the Kamakhya Debutter
+        Board to the Bordewri Samaj.
+      </p>
+    </div>
+  </div>
+</div>

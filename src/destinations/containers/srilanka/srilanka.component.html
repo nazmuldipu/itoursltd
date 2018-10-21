@@ -1,3 +1,281 @@
-<p>
-  srilanka works!
-</p>
+<div class="destination-content">
+  <div class="destination-image">
+
+    <!--<img src="assets/images/destinations/bangladesh/nilachol.jpg" class="img-responsive wp-post-image"  alt="">-->
+    <ngb-carousel *ngIf="images" [showNavigationArrows]="showNavigationArrows">
+      <ng-template ngbSlide>
+        <img class="carousel-image" [src]="images[0]" alt="Random first slide">
+
+      </ng-template>
+      <ng-template ngbSlide>
+        <img class="carousel-image" [src]="images[1]" alt="Random second slide">
+
+      </ng-template>
+      <ng-template ngbSlide>
+        <img class="carousel-image" [src]="images[2]" alt="Random third slide">
+
+      </ng-template>
+    </ngb-carousel>
+  </div>
+  <div class="destination-title">
+      Srilanka
+  </div>
+  <p>
+      Sri Lanka (formerly Ceylon) is an island nation south of India in the Indian Ocean. Its diverse
+      landscapes range from rainforest and arid plains to highlands and sandy beaches. It’s famed for its
+      ancient Buddhist ruins, including the 5th-century citadel Sigiriya, with its palace and frescoes. The
+      city of Anuradhapura, Sri Lanka's ancient capital, has many ruins dating back more than 2,000 years.
+  </p>
+
+  <!--location 1-->
+  <div class="row row-location">
+      <div class="col-md-12 location-title">
+          India's Teardrop
+      </div>
+      <div class="col-md-4 location-image">
+          <img th:src="@{/images/destinations/IndiasTeardrop.jpg" class="img-responsive wp-post-image"  alt="">
+      </div>
+      <div class="col-md-8 location-text">
+          <p>
+              Shaped like a teardrop and located just below the southern tip of India, lush Sri Lanka boasts
+              some of the greatest biodiversity in the world. Unless you time your Sri Lanka holiday for
+              monsoon season, you can expect bright blue skies and plenty of sunshine, perfect for exploring
+              tropical forests, historic temples, colonial forts, and many other buildings dating back to
+              Dutch rule.
+          </p>
+      </div>
+  </div>
+  <!--End location 1-->
+
+  <!--location 2-->
+  <div class="row row-location">
+      <div class="col-md-12 location-title">
+          Sigiriya
+      </div>
+      <div class="col-md-4 location-image">
+          <img th:src="@{/images/destinations/Sigiriya.jpg" class="img-responsive wp-post-image"  alt="">
+      </div>
+      <div class="col-md-8 location-text">
+          <p>
+              Sigiriya or Sinhagiri is an ancient rock fortress located in the northern Matale District near the town of Dambulla in the Central Province, Sri Lanka. Places that worth to visit are : Rock Temple, Forest of rocks.
+          </p>
+      </div>
+  </div>
+  <!--End location 2-->
+
+  <!--location 3-->
+  <div class="row row-location">
+      <div class="col-md-12 location-title">
+          Temple of the Tooth
+      </div>
+      <div class="col-md-4 location-image">
+          <img th:src="@{/images/destinations/TempleoftheTooth.jpg" class="img-responsive wp-post-image"  alt="">
+      </div>
+      <div class="col-md-8 location-text">
+          <p>
+              Sri Dalada Maligawa or the Temple of the Sacred Tooth Relic is a Buddhist temple in the city of Kandy, Sri Lanka. It is located in the royal palace complex of the former Kingdom of Kandy, which houses the relic of the tooth of the Buddha.
+              Places that worth to visit are : Royal complex, Ancient temple,  Relics.
+
+          </p>
+      </div>
+  </div>
+  <!--End location 3-->
+
+  <!--location 4-->
+  <div class="row row-location">
+      <div class="col-md-12 location-title">
+          Udawalawe National Park
+      </div>
+      <div class="col-md-4 location-image">
+          <img th:src="@{/images/destinations/UdawalaweNationalPark.jpg" class="img-responsive wp-post-image"  alt="">
+      </div>
+      <div class="col-md-8 location-text">
+          <p>
+              Udawalawe National Park lies on the boundary of Sabaragamuwa and Uva Provinces, in Srilanka. The national paqrk was created to provide a sanctuary for wild animals displaced by the construction of the Udawalawe on the Walawa river, as well as to protect the catchment of the reservoir.
+              Places that worth to visit are :  Habitant of different kind of wild animals,  Water birds, Rarte tress.
+
+          </p>
+      </div>
+  </div>
+  <!--End location 4-->
+
+  <!--location 5-->
+  <div class="row row-location">
+      <div class="col-md-12 location-title">
+          Yala National Park
+      </div>
+      <div class="col-md-4 location-image">
+          <img th:src="@{/images/destinations/YalaNationalPark.jpg" class="img-responsive wp-post-image"  alt="">
+      </div>
+      <div class="col-md-8 location-text">
+          <p>
+              Yala National Park is the most visited and second largest national park in Sri Lanka. The park consists of five blocks, two of which are now open to the public, and also adjoining parks.
+              Places that worth to visit are :  Ancient trees, Rare animals, Jungle safari.
+
+          </p>
+      </div>
+  </div>
+  <!--End location 5-->
+
+  <!--location 6-->
+  <div class="row row-location">
+      <div class="col-md-12 location-title">
+          Dambulla cave temple
+      </div>
+      <div class="col-md-4 location-image">
+          <img th:src="@{/images/destinations/Dambullacavetemple.jpg" class="img-responsive wp-post-image"  alt="">
+      </div>
+      <div class="col-md-8 location-text">
+          <p>
+              Dambulla cave temple also known as the Golden Temple of Dambulla is a World Heritage Site in Sri Lanka, situated in the central part of the country. This site is situated 148 kilometres east of Colombo and 72 kilometres north of Kandy.
+              Places that worth to visit are :  Ancient temple, Spiritual cave, Cave of the great king.
+
+          </p>
+      </div>
+  </div>
+  <!--End location 6-->
+
+  <!--location 7-->
+  <div class="row row-location">
+      <div class="col-md-12 location-title">
+          Pinnawala Elephant Orphanage
+      </div>
+      <div class="col-md-4 location-image">
+          <img th:src="@{/images/destinations/PinnawalaElephantOrphanage.jpg" class="img-responsive wp-post-image"  alt="">
+      </div>
+      <div class="col-md-8 location-text">
+          <p>
+              Pinnawala Elephant Orphanage is an orphanage, nursery and captive breeding ground for wild Asian elephants located at Pinnawala village, 13 km northeast of Kegalle town in Sabaragamuwa Province of Sri Lanka.
+              Habituate of rare Srilankan Elephant, Animal care facility, Zoo.
+
+          </p>
+      </div>
+  </div>
+  <!--End location 7-->
+
+  <!--location 8-->
+  <div class="row row-location">
+      <div class="col-md-12 location-title">
+          Adam's Peak
+      </div>
+      <div class="col-md-4 location-image">
+          <img th:src="@{/images/destinations/AdamsPeak.jpg" class="img-responsive wp-post-image"  alt="">
+      </div>
+      <div class="col-md-8 location-text">
+          <p>
+              Adam's Peak is a 2,243 m tall conical mountain located in central Sri Lanka. It is well known for the Sri Pada, i.e., "sacred footprint", a 1.8 m rock formation near the summit.
+              Places that worth to visit are :  Religious spot, Hiking mountain, Tropical forest.
+
+          </p>
+      </div>
+  </div>
+  <!--End location 8-->
+
+  <!--location 9-->
+  <div class="row row-location">
+      <div class="col-md-12 location-title">
+          Ravana Falls
+      </div>
+      <div class="col-md-4 location-image">
+          <img th:src="@{/images/destinations/RavanaFalls.jpg" class="img-responsive wp-post-image"  alt="">
+      </div>
+      <div class="col-md-8 location-text">
+          <p>
+              The Ravana Falls is a popular sightseeing attraction in Sri Lanka. It currently ranks as one of the widest falls in the country.
+              Places that worth to visit are :  Water Fall, Caves
+
+          </p>
+      </div>
+  </div>
+  <!--End location 9-->
+
+  <!--location 10-->
+  <div class="row row-location">
+      <div class="col-md-12 location-title">
+          Kelaniya Raja Maha Vihara
+      </div>
+      <div class="col-md-4 location-image">
+          <img th:src="@{/images/destinations/KelaniyaRajaMahaVihara.jpg" class="img-responsive wp-post-image"  alt="">
+      </div>
+      <div class="col-md-8 location-text">
+          <p>
+              The Kelaniya Raja Maha Vihara or Kelaniya Temple is a Buddhist temple in Kelaniya, Sri Lanka, seven miles from Colombo.
+              Places that worth to visit are :  Ritual temple, 120 Feet long stone statue.
+
+          </p>
+      </div>
+  </div>
+  <!--End location 10-->
+
+  <!--location 11-->
+  <div class="row row-location">
+      <div class="col-md-12 location-title">
+          Kandy Lake
+      </div>
+      <div class="col-md-4 location-image">
+          <img th:src="@{/images/destinations/KandyLake.jpg" class="img-responsive wp-post-image"  alt="">
+      </div>
+      <div class="col-md-8 location-text">
+          <p>
+              Kandy Lake, also known as Kiri Muhuda or the Sea of Milk, is an artificial lake in the heart of the hill city of Kandy, Sri Lanka, built in 1807 by King Sri Wickrama Rajasinghe next to the Temple of the Tooth. Over the years, it was reduced in size.
+              There are a number of bird species found on the lake, including:
+              Diyakawa (Indian cormorant), Koka (white egret crane), Ali koka (wood stork), Karawal koka (pelican)
+
+          </p>
+      </div>
+  </div>
+  <!--End location 11-->
+
+  <!--location 12-->
+  <div class="row row-location">
+      <div class="col-md-12 location-title">
+          Diyaluma Falls
+      </div>
+      <div class="col-md-4 location-image">
+          <img th:src="@{/images/destinations/DiyalumaFalls.jpg" class="img-responsive wp-post-image"  alt="">
+      </div>
+      <div class="col-md-8 location-text">
+          <p>
+              Diyaluma Falls is 220 m high and the second highest waterfall in Sri Lanka and 361st highest waterfall in the world. It is situated 6 km away from Koslanda in Badulla District on Colombo-Badulla highway.
+              Places that worth to visit are :  Tragedy of water light.
+
+          </p>
+      </div>
+  </div>
+  <!--End location 12-->
+
+  <!--location 13-->
+  <div class="row row-location">
+      <div class="col-md-12 location-title">
+          Pidurutalagala
+      </div>
+      <div class="col-md-4 location-image">
+          <img th:src="@{/images/destinations/Pidurutalagala.jpg" class="img-responsive wp-post-image"  alt="">
+      </div>
+      <div class="col-md-8 location-text">
+          <p>
+              Pidurutalagala, or Mount Pedro in English, is an ultra prominent peak, and the tallest mountain in Sri Lanka, at 2,524 m. Mount Pedro is located close to the city of Nuwara Eliya, and is easily visible from most areas of the Central Province.
+              Places that worth to visit are : Tropical Forest Mountain, Hiking & camp area.
+
+          </p>
+      </div>
+  </div>
+  <!--End location 13-->
+
+  <!--location 14-->
+  <div class="row row-location">
+      <div class="col-md-12 location-title">
+          Arugam Bay
+      </div>
+      <div class="col-md-4 location-image">
+          <img th:src="@{/images/destinations/ArugamBay.jpg" class="img-responsive wp-post-image"  alt="">
+      </div>
+      <div class="col-md-8 location-text">
+          <p>
+              Arugam Bay, known locally as "Arugam Kudah", is a bay situated on the Indian Ocean in the dry zone of Sri Lanka's southeast coast, and a historic settlement of the ancient Batticaloa Territory.
+              Places that worth to visit are : Sea beach, Surfing area.
+
+          </p>
+      </div>
+  </div>
+</div>

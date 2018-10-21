@@ -6,10 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./nepal.component.scss']
 })
 export class NepalComponent implements OnInit {
+  showNavigationArrows = false;
+  images = [1, 2, 3].map(i => `assets/images/destinations/Nepal${i}.jpg`);
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }
