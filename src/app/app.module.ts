@@ -10,6 +10,10 @@ export const ROUTES: Routes = [
   {
     path: '',
     loadChildren: '../home/home.module#HomeModule'
+  },
+  {
+    path: 'event',
+    loadChildren: '../event/event.module#EventModule'
   }
 ];
 

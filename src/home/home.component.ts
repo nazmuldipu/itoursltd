@@ -4,8 +4,7 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-home',
   template: `
   <router-outlet></router-outlet>
-  `,
-  styleUrls: ['./home.component.css']
+  `
 })
 export class HomeComponent implements OnInit {
   constructor() {}

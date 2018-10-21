@@ -1,20 +1,21 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HomeComponent } from './home.component';
-import { IndexComponent } from './containers/index/index.component';
-import { Routes, RouterModule } from '@angular/router';
-import { CarouselComponent } from './components/carousel/carousel.component';
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { HotDealsComponent } from './components/hot-deals/hot-deals.component';
-import { PackagesComponent } from './components/packages/packages.component';
-import { EventManagementComponent } from './components/event-management/event-management.component';
-import { GalleryComponent } from './components/gallery/gallery.component';
-import { OurPartnersComponent } from './components/our-partners/our-partners.component';
-import { FooterComponent } from './components/footer/footer.component';
-// import { NavbarComponent } from './components/navbar/navbar.component';
-import { FloatingButtonComponent } from './components/floating-button/floating-button.component';
-import { WhyUsComponent } from './containers/why-us/why-us.component';
 
+import { CarouselComponent } from './components/carousel/carousel.component';
+import { EventManagementComponent } from './components/event-management/event-management.component';
+import { FloatingButtonComponent } from './components/floating-button/floating-button.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { GalleryComponent } from './components/gallery/gallery.component';
+import { HotDealsComponent } from './components/hot-deals/hot-deals.component';
+import { OurPartnersComponent } from './components/our-partners/our-partners.component';
+import { PackagesComponent } from './components/packages/packages.component';
+import { IndexComponent } from './containers/index/index.component';
+import { WhyUsComponent } from './containers/why-us/why-us.component';
+import { HomeComponent } from './home.component';
+
+// import { NavbarComponent } from './components/navbar/navbar.component';
 export const ROUTES: Routes = [
   {
     path: '',

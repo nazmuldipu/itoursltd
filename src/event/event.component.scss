@@ -1,0 +1,29 @@
+@import '../home/containers/index/index.component.scss';
+.event-image {
+  padding-top: 70px;
+  height: 570px;
+  width: 100%;
+}
+.section-title {
+  padding-top: 20px;
+}
+.event-service-title {
+  text-align: left;
+  padding: 20px 0px 30px 20px;
+  font-family: 'brandon-grotesque', Arial, sans-serif;
+  font-size: 26px;
+}
+
+.event-services li {
+  margin-left: 100px;
+  text-align: left;
+  list-style: none;
+  font-size: 18px;
+}
+
+.event-services ul li:before {
+  font-family: 'FontAwesome';
+  content: '\f101';
+  margin: 0 5px 0 -15px;
+  color: #707080;
+}
