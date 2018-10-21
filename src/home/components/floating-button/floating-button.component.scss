@@ -1,0 +1,124 @@
+// // Floating buttons
+// .float {
+//   position: fixed;
+//   width: 60px;
+//   height: 60px;
+//   bottom: 40px;
+//   right: 40px;
+//   background-color: #0c9;
+//   color: #fff;
+//   border-radius: 50px;
+//   text-align: center;
+//   box-shadow: 2px 2px 3px #999;
+//   z-index: 999;
+// }
+
+// .my-float {
+//   margin-top: 22px;
+// }
+
+.own-package {
+  position: fixed;
+  bottom: 10%;
+  width: 4%;
+  z-index: 9999;
+  right: 203px;
+}
+
+.own-package ul {
+  padding: 0px;
+  -webkit-transform: translate(0px, 0);
+  -moz-transform: translate(0px, 0);
+  -ms-transform: translate(0px, 0);
+  -o-transform: translate(0px, 0);
+  transform: translate(0px, 0);
+}
+.own-package ul li {
+  display: block;
+  margin: 5px;
+  width: 250px;
+  /*text-align: right;*/
+  padding: 10px;
+  -webkit-border-radius: 30px 0 0 30px;
+  -moz-border-radius: 30px 0 0 30px;
+  border-radius: 30px 0 0 30px;
+  -webkit-transition: all 1s;
+  -moz-transition: all 1s;
+  -ms-transition: all 1s;
+  -o-transition: all 1s;
+  transition: all 1s;
+}
+
+.create-own-package {
+  background: #333;
+}
+.own-package ul li a {
+  color: #212121;
+}
+.own-package ul li a {
+  color: white;
+}
+/*text color*/
+.own-package ul li:hover a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/*Rotate the incon 360degree and change the background color*/
+.own-package ul li:hover i {
+  color: #fff;
+  background: rgba(0, 0, 0, 0.36);
+  -webkit-transform: rotate(360deg);
+  -moz-transform: rotate(360deg);
+  -ms-transform: rotate(360deg);
+  -o-transform: rotate(360deg);
+  transform: rotate(360deg);
+  -webkit-transition: all 1s;
+  -moz-transition: all 1s;
+  -ms-transition: all 1s;
+  -o-transition: all 1s;
+  transition: all 1s;
+}
+/*resize the box*/
+.own-package ul li i {
+  margin-left: 3px;
+  color: #212121;
+  padding: 10px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  font-size: 15px;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  text-align: center;
+  background: #fff;
+}
+
+/*animation*/
+
+@-webkit-keyframes rotation {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(359deg);
+  }
+}
+
+@media (max-width: 767px) {
+  .own-package ul li i {
+    -webkit-animation: rotation 1.5s infinite linear;
+  }
+
+  .own-package {
+    right: 40px;
+  }
+  .create-your-package-title {
+    font-size: 30px;
+  }
+}

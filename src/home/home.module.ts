@@ -12,6 +12,7 @@ import { GalleryComponent } from './components/gallery/gallery.component';
 import { OurPartnersComponent } from './components/our-partners/our-partners.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { FloatingButtonComponent } from './components/floating-button/floating-button.component';
 
 export const ROUTES: Routes = [
   {
@@ -28,6 +29,6 @@ export const ROUTES: Routes = [
 
 @NgModule({
   imports: [CommonModule, NgbModule, RouterModule.forChild(ROUTES)],
-  declarations: [HomeComponent, IndexComponent, CarouselComponent, HotDealsComponent, PackagesComponent, EventManagementComponent, GalleryComponent, OurPartnersComponent, FooterComponent, NavbarComponent]
+  declarations: [HomeComponent, IndexComponent, CarouselComponent, HotDealsComponent, PackagesComponent, EventManagementComponent, GalleryComponent, OurPartnersComponent, FooterComponent, NavbarComponent, FloatingButtonComponent]
 })
 export class HomeModule {}
