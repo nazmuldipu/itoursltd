@@ -14,6 +14,10 @@ export const ROUTES: Routes = [
   {
     path: 'event',
     loadChildren: '../event/event.module#EventModule'
+  },
+  {
+    path: 'destinations',
+    loadChildren: '../destinations/destinations.module#DestinationsModule'
   }
 ];
 

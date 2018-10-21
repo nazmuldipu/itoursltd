@@ -1,0 +1,29 @@
+<nav class="side-nav-offset sidebar bg-white" [ngbCollapse]="navCollaps" id="sideNav">
+  <div>
+
+    <ul class="list-group">
+      <span *ngFor="let menu of menuList">
+        <li class="nav-group-item " [ngClass]="{active: isActive(menu.name)}" (click)="menu.url.length > 0 ? navigateTo(menu.url) : null;">
+
+          <div class="row level-1">
+            <div class="col" (click)="select(menu.name)">
+              {{menu.name}}
+            </div>
+            <small class="pull-right px-2" *ngIf="menu.secondMeu.length > 0">
+              <i class="fa" [ngClass]="isActive(menu.name)?'fa-minus':'fa-plus'" (click)="minimize(menu.name)"></i>
+            </small>
+          </div>
+
+          <ul class="list-group">
+            <span *ngFor="let child of menu.secondMeu">
+              <li style="display:none;" (click)="child.url.length > 0 ? navigateTo(child.url) : null " class="nav-group-item level-2 pl-3"
+                [ngClass]="{selected: child.url == navUrl}">
+                <span>{{ child.name }} </span>
+              </li>
+            </span>
+          </ul>
+        </li>
+      </span>
+    </ul>
+  </div>
+</nav>

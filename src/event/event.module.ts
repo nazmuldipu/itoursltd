@@ -9,7 +9,6 @@ import { CeremoniesComponent } from './containers/ceremonies/ceremonies.componen
 import { CorporateComponent } from './containers/corporate/corporate.component';
 import { ExhibitionComponent } from './containers/exhibition/exhibition.component';
 import { PhotographyComponent } from './containers/photography/photography.component';
-import { EventComponent } from './event.component';
 import { SharedModule } from 'src/shared/shared.module';
 
 export const ROUTES: Routes = [
@@ -30,7 +29,6 @@ export const ROUTES: Routes = [
     RouterModule.forChild(ROUTES)
   ],
   declarations: [
-    EventComponent,
     CorporateComponent,
     BrandComponent,
     CeremoniesComponent,

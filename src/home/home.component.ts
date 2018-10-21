@@ -6,8 +6,6 @@ import { Component, OnInit } from '@angular/core';
   <router-outlet></router-outlet>
   `
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent {
   constructor() {}
-
-  ngOnInit() {}
 }
