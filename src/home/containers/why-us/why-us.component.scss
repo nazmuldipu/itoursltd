@@ -1,0 +1,15 @@
+@import '../../containers/index/index.component.scss';
+
+.section-title {
+  padding-top: 60px;
+  //   text-align: center;
+}
+.why-us-content {
+  list-style: none;
+  & li {
+    padding-bottom: 20px;
+  }
+  &-point {
+    font-size: 22px;
+  }
+}

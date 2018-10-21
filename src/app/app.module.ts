@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NavbarComponent } from 'src/home/components/navbar/navbar.component';
 
 // routes
 export const ROUTES: Routes = [
@@ -13,8 +14,8 @@ export const ROUTES: Routes = [
 ];
 
 @NgModule({
-  declarations: [AppComponent],
   imports: [BrowserModule, RouterModule.forRoot(ROUTES), NgbModule.forRoot()],
+  declarations: [AppComponent, NavbarComponent],
   providers: [],
   bootstrap: [AppComponent]
 })

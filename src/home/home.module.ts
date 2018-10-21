@@ -11,8 +11,9 @@ import { EventManagementComponent } from './components/event-management/event-ma
 import { GalleryComponent } from './components/gallery/gallery.component';
 import { OurPartnersComponent } from './components/our-partners/our-partners.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { NavbarComponent } from './components/navbar/navbar.component';
+// import { NavbarComponent } from './components/navbar/navbar.component';
 import { FloatingButtonComponent } from './components/floating-button/floating-button.component';
+import { WhyUsComponent } from './containers/why-us/why-us.component';
 
 export const ROUTES: Routes = [
   {
@@ -24,11 +25,25 @@ export const ROUTES: Routes = [
         component: IndexComponent
       }
     ]
-  }
+  },
+  { path: 'why-us', component: WhyUsComponent }
 ];
 
 @NgModule({
   imports: [CommonModule, NgbModule, RouterModule.forChild(ROUTES)],
-  declarations: [HomeComponent, IndexComponent, CarouselComponent, HotDealsComponent, PackagesComponent, EventManagementComponent, GalleryComponent, OurPartnersComponent, FooterComponent, NavbarComponent, FloatingButtonComponent]
+  declarations: [
+    HomeComponent,
+    IndexComponent,
+    CarouselComponent,
+    HotDealsComponent,
+    PackagesComponent,
+    EventManagementComponent,
+    GalleryComponent,
+    OurPartnersComponent,
+    FooterComponent,
+    // NavbarComponent,
+    FloatingButtonComponent,
+    WhyUsComponent
+  ]
 })
 export class HomeModule {}

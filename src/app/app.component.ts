@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
   
   <div class="page">
   <div class="page-block">
+    <navbar></navbar>
     <router-outlet></router-outlet>
   </div>
   </div>
