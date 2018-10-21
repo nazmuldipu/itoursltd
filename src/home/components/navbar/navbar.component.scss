@@ -5,16 +5,58 @@
   top: 15px;
   right: 15px;
   left: 15px;
-  overflow: hidden;
-  //   background-color: lightblue;
   z-index: 10;
 }
 
 .sticky {
-  background-color: lightblue !important;
-  //   width: 100%;
+  background-color: rgba(255, 255, 255, 0.7) !important;
 }
 
 .content {
   height: 200vh;
+}
+
+.company-logo {
+  max-width: 120px;
+  border: 6px solid #333;
+}
+.dropdown-toggle {
+  cursor: pointer;
+}
+.dropdown-toggle::after {
+  // content: none;
+  border: none; // remove triangle from dropdown name
+}
+.nav-link {
+  color: black;
+}
+.sliding-middle-out:hover {
+  color: blue !important;
+}
+
+/*sliding underline*/
+.sliding-middle-out {
+  color: black !important;
+  display: inline-block;
+  position: relative;
+  padding-bottom: 3px;
+}
+.sliding-middle-out:after {
+  content: '';
+  display: block;
+  margin: auto;
+  height: 3px;
+  width: 0px;
+  /*margin-top : 3px;*/
+  background: transparent;
+  transition: width 0.5s ease, background-color 0.5s ease;
+}
+.sliding-middle-out:hover:after {
+  width: 100%;
+  background: #343baa;
+}
+/*end sliding*/
+
+.navbar-expand-md .navbar-nav .dropdown-menu {
+  background: rgba(255, 255, 255, 0.7);
 }

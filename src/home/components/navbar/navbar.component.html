@@ -1,52 +1,107 @@
-<!-- <nav class="navbar navbar-expand-md bg-transparent">
-  <a class="navbar-brand" href="#">Carousel</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse"
-    aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarCollapse">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home
-          <span class="sr-only">(current)</span>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#">Disabled</a>
-      </li>
-    </ul>
-    <ul class="navbar-nav">
-      <li class="nav-item">fa</li>
-      <li class="nav-item">tw</li>
-      <li class="nav-item">in</li>
-    </ul>
-  </div>
-</nav> -->
-
-
-<!-- this is the sticky menu -->
 <div>
   <nav class="navbar navbar-expand-md bg-transparent" #stickyMenu [class.sticky]="sticky">
-    <a class="navbar-brand" href="#">Carousel</a>
+    <a class="navbar-brand navbar-link custom-brand" routerLink="/">
+      <img class="company-logo" src="assets/images/logo.jpg" alt="logo">
+    </a>
+    <!-- <a class="navbar-brand" href="#">Carousel</a> -->
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse"
       aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarCollapse">
+    <div class="collapse navbar-collapse show" id="navbarCollapse" [class.show]="show">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Home
-            <span class="sr-only">(current)</span>
+        <li class="nav-item">
+          <a class="nav-link sliding-middle-out" href="#">WHY US</a>
+        </li>
+        <li ngbDropdown placement="bottom-left" class="nav-item dropdown">
+          <a ngbDropdownToggle class="nav-link dropdown-toggle sliding-middle-out" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">PACKAGES</a>
+          <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="dropdown01">
+            <a class="dropdown-item" routerLink="/dashboard/users/profile" (click)="toggleCollapse()">
+              DOMESTIC</a>
+            <a class="dropdown-item" routerLink="/dashboard/users/changePassword" (click)="toggleCollapse()">
+              INDIA</a>
+            <a class="dropdown-item" (click)="logout()">
+              NEPAL</a>
+          </div>
+        </li>
+        <li ngbDropdown placement="bottom-left" class="nav-item dropdown">
+          <a ngbDropdownToggle class="nav-link dropdown-toggle sliding-middle-out" id="dropdown02" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">EVENT MANAGEMENT</a>
+          <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="dropdown02">
+            <a class="dropdown-item" routerLink="/dashboard/users/profile" (click)="toggleCollapse()">
+              CORPORATE EVENTS</a>
+            <a class="dropdown-item" routerLink="/dashboard/users/changePassword" (click)="toggleCollapse()">
+              BRAND PROMOTION</a>
+            <a class="dropdown-item" (click)="logout()">
+              CEREMONIES</a>
+            <a class="dropdown-item" (click)="logout()">
+              ARTIST MANAGEMENT</a>
+            <a class="dropdown-item" (click)="logout()">
+              EXIBITION</a>
+            <a class="dropdown-item" (click)="logout()">
+              PHOTOGRAPHY</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link sliding-middle-out" href="#">HOTELS
           </a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
+        <li ngbDropdown placement="bottom-left" class="nav-item dropdown">
+          <a ngbDropdownToggle class="nav-link dropdown-toggle sliding-middle-out" id="dropdown03" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">TRANSPORT</a>
+          <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="dropdown03">
+            <a class="dropdown-item" routerLink="/dashboard/users/profile" (click)="toggleCollapse()">
+              BUS</a>
+            <a class="dropdown-item" routerLink="/dashboard/users/changePassword" (click)="toggleCollapse()">
+              SHIP</a>
+          </div>
+        </li>
+        <li ngbDropdown placement="bottom-left" class="nav-item dropdown">
+          <a ngbDropdownToggle class="nav-link dropdown-toggle sliding-middle-out" id="dropdown04" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">DESTINATIONS</a>
+          <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="dropdown04">
+            <a class="dropdown-item" routerLink="/dashboard/users/profile" (click)="toggleCollapse()">
+              BANGLADESH</a>
+            <a class="dropdown-item" routerLink="/dashboard/users/changePassword" (click)="toggleCollapse()">
+              INDIA</a>
+            <a class="dropdown-item" (click)="logout()">
+              NEPAL</a>
+            <a class="dropdown-item" (click)="logout()">
+              BHUTAN</a>
+            <a class="dropdown-item" (click)="logout()">
+              THAILAND</a>
+            <a class="dropdown-item" (click)="logout()">
+              MALAYSIA</a>
+            <a class="dropdown-item" (click)="logout()">
+              MALDIVES</a>
+            <a class="dropdown-item" (click)="logout()">
+              SRILANKA</a>
+            <a class="dropdown-item" (click)="logout()">
+              CHINA</a>
+            <a class="dropdown-item" (click)="logout()">
+              INDONESIA</a>
+          </div>
         </li>
         <li class="nav-item">
-          <a class="nav-link disabled" href="#">Disabled</a>
+          <a class="nav-link sliding-middle-out" href="#">GALLERY
+          </a>
+        </li>
+        <li ngbDropdown placement="bottom-left" class="nav-item dropdown">
+          <a ngbDropdownToggle class="nav-link dropdown-toggle sliding-middle-out" id="dropdown05" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">CONTACT US</a>
+          <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="dropdown05">
+            <a class="dropdown-item" routerLink="/dashboard/users/profile" (click)="toggleCollapse()">
+              ADDRESS</a>
+            <a class="dropdown-item" routerLink="/dashboard/users/changePassword" (click)="toggleCollapse()">
+              LOGIN</a>
+            <a class="dropdown-item" (click)="logout()">
+              ABOUT US</a>
+            <a class="dropdown-item" (click)="logout()">
+              FEEDBACK</a>
+            <a class="dropdown-item" (click)="logout()">
+              FAQ</a>
+          </div>
         </li>
       </ul>
       <ul class="navbar-nav">

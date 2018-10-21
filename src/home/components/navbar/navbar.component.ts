@@ -17,13 +17,13 @@ export class NavbarComponent implements OnInit {
 
   sticky: boolean = false;
   elementPosition: any;
+  show = false;
   constructor() {}
 
   ngOnInit() {}
 
   ngAfterViewInit() {
     this.elementPosition = this.menuElement.nativeElement.offsetTop;
-    console.log(this.elementPosition, 'pos');
   }
 
   @HostListener('window:scroll', ['$event'])
@@ -35,5 +35,9 @@ export class NavbarComponent implements OnInit {
     } else {
       this.sticky = false;
     }
+  }
+
+  toggleCollapse() {
+    this.show = !this.show;
   }
 }
