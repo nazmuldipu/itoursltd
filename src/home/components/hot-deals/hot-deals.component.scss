@@ -118,3 +118,48 @@
     text-align: center;
   }
 }
+
+@media (max-width: 767px) {
+  .info-widget {
+    width: 50%;
+  }
+  .myCard {
+    height: 200px;
+    &-img {
+      height: 150px;
+    }
+    &-text {
+      padding: 2px 5px 0 5px;
+      &-left {
+        &-place {
+          font-size: 16px;
+        }
+        &-duration {
+          margin-bottom: 5px;
+          font-size: 10px;
+        }
+      }
+      &-right {
+        &-text {
+          font-size: 10px;
+        }
+        &-price {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+  .hot-button {
+    margin-top: -140px;
+    &-left {
+      width: 35px;
+      height: 35px;
+      padding-top: 3px;
+    }
+    &-right {
+      width: 35px;
+      height: 35px;
+      padding-top: 3px;
+    }
+  }
+}

@@ -7,3 +7,8 @@
 .carousel-caption {
   text-align: left;
 }
+@media (max-width: 767px) {
+  .carousel-image {
+    height: 300px;
+  }
+}

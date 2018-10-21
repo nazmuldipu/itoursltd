@@ -4,3 +4,13 @@
   height: 80px;
   margin: auto;
 }
+
+@media (max-width: 767px) {
+  .partners-logo {
+    height: 60px;
+    margin: auto;
+  }
+  .scroll {
+    margin: 20px 0;
+  }
+}

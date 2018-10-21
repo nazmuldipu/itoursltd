@@ -24,7 +24,6 @@
   float: left;
   width: 100%;
   overflow: hidden;
-  /*will change this to hidden later to deny scolling to user*/
   white-space: nowrap;
 }
 
@@ -91,5 +90,30 @@
     // margin-top: -200px;
     // z-index: 1050;
     text-align: center;
+  }
+}
+
+@media (max-width: 767px) {
+  .packages-content {
+    min-height: 300px;
+  }
+  .blur-background {
+    padding-left: 30px;
+    padding-right: 30px;
+    height: 300px;
+  }
+  .info-widget {
+    width: 100%;
+    margin-top: 0;
+  }
+  .hot-button {
+    margin-top: -240px;
+    margin-bottom: 0;
+    &-left,
+    &-right {
+      width: 35px;
+      height: 35px;
+      padding-top: 3px;
+    }
   }
 }
