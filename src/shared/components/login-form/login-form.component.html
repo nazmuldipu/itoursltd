@@ -1,0 +1,19 @@
+<form class="py-4" [formGroup]="form" (ngSubmit)="send()">
+  <div class="form-group">
+    <label for="email">Email </label>
+    <input type="email" class="form-control" id="email" placeholder="Email" formControlName="email">
+    <small class="form-text text-danger" *ngIf="form.controls.email.errors && form.controls.email.dirty">
+      <span *ngIf="form.controls.email.errors.required">Email required</span>
+      <span *ngIf="form.controls.email.errors.email">Email format wrong</span>
+    </small>
+  </div>
+  <div class="form-group">
+    <label for="password">Password</label>
+    <input type="password" class="form-control" id="password" placeholder="password" formControlName="password">
+    <small class="form-text text-danger" *ngIf="form.controls.password.errors && form.controls.password.dirty">
+      <span *ngIf="form.controls.password.errors.required">password required</span>
+      <span *ngIf="form.controls.password.errors.minlength">minimum 6 character required</span>
+    </small>
+  </div>
+  <button type="submit" class="btn btn-primary" [disabled]="form.invalid">লগইন</button>
+</form>

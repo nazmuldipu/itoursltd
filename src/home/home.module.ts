@@ -14,6 +14,7 @@ import { PackagesComponent } from './components/packages/packages.component';
 import { IndexComponent } from './containers/index/index.component';
 import { WhyUsComponent } from './containers/why-us/why-us.component';
 import { HomeComponent } from './home.component';
+import { SharedModule } from '../shared/shared.module';
 
 // import { NavbarComponent } from './components/navbar/navbar.component';
 export const ROUTES: Routes = [
@@ -24,14 +25,19 @@ export const ROUTES: Routes = [
       {
         path: '',
         component: IndexComponent
-      }
+      },
+      { path: 'why-us', component: WhyUsComponent }
     ]
-  },
-  { path: 'why-us', component: WhyUsComponent }
+  }
 ];
 
 @NgModule({
-  imports: [CommonModule, NgbModule, RouterModule.forChild(ROUTES)],
+  imports: [
+    CommonModule,
+    NgbModule,
+    SharedModule,
+    RouterModule.forChild(ROUTES)
+  ],
   declarations: [
     HomeComponent,
     IndexComponent,

@@ -1,0 +1,54 @@
+.container {
+  padding-top: 80px !important;
+}
+
+.section-title {
+  font-size: 40px;
+  text-align: center;
+  // display: inline-block;
+  position: relative;
+}
+
+.section-title:before {
+  width: 50px;
+  height: 4px;
+}
+
+.section-title:after {
+  width: 350px;
+  height: 1px;
+}
+
+.section-title:before,
+.section-title:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 5px;
+  margin: 1px auto;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.faq-c {
+  display: block;
+  text-align: justify;
+  /* border-bottom: 1px dotted #ccc; */
+  padding: 5px;
+  border: 2px solid lightcyan;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background-color: lightcyan;
+  border-radius: 30px 0 30px 0;
+  -webkit-border-radius: 30px 0 30px 0;
+  -moz-border-radius: 30px 0 30px 0;
+  box-shadow: 3px 3px 10px black;
+  font-family: 'Bell MT';
+  font-size: 18px;
+}
+
+.faq-q {
+  font-size: 22px;
+  font-weight: 600;
+  border-bottom: 1px dotted gray;
+}
