@@ -8,6 +8,10 @@ import { LoginComponent } from '../shared/components/login/login.component';
 import { LoginFormComponent } from 'src/shared/components/login-form/login-form.component';
 import { RegisterFormComponent } from 'src/shared/components/register-form/register-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SharedModule } from '../shared/shared.module';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { environment } from 'src/environments/environment';
+import { AngularFireModule } from '@angular/fire';
 
 // routes
 export const ROUTES: Routes = [
@@ -39,8 +43,11 @@ export const ROUTES: Routes = [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
+    SharedModule,
     RouterModule.forRoot(ROUTES),
-    NgbModule.forRoot()
+    NgbModule.forRoot(),
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule
   ],
   declarations: [
     AppComponent,

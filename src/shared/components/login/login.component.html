@@ -11,19 +11,28 @@
         <!-- <div class="login-header-title">মন ফিজিওথেরাপি</div> -->
 
       </div>
-      <div class="row">
-        <div class="col-12 text-center login-tab">
-          <a [ngClass]="login?'active':''" (click)="loginClicked()">Login</a> |
-          <a [ngClass]="login?'':'active'" (click)="registerClicked()">Register</a>
+      <div *ngIf="!showBusy else busy">
+        <div class="row">
+          <div class="col-12 text-center login-tab">
+            <a [ngClass]="login?'active':''" (click)="loginClicked()">Login</a> |
+            <a [ngClass]="login?'':'active'" (click)="registerClicked()">Register</a>
+          </div>
+        </div>
+        <div class="alert alert-warning" role="alert" *ngIf="errorMessage.length > 0">
+          {{errorMessage}}
+        </div>
+        <div *ngIf="login" class="col-12 login-form">
+          <login-form (login)="onLogin($event)"></login-form>
+        </div>
+        <div *ngIf="!login" class="col-12 register-form">
+          <register-form (register)="onRegister($event)"></register-form>
         </div>
       </div>
-      <small class="form-text text-danger" *ngIf="errorMessage">{{errorMessage}}</small>
-      <div *ngIf="login" class="col-12 login-form">
-        <login-form (login)="onLogin($event)"></login-form>
-      </div>
-      <div *ngIf="!login" class="col-12 register-form">
-        <register-form (register)="onRegister($event)"></register-form>
-      </div>
+      <ng-template #busy>
+        <div class="loading">
+          <i class="fa fa-refresh"></i>&nbsp; Sending information ...
+        </div>
+      </ng-template>
     </div>
   </div>
 </div>

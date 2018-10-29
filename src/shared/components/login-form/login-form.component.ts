@@ -1,6 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Validators, FormBuilder } from '@angular/forms';
-import { User } from 'src/shared/models/user.models';
+import { User } from 'src/shared/models/user.model';
 
 @Component({
   selector: 'login-form',

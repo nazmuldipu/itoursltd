@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'login',
@@ -8,9 +9,10 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent {
   login = true;
-  errorMessage;
+  errorMessage = '';
+  showBusy = false;
 
-  constructor(private router: Router) {}
+  constructor(private auth: AuthService, private router: Router) {}
 
   loginClicked() {
     this.login = true;
@@ -18,5 +20,65 @@ export class LoginComponent {
 
   registerClicked() {
     this.login = false;
+  }
+
+  onLogin(event) {
+    console.log(event);
+    this.showBusy = true;
+    this.errorMessage = '';
+    this.auth
+      .loginWithEmail(event.email, event.password)
+      .then(ref => {
+        this.auth.getRegisteredUsers(ref.user.uid).subscribe(data => {
+          this.showBusy = false;
+          localStorage.setItem('username', data.name);
+          let role = data.roles[0];
+          localStorage.setItem('role', role);
+          console.log(data);
+          if (role == 'ADMIN' || role == 'EMPLOYEE') {
+            this.router.navigate(['/dashboard']);
+          } else {
+            this.errorMessage =
+              'You do not have permission to access the dashboard';
+          }
+          // TODO: dashboard
+        });
+      })
+      .catch(error => {
+        console.log(error);
+        this.showBusy = false;
+        this.errorMessage = error.message;
+      });
+  }
+
+  onRegister(event) {
+    console.log(event);
+    this.showBusy = true;
+    this.auth
+      .register(event.email, event.password)
+      .then(ref => {
+        let returnUrl = '/login';
+        this.auth
+          .saveUserInfoFromForm(
+            ref.user.uid,
+            event.name,
+            event.email,
+            event.password
+          )
+          .then(ref => {
+            this.showBusy = false;
+            this.router.navigateByUrl(returnUrl);
+          })
+          .catch(error => {
+            console.log('USER SAVIG ERROR', error);
+            this.errorMessage = error.message;
+            this.showBusy = false;
+          });
+      })
+      .catch(error => {
+        console.log('REGISTRATION ERROR', error);
+        this.errorMessage = error.message;
+        this.showBusy = false;
+      });
   }
 }
