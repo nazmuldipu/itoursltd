@@ -11,9 +11,16 @@ import { AuthService } from './services/auth.service';
 import { GallerysService } from './services/gallerys.service';
 import { HotdealsService } from './services/hotdeals.service';
 import { PackagesService } from './services/packages.service';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
-  imports: [CommonModule, RouterModule, NgbModule.forRoot()],
+  imports: [
+    CommonModule,
+    RouterModule,
+    FormsModule,
+    ReactiveFormsModule,
+    NgbModule.forRoot()
+  ],
   declarations: [FooterSectionComponent, NavbarComponent],
   providers: [
     AngularFireAuthModule,
@@ -27,6 +34,8 @@ import { PackagesService } from './services/packages.service';
     FooterSectionComponent,
     NavbarComponent,
     NgbModule,
+    FormsModule,
+    ReactiveFormsModule,
     AngularFireAuthModule
   ]
 })

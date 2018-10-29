@@ -1,0 +1,61 @@
+Group : {{group}}
+<div [formGroup]="parent">
+  <div formGroupName="{{group}}">
+    <div class="form-group">
+      <input class="form-control" formControlName="headline" id="headline" placeholder="Headline">
+    </div>
+
+
+    <div class="d-flex flex-row-reverse text-primary-color">
+      <a class="btn btn-info btn-sm  raised" (click)="addTaglines()">
+        <i class="fa fa-plus"></i> Add Tagline
+      </a>
+    </div>
+    <div formArrayName="taglines">
+      <div class="form-group" *ngFor="let t of taglines.controls; index as i">
+        <input class="form-control" [formControlName]="i" placeholder="taglines {{i+1}}" placeholder="Taglines">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <input class="form-control" formControlName="duration" id="duration" placeholder="Duration">
+    </div>
+    <div class="form-group">
+      <input type="number" class="form-control" formControlName="price" id="price" placeholder="Price">
+    </div>
+
+    <div class="d-flex flex-row-reverse text-primary-color">
+      <a class="btn btn-info btn-sm  raised" (click)="addDescription()">
+        <i class="fa fa-plus"></i> Add Description
+      </a>
+    </div>
+    <div formArrayName="description">
+      <div class="form-group" *ngFor="let t of description.controls; index as i">
+        <input class="form-control" [formControlName]="i" placeholder="Description {{i+1}}">
+      </div>
+    </div>
+
+    <div class="d-flex flex-row-reverse text-primary-color">
+      <a class="btn btn-info btn-sm  raised" (click)="addInclusions()">
+        <i class="fa fa-plus"></i> Add Inclusions
+      </a>
+    </div>
+    <div formArrayName="inclusions">
+      <div class="form-group" *ngFor="let t of inclusions.controls; index as i">
+        <input class="form-control" [formControlName]="i" placeholder="Inclusion {{i+1}}">
+      </div>
+    </div>
+
+    <div class="d-flex flex-row-reverse text-primary-color">
+      <a class="btn btn-info btn-sm  raised" (click)="addExclusions()">
+        <i class="fa fa-plus"></i> Add Exclusions
+      </a>
+    </div>
+    <div formArrayName="exclusions">
+      <div class="form-group" *ngFor="let t of exclusions.controls; index as i">
+        <input class="form-control" [formControlName]="i" placeholder="Exclusion {{i+1}}">
+      </div>
+    </div>
+
+  </div>
+</div>

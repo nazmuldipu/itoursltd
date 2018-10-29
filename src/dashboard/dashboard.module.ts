@@ -12,6 +12,8 @@ import { HotdealsListComponent } from './containers/hotdeals-list/hotdeals-list.
 import { HotdealsAddComponent } from './containers/hotdeals-add/hotdeals-add.component';
 import { GalleryListComponent } from './containers/gallery-list/gallery-list.component';
 import { GalleryAddComponent } from './containers/gallery-add/gallery-add.component';
+import { PackagesFormComponent } from './components/packages-form/packages-form.component';
+import { PackageCategoryFormComponent } from './components/package-category-form/package-category-form.component';
 
 export const ROUTES: Routes = [
   {
@@ -46,7 +48,9 @@ export const ROUTES: Routes = [
     HotdealsListComponent,
     HotdealsAddComponent,
     GalleryListComponent,
-    GalleryAddComponent
+    GalleryAddComponent,
+    PackagesFormComponent,
+    PackageCategoryFormComponent
   ]
 })
 export class DashboardModule {}
