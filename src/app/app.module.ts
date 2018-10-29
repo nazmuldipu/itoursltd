@@ -12,30 +12,36 @@ import { SharedModule } from '../shared/shared.module';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from 'src/environments/environment';
 import { AngularFireModule } from '@angular/fire';
+import { AuthGuard } from '../shared/services/auth-guard.service';
 
 // routes
 export const ROUTES: Routes = [
   {
-    path: '',
-    loadChildren: '../home/home.module#HomeModule'
-  },
-  {
-    path: 'event',
-    loadChildren: '../event/event.module#EventModule'
-  },
-  {
-    path: 'destinations',
-    loadChildren: '../destinations/destinations.module#DestinationsModule'
+    path: 'about',
+    loadChildren: '../about/about.module#AboutModule'
   },
   {
     path: 'contact',
     loadChildren: '../contact/contact.module#ContactModule'
   },
   {
-    path: 'about',
-    loadChildren: '../about/about.module#AboutModule'
+    path: 'dashboard',
+    loadChildren: '../dashboard/dashboard.module#DashboardModule',
+    canActivate: [AuthGuard]
   },
-  { path: 'login', component: LoginComponent }
+  {
+    path: 'destinations',
+    loadChildren: '../destinations/destinations.module#DestinationsModule'
+  },
+  {
+    path: 'event',
+    loadChildren: '../event/event.module#EventModule'
+  },
+  { path: 'login', component: LoginComponent },
+  {
+    path: '',
+    loadChildren: '../home/home.module#HomeModule'
+  }
 ];
 
 @NgModule({

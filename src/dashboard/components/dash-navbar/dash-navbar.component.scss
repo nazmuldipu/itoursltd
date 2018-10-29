@@ -1,0 +1,49 @@
+.company-name {
+  color: gray;
+  font-family: Quicksand, Georgia, 'Times New Roman', Times, serif;
+  font-weight: 200;
+}
+
+.fa-search {
+  color: gray;
+  font-weight: 100;
+  //   color: blue;
+}
+
+.nav-link {
+  font-family: Quicksand, Georgia, 'Times New Roman', Times, serif;
+  font-size: 1rem;
+  font-weight: 100;
+}
+
+.user-name {
+  font-weight: bold;
+}
+.user-pic {
+  padding: 0 5px;
+  height: 36px;
+  border-radius: 50%;
+}
+.user-flag {
+  padding: 0 5px;
+  height: 30px;
+}
+
+.dropdown-flag {
+  padding: 0 5px;
+  height: 20px;
+}
+
+.dropdown-toggle::after {
+  content: none;
+}
+
+.badge-info {
+  position: absolute;
+  top: -3px;
+  left: 25px;
+}
+
+.btn-profile {
+  padding: 0 10px;
+}

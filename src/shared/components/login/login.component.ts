@@ -23,7 +23,6 @@ export class LoginComponent {
   }
 
   onLogin(event) {
-    console.log(event);
     this.showBusy = true;
     this.errorMessage = '';
     this.auth
@@ -34,25 +33,21 @@ export class LoginComponent {
           localStorage.setItem('username', data.name);
           let role = data.roles[0];
           localStorage.setItem('role', role);
-          console.log(data);
           if (role == 'ADMIN' || role == 'EMPLOYEE') {
             this.router.navigate(['/dashboard']);
           } else {
             this.errorMessage =
               'You do not have permission to access the dashboard';
           }
-          // TODO: dashboard
         });
       })
       .catch(error => {
-        console.log(error);
         this.showBusy = false;
         this.errorMessage = error.message;
       });
   }
 
   onRegister(event) {
-    console.log(event);
     this.showBusy = true;
     this.auth
       .register(event.email, event.password)
