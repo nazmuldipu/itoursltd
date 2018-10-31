@@ -13,7 +13,7 @@
       </div>
       <div class="col">
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="checkbox" id="domestic" formControlName="domestic">
+          <input class="form-check-input" type="checkbox" id="domestic" formControlName="domestic" (change)="onDomesticChange($event.target.checked)">
           <label class="form-check-label" for="domestic">Domestic</label>
         </div>
       </div>
@@ -26,7 +26,7 @@
       </div>
       <div class="col">
         <label for="country">Country</label>
-        <input class="form-control" formControlName="country" id="country" placeholder="Country">
+        <input class="form-control" formControlName="country" id="country" placeholder="Country" [readonly]="domestic">
         <small class="text-danger" *ngIf="form.controls.country.errors?.required && (form.controls.country.dirty || mouseoverShifting)">Country required</small>
       </div>
     </div>
@@ -34,8 +34,8 @@
       <div class="col">
         <label for="area">City/Cities</label>
         <small class="float-right">
-          <button class="btn-sm btn-danger" (click)="addArea()">
-            <i class="fa fa-plus"></i> Add city</button>
+          <button type="button" class="btn-sm btn-danger" (click)="addArea()">
+            <i class="fa fa-plus"></i> Add City</button>
         </small>
         <div formArrayName="area">
           <div class="form-group" *ngFor="let r of area.controls; index as i">
@@ -46,8 +46,8 @@
       <div class="col">
         <label for="subArea">Spots</label>
         <small class="float-right">
-          <button class="btn-sm btn-danger" (click)="addSubArea()">
-            <i class="fa fa-plus"></i> Add subArea</button>
+          <button type="button" class="btn-sm btn-danger" (click)="addSubArea()">
+            <i class="fa fa-plus"></i> Add Spot</button>
         </small>
         <div formArrayName="subArea">
           <div class="form-group" *ngFor="let r of subArea.controls; index as i">
@@ -58,8 +58,8 @@
       <div class="col">
         <label for="category">Category</label>
         <small class="float-right">
-          <button class="btn-sm btn-danger" (click)="addCategory()">
-            <i class="fa fa-plus"></i> Add category</button>
+          <button type="button" class="btn-sm btn-danger" (click)="addCategory()">
+            <i class="fa fa-plus"></i> Add Category</button>
         </small>
         <div formArrayName="category">
           <div class="form-group" *ngFor="let r of category.controls; index as i">
@@ -73,24 +73,25 @@
 
       <div class="col-md-4" formGroupName="regularPackage">
         <h3 class="text-center">Regular</h3>
-        <package-category-form [parent]="form" [group]="'regularPackage'"></package-category-form>
+        <package-category-form [parent]="form" [group]="'regularPackage'" [mouseoverShifting]="mouseoverShifting"></package-category-form>
       </div>
       <div class="col-md-4" formGroupName="regularPackage">
         <h3 class="text-center">Delux</h3>
-        <package-category-form [parent]="form" [group]="'deluxePackage'"></package-category-form>
+        <package-category-form [parent]="form" [group]="'deluxePackage'" [mouseoverShifting]="mouseoverShifting"></package-category-form>
       </div>
       <div class="col-md-4" formGroupName="regularPackage">
         <h3 class="text-center">Crown</h3>
-        <package-category-form [parent]="form" [group]="'crownPackage'"></package-category-form>
+        <package-category-form [parent]="form" [group]="'crownPackage'" [mouseoverShifting]="mouseoverShifting"></package-category-form>
       </div>
     </div>
 
     <div class="d-flex flex-row-reverse bd-highlight">
       <span (mouseenter)="mouseoverShifting=true">
-        <!-- <button class="btn btn-warning mx-1" [ngClass]="{'disabled': form.invalid, 'btn-warning':edit, 'btn-success': !edit }" type="submit">{{edit? 'Update':'Create'}}</button> -->
-        <button class="btn btn-warning mx-1" [ngClass]="{'btn-warning':edit, 'btn-success': !edit }" type="submit">{{edit? 'Update':'Create'}}</button>
+        <button type="submit" class="btn btn-warning mx-1" [ngClass]="{'disabled': form.invalid, 'btn-warning':edit, 'btn-success': !edit }"
+          type="submit">{{edit? 'Update':'Create'}}</button>
+        <!-- <button class="btn btn-warning mx-1" [ngClass]="{'btn-warning':edit, 'btn-success': !edit }" type="submit">{{edit? 'Update':'Create'}}</button> -->
       </span>
-      <button class="btn btn-light mx-1" (click)="clear()">Clear</button>
+      <!-- <button class="btn btn-light mx-1" (click)="clear()">Clear</button> -->
     </div>
   </form>
 </div>

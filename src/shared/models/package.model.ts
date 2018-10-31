@@ -21,12 +21,12 @@ interface PackageType {
   taglines: string[];
   duration: string;
   price: number;
-  description: string[];
+  description: PackageDescription[];
   inclusions: string[];
   exclusions: string[];
 }
 
 interface PackageDescription {
   head: string;
-  text: string;
+  text: string[];
 }

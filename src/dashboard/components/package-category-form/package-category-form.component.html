@@ -1,42 +1,62 @@
-Group : {{group}}
 <div [formGroup]="parent">
   <div formGroupName="{{group}}">
+
     <div class="form-group">
       <input class="form-control" formControlName="headline" id="headline" placeholder="Headline">
+      <small class="text-danger" *ngIf="required('headline')">Headline required</small>
     </div>
 
-
     <div class="d-flex flex-row-reverse text-primary-color">
-      <a class="btn btn-info btn-sm  raised" (click)="addTaglines()">
+      <a class="arr-button" (click)="addTaglines()">
         <i class="fa fa-plus"></i> Add Tagline
       </a>
     </div>
     <div formArrayName="taglines">
       <div class="form-group" *ngFor="let t of taglines.controls; index as i">
-        <input class="form-control" [formControlName]="i" placeholder="taglines {{i+1}}" placeholder="Taglines">
+        <input class="form-control" [formControlName]="i" placeholder="taglines {{i+1}}">
       </div>
     </div>
 
     <div class="form-group">
       <input class="form-control" formControlName="duration" id="duration" placeholder="Duration">
+      <small class="text-danger" *ngIf="required('duration')">Duration required</small>
     </div>
     <div class="form-group">
       <input type="number" class="form-control" formControlName="price" id="price" placeholder="Price">
+      <small class="text-danger" *ngIf="required('price')">Price required</small>
     </div>
 
     <div class="d-flex flex-row-reverse text-primary-color">
-      <a class="btn btn-info btn-sm  raised" (click)="addDescription()">
+      <a class="arr-button" (click)="addDescription()">
         <i class="fa fa-plus"></i> Add Description
       </a>
     </div>
     <div formArrayName="description">
-      <div class="form-group" *ngFor="let t of description.controls; index as i">
-        <input class="form-control" [formControlName]="i" placeholder="Description {{i+1}}">
+      <div class="border my-1" *ngFor="let des of getDescriptoin(parent).controls; let i=index">
+        <div style="margin: 5px;" [formGroupName]="i">
+          <input class="form-control" placeholder="Description Head:{{i+1}}" formControlName="head">
+
+          <div formArrayName="texts">
+            <div class="row my-1">
+              <div class="col-1">
+                <button class="btn btn-sm btn-warning" (click)="addTexts(i)" type="button">
+                  <i class="fa fa-plus"></i>
+                </button>
+              </div>
+              <div class="col-11">
+                <div class="form-group my-1" *ngFor="let t of des.controls.texts.controls; index as j">
+                  <input class="form-control" [formControlName]="j" placeholder="Description Head {{i+1}} - Text {{j+1}}">
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
       </div>
     </div>
 
     <div class="d-flex flex-row-reverse text-primary-color">
-      <a class="btn btn-info btn-sm  raised" (click)="addInclusions()">
+      <a class="arr-button" (click)="addInclusions()">
         <i class="fa fa-plus"></i> Add Inclusions
       </a>
     </div>
@@ -47,7 +67,7 @@ Group : {{group}}
     </div>
 
     <div class="d-flex flex-row-reverse text-primary-color">
-      <a class="btn btn-info btn-sm  raised" (click)="addExclusions()">
+      <a class="arr-button" (click)="addExclusions()">
         <i class="fa fa-plus"></i> Add Exclusions
       </a>
     </div>
