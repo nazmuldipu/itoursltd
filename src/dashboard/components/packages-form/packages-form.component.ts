@@ -36,7 +36,11 @@ export class PackagesFormComponent implements OnChanges {
     this.createForm();
   }
 
-  ngOnChanges() {}
+  ngOnChanges() {
+    if (this.package != null && this.package.id != null) {
+      this.form.patchValue(this.package);
+    }
+  }
 
   createForm() {
     this.form = this.fb.group({

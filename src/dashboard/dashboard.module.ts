@@ -26,6 +26,7 @@ export const ROUTES: Routes = [
       },
       { path: 'packages-list', component: PackagesListComponent },
       { path: 'packages-add', component: PackagesAddComponent },
+      { path: 'packages-add/:id', component: PackagesAddComponent },
       { path: 'hotdeals-list', component: HotdealsListComponent },
       { path: 'hotdeals-add', component: HotdealsAddComponent },
       { path: 'gallery-list', component: GalleryListComponent },

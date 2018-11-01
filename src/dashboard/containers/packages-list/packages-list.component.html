@@ -1,3 +1,46 @@
-<p>
-  packages-list works!
-</p>
+<div class="container-fluid">
+  <h3 class="text-center">Package List</h3>
+  <div class="row mx-1">
+    <div class="table-responsive">
+      <table class="table table-hover">
+        <thead>
+          <tr class="table-primary">
+            <th>Country</th>
+            <th>Area</th>
+            <th>Sub Area</th>
+            <th>Active</th>
+            <th>Domestic</th>
+            <th>Edit</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
+        <tbody *ngIf="!showLoading">
+          <tr *ngFor="let package of packages">
+            <td>{{package.country}}</td>
+            <td>
+              <span *ngFor="let are of package.area">{{are}}, </span>
+            </td>
+            <td>
+              <span *ngFor="let sare of package.subArea">{{sare}}, </span>
+            </td>
+            <td>{{package.active}}</td>
+            <td>{{package.domestic}}</td>
+            <td>
+              <button class="btn btn-sm btn-warning" (click)="onEdit(package.id)">Edit</button>
+            </td>
+            <td>
+              <button class="btn btn-sm btn-danger" (click)="onDelete(package.id)">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+        <tr *ngIf="showLoading">
+          <td colspan="7">
+            <div class="loading">
+              <i class="fa fa-refresh"></i>&nbsp; Loading information ...
+            </div>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>

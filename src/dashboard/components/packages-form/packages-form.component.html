@@ -1,4 +1,6 @@
-<!-- {{form.value | json}} -->
+{{form.value | json}}
+<br>
+<br> {{package | json}}
 <div class="container-fluid">
   <form [formGroup]="form" class="my-3 p-4 shifting-form label1 text-left" (ngSubmit)="submit()" (mouseleave)="mouseoverShifting=false">
 
