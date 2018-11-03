@@ -16,7 +16,7 @@ export interface Package {
   crownPackage: PackageType;
 }
 
-interface PackageType {
+export interface PackageType {
   headline: string;
   taglines: string[];
   duration: string;
@@ -28,5 +28,5 @@ interface PackageType {
 
 interface PackageDescription {
   head: string;
-  text: string[];
+  texts: string[];
 }

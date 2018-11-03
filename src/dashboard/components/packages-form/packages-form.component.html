@@ -1,6 +1,6 @@
-{{form.value | json}}
+<!-- {{form.value | json}}
 <br>
-<br> {{package | json}}
+<br> {{package | json}} -->
 <div class="container-fluid">
   <form [formGroup]="form" class="my-3 p-4 shifting-form label1 text-left" (ngSubmit)="submit()" (mouseleave)="mouseoverShifting=false">
 
@@ -75,15 +75,15 @@
 
       <div class="col-md-4" formGroupName="regularPackage">
         <h3 class="text-center">Regular</h3>
-        <package-category-form [parent]="form" [group]="'regularPackage'" [mouseoverShifting]="mouseoverShifting"></package-category-form>
+        <package-category-form [parent]="form" [group]="'regularPackage'" [package]="package?.regularPackage" [mouseoverShifting]="mouseoverShifting"></package-category-form>
       </div>
       <div class="col-md-4" formGroupName="regularPackage">
         <h3 class="text-center">Delux</h3>
-        <package-category-form [parent]="form" [group]="'deluxePackage'" [mouseoverShifting]="mouseoverShifting"></package-category-form>
+        <package-category-form [parent]="form" [group]="'deluxePackage'" [package]="package?.deluxePackage" [mouseoverShifting]="mouseoverShifting"></package-category-form>
       </div>
       <div class="col-md-4" formGroupName="regularPackage">
         <h3 class="text-center">Crown</h3>
-        <package-category-form [parent]="form" [group]="'crownPackage'" [mouseoverShifting]="mouseoverShifting"></package-category-form>
+        <package-category-form [parent]="form" [group]="'crownPackage'" [package]="package?.crownPackage" [mouseoverShifting]="mouseoverShifting"></package-category-form>
       </div>
     </div>
 

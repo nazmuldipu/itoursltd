@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { PackagesService } from '../../../shared/services/packages.service';
-import { Package } from '../../../shared/models/package.model';
 import { Router } from '@angular/router';
+import { Package } from 'src/shared/models/package.model';
+import { PackagesService } from 'src/shared/services/packages.service';
 
 @Component({
   selector: 'app-packages-list',
@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./packages-list.component.scss']
 })
 export class PackagesListComponent implements OnInit {
-  showLoading = true;
+  showLoading = false;
   packages: Package[];
   constructor(
     private packageService: PackagesService,

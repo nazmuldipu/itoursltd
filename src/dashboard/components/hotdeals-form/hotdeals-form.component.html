@@ -1,0 +1,81 @@
+<!-- {{form.value | json}} -->
+<div class="container-fluid">
+    <form [formGroup]="form" class="my-3 p-4 shifting-form label1 text-left" (ngSubmit)="submit()" (mouseleave)="mouseoverShifting=false">
+        <div class="row my-3">
+            <div class="col">
+                <label for="headline">Headline</label>
+                <input class="form-control" formControlName="headline" id="headline" placeholder="Headline">
+                <small class="text-danger" *ngIf="form.controls.headline.errors?.required && (form.controls.headline.dirty || mouseoverShifting)">Headline required</small>
+            </div>
+            <div class="col">
+                <label for="price">Price</label>
+                <input class="form-control" type="number" formControlName="price" id="price" placeholder="price">
+                <small class="text-danger" *ngIf="form.controls.price.errors?.required && (form.controls.price.dirty || mouseoverShifting)">Price required</small>
+            </div>
+        </div>
+        <div class="form-group row my-3">
+            <div class="col">
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="active" formControlName="active">
+                    <label class="form-check-label" for="active">Active</label>
+                </div>
+            </div>
+            <div class="col">
+                <label for="taglines">Tagline</label>
+                <small class="float-right">
+                    <button type="button" class="btn-sm btn-danger" (click)="addTaglines()">
+                        <i class="fa fa-plus"></i> Add tagline</button>
+                </small>
+                <div formArrayName="taglines">
+                    <div class="form-group" *ngFor="let r of taglines.controls; index as i">
+                        <input class="form-control" [formControlName]="i" placeholder="Tags {{i+1}}">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row my-3">
+            <div class="col">
+                <label for="tourDate">Tour Date</label>
+                <input class="form-control" type="date" formControlName="tourDate" id="tourDate" placeholder="tourDate">
+                <small class="text-danger" *ngIf="form.controls.tourDate.errors?.required && (form.controls.tourDate.dirty || mouseoverShifting)">Tour Date required</small>
+            </div>
+            <div class="col">
+                <label for="lastBookingDate">Last BookingDate</label>
+                <input class="form-control" type="date" formControlName="lastBookingDate" id="lastBookingDate" placeholder="Last Booking Date">
+                <small class="text-danger" *ngIf="form.controls.lastBookingDate.errors?.required && (form.controls.lastBookingDate.dirty || mouseoverShifting)">Last Booking Date required</small>
+            </div>
+        </div>
+        <div class="row my-3">
+            <div class="col">
+                <label for="duration">Duration</label>
+                <input class="form-control" formControlName="duration" id="duration" placeholder="duration">
+                <small class="text-danger" *ngIf="form.controls.duration.errors?.required && (form.controls.duration.dirty || mouseoverShifting)">Duration required</small>
+            </div>
+            <div class="col">
+                <label for="url">Package url</label>
+                <input class="form-control" formControlName="url" id="url" placeholder="Url">
+                <small class="text-danger" *ngIf="form.controls.url.errors?.required && (form.controls.url.dirty || mouseoverShifting)">Url required</small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="description">Description</label>
+            <textarea class="form-control" id="description" rows="3" formControlName="description"></textarea>
+            <small class="text-danger" *ngIf="form.controls.description.errors?.required && (form.controls.description.dirty || mouseoverShifting)">Description required</small>
+        </div>
+        <!-- <div class="row my-3">
+            <div class="col">
+                <label for="description">description</label>
+                <textarea formControlName="description"></textarea>
+                
+                <small class="text-danger" *ngIf="form.controls.description.errors?.required && (form.controls.description.dirty || mouseoverShifting)">Description required</small>
+            </div>
+
+        </div> -->
+        <div class="d-flex flex-row-reverse bd-highlight">
+            <span (mouseenter)="mouseoverShifting=true">
+                <button type="submit" class="btn btn-warning mx-1" [ngClass]="{'disabled': form.invalid, 'btn-warning':edit, 'btn-success': !edit }"
+                    type="submit">{{edit? 'Update':'Create'}}</button>
+            </span>
+        </div>
+    </form>
+</div>

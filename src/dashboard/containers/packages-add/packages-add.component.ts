@@ -17,14 +17,14 @@ export class PackagesAddComponent implements OnInit {
     private activeRoute: ActivatedRoute
   ) {
     this.id = activeRoute.snapshot.paramMap.get('id');
-    console.log(this.id);
   }
 
   async ngOnInit() {
     if (this.id) {
+      this.showBusy = true;
       await this.packageService.get(this.id).subscribe(data => {
-        console.log(data);
         this.package = data as Package;
+        this.showBusy = false;
       });
     }
   }
@@ -41,6 +41,21 @@ export class PackagesAddComponent implements OnInit {
       .catch(error => {
         this.showBusy = true;
         console.log('Package could not create');
+      });
+  }
+
+  onUpdate(event) {
+    console.log(event);
+    this.showBusy = true;
+    this.packageService
+      .update(this.id, event)
+      .then(ref => {
+        this.showBusy = false;
+        console.log('Package updated Successfully');
+      })
+      .catch(error => {
+        this.showBusy = false;
+        console.log('Package could not update');
       });
   }
 }

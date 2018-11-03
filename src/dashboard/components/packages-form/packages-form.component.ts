@@ -27,6 +27,9 @@ export class PackagesFormComponent implements OnChanges {
   @Output()
   create = new EventEmitter<Package>();
 
+  @Output()
+  update = new EventEmitter<Package>();
+
   form: FormGroup;
   mouseoverShifting = false;
   edit = false;
@@ -38,7 +41,35 @@ export class PackagesFormComponent implements OnChanges {
 
   ngOnChanges() {
     if (this.package != null && this.package.id != null) {
+      this.edit = true;
       this.form.patchValue(this.package);
+
+      // Patch area array
+      let ctrl = <FormArray>this.form.controls.area;
+      ctrl.removeAt(0);
+      this.package.area.forEach(ar => {
+        if (ar.length > 0) {
+          ctrl.push(new FormControl(ar));
+        }
+      });
+
+      // Patch subArea array
+      ctrl = <FormArray>this.form.controls.subArea;
+      ctrl.removeAt(0);
+      this.package.subArea.forEach(ar => {
+        if (ar.length > 0) {
+          ctrl.push(new FormControl(ar));
+        }
+      });
+
+      // Patch category array
+      ctrl = <FormArray>this.form.controls.category;
+      ctrl.removeAt(0);
+      this.package.category.forEach(ar => {
+        if (ar.length > 0) {
+          ctrl.push(new FormControl(ar));
+        }
+      });
     }
   }
 
@@ -116,7 +147,12 @@ export class PackagesFormComponent implements OnChanges {
   }
 
   submit() {
-    this.create.emit(this.form.value);
+    if (this.edit) {
+      this.update.emit(this.form.value);
+    } else {
+      this.create.emit(this.form.value);
+    }
+    this.edit = false;
     this.form.reset();
     this.createForm();
   }
