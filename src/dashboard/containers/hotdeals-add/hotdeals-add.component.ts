@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HotdealsService } from '../../../shared/services/hotdeals.service';
 import { Hotdeal } from 'src/shared/models/hotdeal.model';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-hotdeals-add',
@@ -15,7 +15,8 @@ export class HotdealsAddComponent implements OnInit {
 
   constructor(
     private hotdealService: HotdealsService,
-    private activeRoute: ActivatedRoute
+    private activeRoute: ActivatedRoute,
+    private router: Router
   ) {
     this.id = activeRoute.snapshot.paramMap.get('id');
   }
@@ -36,11 +37,12 @@ export class HotdealsAddComponent implements OnInit {
     this.hotdealService
       .create(event)
       .then(ref => {
-        this.showBusy = true;
+        this.showBusy = false;
         console.log('Hotdeal Created Successfully');
+        this.router.navigate(['/dashboard/hotdeals-list']);
       })
       .catch(error => {
-        this.showBusy = true;
+        this.showBusy = false;
         console.log('Hotdeal could not create');
       });
   }
@@ -53,6 +55,7 @@ export class HotdealsAddComponent implements OnInit {
       .then(ref => {
         this.showBusy = false;
         console.log('Hotdeal updated Successfully');
+        this.router.navigate(['/dashboard/hotdeals-list']);
       })
       .catch(error => {
         this.showBusy = false;

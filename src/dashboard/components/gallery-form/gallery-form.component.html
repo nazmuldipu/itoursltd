@@ -1,0 +1,66 @@
+<!-- {{form.value | json}} -->
+<div class="container-fluid">
+  <form [formGroup]="form" class="my-3 p-4 shifting-form label1 text-left" (ngSubmit)="submit()" (mouseleave)="mouseoverShifting=false">
+
+    <div class="form-group row my-3">
+      <div class="col">
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" id="active" formControlName="active">
+          <label class="form-check-label" for="active">Active</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="row my-3">
+      <div class="col">
+        <label for="title">Title</label>
+        <input class="form-control" formControlName="title" id="title" placeholder="Title">
+        <small class="text-danger" *ngIf="form.controls.title.errors?.required && (form.controls.title.dirty || mouseoverShifting)">Title required</small>
+      </div>
+      <div class="col">
+        <label for="eventDate">Event Date</label>
+        <input class="form-control" type="date" formControlName="eventDate" id="tourDate" placeholder="Event Date">
+        <small class="text-danger" *ngIf="form.controls.eventDate.errors?.required && (form.controls.eventDate.dirty || mouseoverShifting)">Tour Date required</small>
+      </div>
+    </div>
+
+    <div class="row my-3">
+      <div class="col">
+        <label for="institute">Institute</label>
+        <input class="form-control" formControlName="institute" id="institute" placeholder="Institute">
+        <small class="text-danger" *ngIf="form.controls.institute.errors?.required && (form.controls.institute.dirty || mouseoverShifting)">Institute required</small>
+      </div>
+      <div class="col">
+        <label for="department">Department</label>
+        <input class="form-control" formControlName="department" id="department" placeholder="Department">
+        <small class="text-danger" *ngIf="form.controls.department.errors?.required && (form.controls.department.dirty || mouseoverShifting)">Department required</small>
+      </div>
+    </div>
+
+    <div class="form-group row my-3">
+      <div class="col">
+        <label for="duration">Duration</label>
+        <input class="form-control" formControlName="duration" id="duration" placeholder="Duration">
+        <small class="text-danger" *ngIf="form.controls.duration.errors?.required && (form.controls.duration.dirty || mouseoverShifting)">Duration required</small>
+      </div>
+      <div class="col">
+        <label for="numberGuests">Number Guests</label>
+        <input class="form-control" type="number" formControlName="numberGuests" id="numberGuests" placeholder="NumberGuests">
+        <small class="text-danger" *ngIf="form.controls.numberGuests.errors?.required && (form.controls.numberGuests.dirty || mouseoverShifting)">Number Guests required</small>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="details">Details</label>
+      <textarea class="form-control" id="details" rows="3" formControlName="details"></textarea>
+      <small class="text-danger" *ngIf="form.controls.details.errors?.required && (form.controls.details.dirty || mouseoverShifting)">Description required</small>
+    </div>
+
+    <div class="d-flex flex-row-reverse bd-highlight">
+      <span (mouseenter)="mouseoverShifting=true">
+        <button type="submit" class="btn btn-warning mx-1" [ngClass]="{'disabled': form.invalid, 'btn-warning':edit, 'btn-success': !edit }"
+          type="submit">{{edit? 'Update':'Create'}}</button>
+      </span>
+    </div>
+  </form>
+</div>

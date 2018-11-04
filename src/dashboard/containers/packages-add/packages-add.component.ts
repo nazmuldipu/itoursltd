@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PackagesService } from '../../../shared/services/packages.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Package } from '../../../shared/models/package.model';
 
 @Component({
@@ -14,7 +14,8 @@ export class PackagesAddComponent implements OnInit {
   id;
   constructor(
     private packageService: PackagesService,
-    private activeRoute: ActivatedRoute
+    private activeRoute: ActivatedRoute,
+    private router: Router
   ) {
     this.id = activeRoute.snapshot.paramMap.get('id');
   }
@@ -37,6 +38,7 @@ export class PackagesAddComponent implements OnInit {
       .then(ref => {
         this.showBusy = true;
         console.log('Package Created Successfully');
+        this.router.navigate(['/dashboard/packages-list']);
       })
       .catch(error => {
         this.showBusy = true;
@@ -52,6 +54,7 @@ export class PackagesAddComponent implements OnInit {
       .then(ref => {
         this.showBusy = false;
         console.log('Package updated Successfully');
+        this.router.navigate(['/dashboard/packages-list']);
       })
       .catch(error => {
         this.showBusy = false;

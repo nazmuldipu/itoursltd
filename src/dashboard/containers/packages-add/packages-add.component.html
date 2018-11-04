@@ -1,5 +1,5 @@
 <div class="container text-center">
-  <h2>Add Package</h2>
+  <h2 [ngClass]="id? 'bg-warning' : ''">{{id?'Edit':'Add'}} Package</h2>
 </div>
 <div *ngIf="!showBusy else loading">
   <packages-form (create)="onCreate($event)" (update)="onUpdate($event)" [package]="package"></packages-form>

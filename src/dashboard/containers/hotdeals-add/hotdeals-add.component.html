@@ -1,5 +1,5 @@
 <div class="container text-center">
-  <h2>Add Hotdeal</h2>
+  <h2 [ngClass]="id? 'bg-warning' : ''">{{id?'Edit':'Add'}} Hotdeal</h2>
 </div>
 <div *ngIf="!showBusy else loading">
   <hotdeals-form (create)="onCreate($event)" (update)="onUpdate($event)" [hotdeal]="hotdeal"></hotdeals-form>

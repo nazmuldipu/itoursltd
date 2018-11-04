@@ -1,3 +1,43 @@
-<p>
-  gallery-list works!
-</p>
+<div class="container-fluid">
+  <h3 class="text-center">Gallery List</h3>
+  <div class="row mx-1">
+    <div class="table-responsive">
+      <table class="table table-hover">
+        <thead>
+          <tr class="table-primary">
+            <th>Event Date</th>
+            <th>Title</th>
+            <th>Institute</th>
+            <th>Active</th>
+            <th>Edit</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
+        <tbody *ngIf="!showLoading">
+          <tr *ngFor="let gallery of gallerys">
+            <td>{{gallery.eventDate}}</td>
+
+            <td>
+              {{gallery.title}}
+            </td>
+            <td>{{gallery.institute}}</td>
+            <td>{{gallery.active}}</td>
+            <td>
+              <button class="btn btn-sm btn-warning" (click)="onEdit(gallery.id)">Edit</button>
+            </td>
+            <td>
+              <button class="btn btn-sm btn-danger" (click)="onDelete(gallery.id)">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+        <tr *ngIf="showLoading">
+          <td colspan="7">
+            <div class="loading">
+              <i class="fa fa-refresh"></i>&nbsp; Loading information ...
+            </div>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>

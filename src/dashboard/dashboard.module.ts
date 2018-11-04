@@ -15,6 +15,7 @@ import { GalleryAddComponent } from './containers/gallery-add/gallery-add.compon
 import { PackagesFormComponent } from './components/packages-form/packages-form.component';
 import { PackageCategoryFormComponent } from './components/package-category-form/package-category-form.component';
 import { HotdealsFormComponent } from './components/hotdeals-form/hotdeals-form.component';
+import { GalleryFormComponent } from './components/gallery-form/gallery-form.component';
 
 export const ROUTES: Routes = [
   {
@@ -55,7 +56,8 @@ export const ROUTES: Routes = [
     GalleryAddComponent,
     PackagesFormComponent,
     PackageCategoryFormComponent,
-    HotdealsFormComponent
+    HotdealsFormComponent,
+    GalleryFormComponent
   ]
 })
 export class DashboardModule {}

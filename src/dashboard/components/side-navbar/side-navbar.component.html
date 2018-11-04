@@ -24,7 +24,7 @@
             <span *ngFor="let child of menu.secondMeu">
               <li style="display:none;" *ngIf="hasAuthority(child.authority)" (click)="child.url.length > 0 ? navigateTo(child.url) : null "
                 class="nav-group-item first pl-3" [ngClass]="{selected: child.url == navUrl}">
-                <!-- <i class="fa" [ngClass]="child.icon"></i>&nbsp; -->
+                <i class="fa" [ngClass]="child.icon"></i>&nbsp;
                 <span>{{ child.name }} </span>
               </li>
             </span>
