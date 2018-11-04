@@ -16,6 +16,10 @@ import { PackagesFormComponent } from './components/packages-form/packages-form.
 import { PackageCategoryFormComponent } from './components/package-category-form/package-category-form.component';
 import { HotdealsFormComponent } from './components/hotdeals-form/hotdeals-form.component';
 import { GalleryFormComponent } from './components/gallery-form/gallery-form.component';
+import { HotdealsImageComponent } from './containers/hotdeals-image/hotdeals-image.component';
+import { PackagesImageComponent } from './containers/packages-image/packages-image.component';
+import { GalleryImageComponent } from './containers/gallery-image/gallery-image.component';
+import { Ng2ImgMaxModule } from 'ng2-img-max';
 
 export const ROUTES: Routes = [
   {
@@ -27,12 +31,15 @@ export const ROUTES: Routes = [
         component: IndexComponent
       },
       { path: 'packages-list', component: PackagesListComponent },
+      { path: 'packages-image/:id', component: PackagesImageComponent },
       { path: 'packages-add', component: PackagesAddComponent },
       { path: 'packages-add/:id', component: PackagesAddComponent },
       { path: 'hotdeals-list', component: HotdealsListComponent },
+      { path: 'hotdeals-image/:id', component: HotdealsImageComponent },
       { path: 'hotdeals-add', component: HotdealsAddComponent },
       { path: 'hotdeals-add/:id', component: HotdealsAddComponent },
       { path: 'gallery-list', component: GalleryListComponent },
+      { path: 'gallery-image/:id', component: GalleryImageComponent },
       { path: 'gallery-add', component: GalleryAddComponent },
       { path: 'gallery-add/:id', component: GalleryAddComponent }
     ]
@@ -42,7 +49,12 @@ export const ROUTES: Routes = [
 ];
 
 @NgModule({
-  imports: [CommonModule, SharedModule, RouterModule.forChild(ROUTES)],
+  imports: [
+    CommonModule,
+    SharedModule,
+    Ng2ImgMaxModule,
+    RouterModule.forChild(ROUTES)
+  ],
   declarations: [
     DashboardComponent,
     IndexComponent,
@@ -57,7 +69,10 @@ export const ROUTES: Routes = [
     PackagesFormComponent,
     PackageCategoryFormComponent,
     HotdealsFormComponent,
-    GalleryFormComponent
+    GalleryFormComponent,
+    HotdealsImageComponent,
+    PackagesImageComponent,
+    GalleryImageComponent
   ]
 })
 export class DashboardModule {}

@@ -1,0 +1,21 @@
+<p>
+  hotdeals-image works!
+</p>
+{{hotdeal | json}}
+<!-- <input type="file" (change)="onImageChange($event)" accept="image/*"> -->
+
+<!-- <img *ngIf="!imagePreview" [src]="imagePreview"> -->
+<img class="img-thumbnail" *ngIf="imageUrl" height="180px" width="320" [src]="imageUrl" alt="" style="height: 270px;">
+<p>
+  <input type="file" (change)="fileChange($event)" placeholder="Upload file" accept="image/x-png,image/gif,image/jpeg">
+</p>
+<div *ngIf="progressPercentage == 100">
+  Uploaded
+  <i class="fa fa-check-square-o text-success"></i>
+</div>
+<div>
+  <button *ngIf="image" type="button" class="btn btn-outline-dark btn-sm" (click)="startUpload()"> আপলোড </button>
+  <button type="button" class="btn btn-outline-dark btn-sm" (click)="back()">ফেরত </button>
+</div>
+<!-- <img *ngIf="hotdeal?.imageUrl" [src]="hotdeal?.imageUrl" alt="{{ hotdeal?.imageUrl }}" class="card-img-top img-fluid">
+<input type="file" (change)="onProfileImageChange($event)" accept="image/*"> -->

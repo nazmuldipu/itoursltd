@@ -23,6 +23,12 @@ export const SideNavbarDashboard = [
         icon: 'fa-list',
         url: '/dashboard/packages-list',
         authority: 'ADMIN'
+      },
+      {
+        name: 'Image',
+        icon: 'fa-picture-o',
+        url: '/dashboard/packages-image',
+        authority: 'ADMIN'
       }
     ]
   },
@@ -43,12 +49,18 @@ export const SideNavbarDashboard = [
         icon: 'fa-list',
         url: '/dashboard/hotdeals-list',
         authority: 'ADMIN'
+      },
+      {
+        name: 'Image',
+        icon: 'fa-picture-o',
+        url: '/dashboard/hotdeals-image',
+        authority: 'ADMIN'
       }
     ]
   },
   {
     name: 'Gallery',
-    icon: 'fa-picture-o',
+    icon: 'fa-file-image-o',
     url: '',
     authority: '',
     secondMeu: [
@@ -62,6 +74,12 @@ export const SideNavbarDashboard = [
         name: 'List',
         icon: 'fa-list',
         url: '/dashboard/gallery-list',
+        authority: 'ADMIN'
+      },
+      {
+        name: 'Image',
+        icon: 'fa-picture-o',
+        url: '/dashboard/gallery-image',
         authority: 'ADMIN'
       }
     ]

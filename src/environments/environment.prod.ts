@@ -5,7 +5,7 @@ export const environment = {
     authDomain: 'itoursltd-c458f.firebaseapp.com',
     databaseURL: 'https://itoursltd-c458f.firebaseio.com',
     projectId: 'itoursltd-c458f',
-    storageBucket: '',
+    storageBucket: 'itoursltd-c458f.appspot.com',
     messagingSenderId: '516310809665'
   }
 };

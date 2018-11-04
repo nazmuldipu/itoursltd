@@ -1,19 +1,21 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireStorageModule } from '@angular/fire/storage';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
-import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-// import { NavbarComponent } from 'src/home/components/navbar/navbar.component';
-import { LoginComponent } from '../shared/components/login/login.component';
+import { environment } from 'src/environments/environment';
 import { LoginFormComponent } from 'src/shared/components/login-form/login-form.component';
 import { RegisterFormComponent } from 'src/shared/components/register-form/register-form.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { SharedModule } from '../shared/shared.module';
-import { AngularFirestoreModule } from '@angular/fire/firestore';
-import { environment } from 'src/environments/environment';
-import { AngularFireModule } from '@angular/fire';
-import { AuthGuard } from '../shared/services/auth-guard.service';
 
+import { LoginComponent } from '../shared/components/login/login.component';
+import { AuthGuard } from '../shared/services/auth-guard.service';
+import { SharedModule } from '../shared/shared.module';
+import { AppComponent } from './app.component';
+
+// import { NavbarComponent } from 'src/home/components/navbar/navbar.component';
 // routes
 export const ROUTES: Routes = [
   {
@@ -53,7 +55,8 @@ export const ROUTES: Routes = [
     RouterModule.forRoot(ROUTES),
     NgbModule.forRoot(),
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    AngularFireStorageModule
   ],
   declarations: [
     AppComponent,

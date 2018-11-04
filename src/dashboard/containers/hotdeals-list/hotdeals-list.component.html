@@ -10,6 +10,7 @@
             <th>Price</th>
             <th>Active</th>
             <th>TourDate</th>
+            <th>Image</th>
             <th>Edit</th>
             <th>Delete</th>
           </tr>
@@ -25,6 +26,9 @@
             </td>
             <td>{{hotdeal.active}}</td>
             <td>{{hotdeal.tourDate}}</td>
+            <td>
+              <a class="btn btn-sm btn-warning" routerLink="/dashboard/hotdeals-image/{{hotdeal.id}}">Image</a>
+            </td>
             <td>
               <button class="btn btn-sm btn-warning" (click)="onEdit(hotdeal.id)">Edit</button>
             </td>
