@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { Ng2ImgMaxService } from 'ng2-img-max';
+import { AngularFireStorage } from '@angular/fire/storage';
 import { DomSanitizer } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
-import { AngularFireStorage } from '@angular/fire/storage';
+import { Ng2ImgMaxService } from 'ng2-img-max';
 import { Observable } from 'rxjs/internal/Observable';
-import { Hotdeal } from 'src/shared/models/hotdeal.model';
-import { HotdealsService } from '../../../shared/services/hotdeals.service';
 import { finalize } from 'rxjs/operators';
+import { Hotdeal } from 'src/shared/models/hotdeal.model';
+import { HotdealsService } from 'src/shared/services/hotdeals.service';
 
 @Component({
   selector: 'app-hotdeals-image',
@@ -17,7 +17,6 @@ export class HotdealsImageComponent implements OnInit {
   id;
   hotdeal: Hotdeal;
   imageUrl;
-  imagePreview;
   url;
   image;
   uploadPercent: any;
@@ -54,8 +53,6 @@ export class HotdealsImageComponent implements OnInit {
       result => {
         this.image = result;
         this.previewFile();
-        // this.getImagePreview(new File([result], result.name));
-        // this.uploadToFireStorage(result);
       },
       error => {
         console.log('😢 Image Resize error!!', error);
@@ -71,14 +68,6 @@ export class HotdealsImageComponent implements OnInit {
     reader.readAsDataURL(this.image);
   }
 
-  getImagePreview(file: File) {
-    const reader: FileReader = new FileReader();
-    reader.readAsDataURL(file);
-    reader.onload = () => {
-      this.imagePreview = reader.result;
-    };
-  }
-
   startUpload() {
     const fileRef = this.storage.ref(this.url);
     const task = this.storage.upload(this.url, this.image);
@@ -92,23 +81,11 @@ export class HotdealsImageComponent implements OnInit {
         finalize(() => {
           this.downloadURL = fileRef.getDownloadURL();
           this.downloadURL.subscribe(url => {
-            // switch (mode) {
-            //   case 0:
             this.hotdeal.imageUrl = url;
-            //   break;
-            // case 1:
-            //   this.hotdeal.imageUrl = url;
-            //   break;
-            // case 2:
-            //   this.hotdeal.imageUrl = url;
-            //   break;
-            // }
-            console.log('update service');
-            this.hotdealsService
-              .update(this.hotdeal.id, this.hotdeal)
-              .then(data => {
-                console.log('😢 Image url updated');
-              });
+
+            this.hotdealsService.update(this.id, this.hotdeal).then(data => {
+              console.log('😢 Image url updated');
+            });
           });
         })
       )

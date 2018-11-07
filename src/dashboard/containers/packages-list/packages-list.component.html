@@ -5,17 +5,22 @@
       <table class="table table-hover">
         <thead>
           <tr class="table-primary">
+            <th>Image</th>
             <th>Country</th>
             <th>Area</th>
             <th>Sub Area</th>
             <th>Active</th>
             <th>Domestic</th>
+            <th>Image</th>
             <th>Edit</th>
             <th>Delete</th>
           </tr>
         </thead>
         <tbody *ngIf="!showLoading">
           <tr *ngFor="let package of packages">
+            <td class="p-1">
+              <img class="img-thumbnail" *ngIf="package?.imageUrl" [src]="package.imageUrl" alt="image not found" style="max-height: 80px;">
+            </td>
             <td>{{package.country}}</td>
             <td>
               <span *ngFor="let are of package.area">{{are}}, </span>
@@ -25,6 +30,9 @@
             </td>
             <td>{{package.active}}</td>
             <td>{{package.domestic}}</td>
+            <td>
+              <a class="btn btn-sm btn-primary" routerLink="/dashboard/packages-image/{{package.id}}">Image</a>
+            </td>
             <td>
               <button class="btn btn-sm btn-warning" (click)="onEdit(package.id)">Edit</button>
             </td>

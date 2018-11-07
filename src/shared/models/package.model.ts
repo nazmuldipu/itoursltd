@@ -9,7 +9,7 @@ export interface Package {
   area: string[];
   subArea: string[];
   category: string[];
-  imageUrl: string[];
+  imageUrl: string;
 
   regularPackage: PackageType;
   deluxePackage: PackageType;

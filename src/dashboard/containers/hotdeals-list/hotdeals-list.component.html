@@ -5,6 +5,7 @@
       <table class="table table-hover">
         <thead>
           <tr class="table-primary">
+            <th>Image</th>
             <th>HeadLines</th>
             <th>TagLines</th>
             <th>Price</th>
@@ -17,6 +18,9 @@
         </thead>
         <tbody *ngIf="!showLoading">
           <tr *ngFor="let hotdeal of hotdeals">
+            <td class="p-1">
+              <img class="img-thumbnail" *ngIf="hotdeal?.imageUrl" [src]="hotdeal.imageUrl" alt="image not found" style="max-height: 80px;">
+            </td>
             <td>{{hotdeal.headline}}</td>
             <td>
               <span *ngFor="let tag of hotdeal.taglines">{{tag}}, </span>
