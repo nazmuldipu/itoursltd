@@ -15,13 +15,13 @@
               <i class="fa" [ngClass]="menu.icon"></i>
               <span class="menu-item-text"> {{menu.name}}</span>
             </div>
-            <small class="pull-right px-2" *ngIf="menu.secondMeu.length > 0" style="cursor: pointer;">
+            <small class="pull-right px-2" *ngIf="menu.secondMenu.length > 0" style="cursor: pointer;">
               <i class="fa" [ngClass]="isActive(menu.name)?' fa-chevron-down':'fa-chevron-right'" (click)="minimize(menu.name)"></i>
             </small>
           </div>
 
           <ul class="list-group">
-            <span *ngFor="let child of menu.secondMeu">
+            <span *ngFor="let child of menu.secondMenu">
               <li style="display:none;" *ngIf="hasAuthority(child.authority)" (click)="child.url.length > 0 ? navigateTo(child.url) : null "
                 class="nav-group-item first pl-3" [ngClass]="{selected: child.url == navUrl}">
                 <i class="fa" [ngClass]="child.icon"></i>&nbsp;

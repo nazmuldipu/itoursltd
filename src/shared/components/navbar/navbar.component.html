@@ -93,8 +93,10 @@
           <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="dropdown05">
             <a class="dropdown-item" routerLink="/contact/our-address" (click)="toggleCollapse()">
               ADDRESS</a>
-            <a class="dropdown-item" routerLink="/login" (click)="toggleCollapse()">
-              LOGIN</a>
+            <a class="dropdown-item" *ngIf="(authService.user$|async)?.uid" (click)="logout()">
+              LOGOUT {{(authService.user$|async)?.uid}}</a>
+            <a class="dropdown-item" *ngIf="!(authService.user$|async)?.uid" routerLink="/login" (click)="toggleCollapse()">
+              LOGIN </a>
             <a class="dropdown-item" routerLink="/about/company-overview" (click)="toggleCollapse()">
               ABOUT US</a>
             <a class="dropdown-item" routerLink="/contact/feedback" (click)="toggleCollapse()">

@@ -5,6 +5,7 @@ import {
   ElementRef,
   HostListener
 } from '@angular/core';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'navbar',
@@ -18,7 +19,7 @@ export class NavbarComponent implements OnInit {
   sticky: boolean = false;
   elementPosition: any;
   show = false;
-  constructor() {}
+  constructor(private authService: AuthService) {}
 
   ngOnInit() {}
 
@@ -38,5 +39,11 @@ export class NavbarComponent implements OnInit {
 
   toggleCollapse() {
     this.show = !this.show;
+  }
+
+  logout() {
+    console.log('log out');
+    this.authService.logout();
+    this.toggleCollapse();
   }
 }

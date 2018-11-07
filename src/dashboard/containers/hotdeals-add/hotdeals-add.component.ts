@@ -32,7 +32,6 @@ export class HotdealsAddComponent implements OnInit {
   }
 
   onCreate(event) {
-    console.log(event);
     this.showBusy = true;
     this.hotdealService
       .create(event)
@@ -48,7 +47,6 @@ export class HotdealsAddComponent implements OnInit {
   }
 
   onUpdate(event) {
-    console.log(event);
     this.showBusy = true;
     this.hotdealService
       .update(this.id, event)

@@ -36,7 +36,6 @@ export class HotdealsListComponent implements OnInit {
   }
 
   onEdit(id: string) {
-    console.log('on edit', id);
     this.router.navigate(['/dashboard/hotdeals-add', id]);
   }
 

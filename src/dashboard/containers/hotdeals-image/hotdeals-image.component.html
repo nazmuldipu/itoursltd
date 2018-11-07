@@ -1,21 +1,63 @@
-<p>
-  hotdeals-image works!
-</p>
-{{hotdeal | json}}
-<!-- <input type="file" (change)="onImageChange($event)" accept="image/*"> -->
-
-<!-- <img *ngIf="!imagePreview" [src]="imagePreview"> -->
-<img class="img-thumbnail" *ngIf="imageUrl" height="180px" width="320" [src]="imageUrl" alt="" style="height: 270px;">
-<p>
-  <input type="file" (change)="fileChange($event)" placeholder="Upload file" accept="image/x-png,image/gif,image/jpeg">
-</p>
-<div *ngIf="progressPercentage == 100">
-  Uploaded
-  <i class="fa fa-check-square-o text-success"></i>
+<div class="container-fluid">
+  <div class="row my-4">
+    <div class="col-md-5 text-center">
+      <img class="img-thumbnail" *ngIf="imageUrl" [src]="imageUrl" alt="" style="max-height: 500px;">
+    </div>
+    <div class="col-md-7 ">
+      <table class="table border">
+        <tr>
+          <td colspan="2" class="text-center">
+            <h3> {{hotdeal?.headline}}</h3>
+          </td>
+        </tr>
+        <tr>
+          <th>Taglines</th>
+          <td>
+            <span *ngFor="let tag of hotdeal?.taglines">
+              <span class="badge badge-primary"> {{tag}}</span> &nbsp;
+            </span>
+          </td>
+        </tr>
+        <tr>
+          <th>Description</th>
+          <td>{{hotdeal?.description}}</td>
+        </tr>
+        <tr>
+          <th>Duration</th>
+          <td>{{hotdeal?.duration}}</td>
+        </tr>
+        <tr>
+          <th>Tour Date</th>
+          <td>{{hotdeal?.tourDate}}</td>
+        </tr>
+        <tr>
+          <th>Last Booking Date</th>
+          <td>{{hotdeal?.lastBookingDate}}</td>
+        </tr>
+        <tr>
+          <th>Price</th>
+          <td>{{hotdeal?.price}}</td>
+        </tr>
+        <tr>
+          <th></th>
+          <td>
+            <a [href]="hotdeal?.url" target="_blank">more</a>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div>
+              <a class="btn btn-outline-danger btn-sm mx-1" routerLink="/dashboard/hotdeals-list">Back </a>
+              <button *ngIf="image && !(uploadPercent | async)" type="button" class="btn btn-outline-primary btn-sm mx-1" (click)="startUpload()">
+                Upload </button>
+              <span *ngIf="image">{{(uploadPercent | async)?(uploadPercent | async):0}} Uploaded</span>
+            </div>
+          </td>
+          <td>
+            <input type="file" (change)="fileChange($event)" placeholder="Upload file" accept="image/x-png,image/gif,image/jpeg">
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
 </div>
-<div>
-  <button *ngIf="image" type="button" class="btn btn-outline-dark btn-sm" (click)="startUpload()"> আপলোড </button>
-  <button type="button" class="btn btn-outline-dark btn-sm" (click)="back()">ফেরত </button>
-</div>
-<!-- <img *ngIf="hotdeal?.imageUrl" [src]="hotdeal?.imageUrl" alt="{{ hotdeal?.imageUrl }}" class="card-img-top img-fluid">
-<input type="file" (change)="onProfileImageChange($event)" accept="image/*"> -->

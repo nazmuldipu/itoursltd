@@ -76,7 +76,7 @@ export class AuthService {
         localStorage.clear();
         console.log('SIGNOUT');
         this.router.navigate(['/login']);
-        location.reload();
+        // location.reload();
       })
       .catch(error => {
         console.log('SIGNOUT ERROR', error);
