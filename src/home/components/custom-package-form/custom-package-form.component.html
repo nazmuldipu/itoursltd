@@ -1,0 +1,851 @@
+<div class="container-fluid">
+  <form class="my-3 p-4 shifting-form label1 text-left ">
+    <div class="form-group row">
+      <label
+        for="inputName"
+        class="col-sm-2 col-form-label text-right font-weight-bold"
+      >
+        Name
+      </label>
+      <div class="col-sm-4"><input class="form-control" id="inputName" /></div>
+    </div>
+    <div class="form-group row">
+      <label
+        for="inputPhone"
+        class="col-sm-2 col-form-label text-right font-weight-bold"
+      >
+        Phone
+      </label>
+      <div class="col-sm-3"><input class="form-control" id="inputPhone" /></div>
+
+      <label
+        for="inputEmail"
+        class="col-sm-2 col-form-label text-right font-weight-bold"
+      >
+        Email
+      </label>
+      <div class="col-sm-3"><input class="form-control" id="inputEmail" /></div>
+    </div>
+
+    <div class="form-group row">
+      <label
+        for="inputDate"
+        class="col-sm-2 col-form-label text-right font-weight-bold"
+      >
+        Date I want to start
+      </label>
+      <div class="col-sm-3"><input class="form-control" id="inputDate" /></div>
+
+      <label
+        for="inputStartPlace"
+        class="col-sm-2 col-form-label text-right font-weight-bold"
+      >
+        I want to go from
+      </label>
+      <div class="col-sm-3">
+        <input class="form-control" id="inputStartPlace" />
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-sm-2 col-form-label text-right font-weight-bold">
+        I want to go to
+      </label>
+      <div class="col-md-8">
+        <div class="row">
+          <div class="form-check col-sm-2 ml-3">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              id="locationCoxsBazar"
+            />
+            <label class="form-check-label" for="locationCoxsBazar"
+              >Cox's Bazar</label
+            >
+          </div>
+          <div class="form-check col-sm-2 ml-3">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              id="locationSaintMartin"
+            />
+            <label class="form-check-label" for="locationSaintMartin"
+              >Saint Martin</label
+            >
+          </div>
+          <div class="form-check col-sm-2 ml-3">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              id="locationBandarban"
+            />
+            <label class="form-check-label" for="locationBandarban"
+              >Bandarban</label
+            >
+          </div>
+          <div class="form-check col-sm-2 ml-3">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              id="locationRangamati"
+            />
+            <label class="form-check-label" for="locationRangamati"
+              >Rangamati</label
+            >
+          </div>
+          <div class="form-check col-sm-2 ml-3">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              id="locationKhagrachari"
+            />
+            <label class="form-check-label" for="locationKhagrachari"
+              >Khagrachari-Sajek</label
+            >
+          </div>
+          <div class="form-check col-sm-2 ml-3">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              id="locationSylhet"
+            />
+            <label class="form-check-label" for="locationSylhet">Sylhet</label>
+          </div>
+          <div class="form-check col-2 ml-3">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              id="locationMoulovibazar"
+            />
+            <label class="form-check-label" for="locationMoulovibazar"
+              >Moulovibazar</label
+            >
+          </div>
+          <div class="form-check col-sm-2 ml-3">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              id="locationSunamgonj"
+            />
+            <label class="form-check-label" for="locationSunamgonj"
+              >Sunamgonj</label
+            >
+          </div>
+          <div class="form-check col-sm-2 ml-3">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              id="locationSundarban"
+            />
+            <label class="form-check-label" for="locationSundarban"
+              >Sundarban</label
+            >
+          </div>
+          <div class="form-check col-sm-2 ml-3">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              id="locationKuakata"
+            />
+            <label class="form-check-label" for="locationKuakata"
+              >Kuakata</label
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label
+        for="inputName"
+        class="col-sm-2 col-form-label text-right font-weight-bold"
+      >
+        I want to see <br />
+        (Only for Bandarban)
+      </label>
+      <div class="col-md-8">
+        <div class="row">
+          <div class="form-check col-sm-6 ml-3">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              id="locationNilgiri"
+            />
+            <label class="form-check-label" for="locationNilgiri"
+              >Nilgiri, Nilachol, Meghla, Shoilopropat, Shwarna Mandir,
+              Chimbuk</label
+            >
+          </div>
+          <div class="form-check col-sm-5 ml-3">
+            <input class="form-check-input" type="checkbox" id="locationRuma" />
+            <label class="form-check-label" for="locationRuma"
+              >Ruma, Boga Lake, Keokradong, Jadipai</label
+            >
+          </div>
+          <div class="form-check col-sm-6 ml-3">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              id="locationThanchi"
+            />
+            <label class="form-check-label" for="locationThanchi"
+              >Thanchi, Remakri, Nafa Khum, Amia Khum, Shat vai Khum</label
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label
+        for="nightCoxsBazarInput"
+        class="col-sm-2 col-form-label text-right font-weight-bold"
+      >
+        Cox's Bazar
+      </label>
+      <div class="col-sm-2">
+        <input class="form-control" id="nightCoxsBazarInput" />
+      </div>
+      <div class="col-sm-2">Night</div>
+    </div>
+    <div class="form-group row">
+      <label
+        for="nightSaintMartin"
+        class="col-sm-2 col-form-label text-right font-weight-bold"
+      >
+        Saint Martin</label
+      >
+      <div class="col-sm-2">
+        <input class="form-control" id="nightSaintMartin" />
+      </div>
+      <div class="col-sm-2">Night</div>
+    </div>
+    <div class="form-group row">
+      <label
+        for="nightBandarban"
+        class="col-sm-2 col-form-label text-right font-weight-bold"
+      >
+        Bandarban</label
+      >
+      <div class="col-sm-2">
+        <input class="form-control" id="nightBandarban" />
+      </div>
+      <div class="col-sm-2">Night</div>
+    </div>
+    <div class="form-group row">
+      <label
+        for="nightRangamati"
+        class="col-sm-2 col-form-label text-right font-weight-bold"
+      >
+        Rangamati</label
+      >
+      <div class="col-sm-2">
+        <input class="form-control" id="nightRangamati" />
+      </div>
+      <div class="col-sm-2">Night</div>
+    </div>
+    <div class="form-group row">
+      <label
+        for="nightKharachari"
+        class="col-sm-2 col-form-label text-right font-weight-bold"
+      >
+        Kharachari</label
+      >
+      <div class="col-sm-2">
+        <input class="form-control" id="nightKharachari" />
+      </div>
+      <div class="col-sm-2">Night</div>
+    </div>
+    <div class="form-group row">
+      <label
+        for="nightSylhet"
+        class="col-sm-2 col-form-label text-right font-weight-bold"
+      >
+        Sylhet</label
+      >
+      <div class="col-sm-2">
+        <input class="form-control" id="nightSylhet" />
+      </div>
+      <div class="col-sm-2">Night</div>
+    </div>
+    <div class="form-group row">
+      <label
+        for="nightMoulovibazar"
+        class="col-sm-2 col-form-label text-right font-weight-bold"
+      >
+        Moulovibazar</label
+      >
+      <div class="col-sm-2">
+        <input class="form-control" id="nightMoulovibazar" />
+      </div>
+      <div class="col-sm-2">Night</div>
+    </div>
+    <div class="form-group row">
+      <label
+        for="nightSunamganj"
+        class="col-sm-2 col-form-label text-right font-weight-bold"
+      >
+        Sunamganj</label
+      >
+      <div class="col-sm-2">
+        <input class="form-control" id="nightSunamganj" />
+      </div>
+      <div class="col-sm-2">Night</div>
+    </div>
+    <div class="form-group row">
+      <label
+        for="nightSundarbans"
+        class="col-sm-2 col-form-label text-right font-weight-bold"
+      >
+        Sundarbans</label
+      >
+      <div class="col-sm-2">
+        <input class="form-control" id="nightSundarbans" />
+      </div>
+      <div class="col-sm-2">Night</div>
+    </div>
+    <div class="form-group row">
+      <label
+        for="nightKuakata"
+        class="col-sm-2 col-form-label text-right font-weight-bold"
+      >
+        Kuakata</label
+      >
+      <div class="col-sm-2">
+        <input class="form-control" id="nightKuakata" />
+      </div>
+      <div class="col-sm-2">Night</div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-sm-2 col-form-label text-right font-weight-bold">
+        I want to go with
+      </label>
+      <div class="col-md-8">
+        <div class="row border-bottom py-2">
+          <div class="col-md-3">Less than three years</div>
+          <div class="col-md-2">
+            <input class="form-control" type="number" />
+          </div>
+          <span class="col-md-6">
+            persons (no cost, no package feature will be included)
+          </span>
+        </div>
+        <div class="row border-bottom py-2">
+          <div class="col-md-3">Three to six years</div>
+          <div class="col-md-2">
+            <input class="form-control" type="number" />
+          </div>
+          <span class="col-md-6">
+            persons (half cost, no extra seat in bus & hotel)
+          </span>
+        </div>
+        <div class="row border-bottom py-2">
+          <div class="col-md-3">Above six years</div>
+          <div class="col-md-2">
+            <input class="form-control" type="number" />
+          </div>
+          <span class="col-md-6">
+            persons (full cost, everything will be included)
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-sm-2 col-form-label text-right font-weight-bold">
+        I want to include meal
+      </label>
+      <div class="col-md-8">
+        <div class="row">
+          <div class="form-check form-check-inline">
+            <input
+              class="form-check-input"
+              type="radio"
+              id="radioAllThreeMeals"
+              value="option1"
+            />
+            <label class="form-check-label" for="radioAllThreeMeals"
+              >All Three meals
+            </label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input
+              class="form-check-input"
+              type="radio"
+              id="radioOnlyBreakfast"
+              value="option2"
+            />
+            <label class="form-check-label" for="radioOnlyBreakfast">
+              Only breakfast
+            </label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input
+              class="form-check-input"
+              type="radio"
+              id="radioOnlyLunch"
+              value="option3"
+            />
+            <label class="form-check-label" for="radioOnlyLunch">
+              Only lunch
+            </label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input
+              class="form-check-input"
+              type="radio"
+              id="radioOnlyDinner"
+              value="option3"
+            />
+            <label class="form-check-label" for="radioOnlyDinner">
+              Only dinner
+            </label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input
+              class="form-check-input"
+              type="radio"
+              id="radioOnlyLunchDinner"
+              value="option3"
+            />
+            <label class="form-check-label" for="radioOnlyLunchDinner">
+              Only launch & dinner
+            </label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input
+              class="form-check-input"
+              type="radio"
+              id="radioNothing"
+              value="option3"
+            />
+            <label class="form-check-label" for="radioNothing"> Nothing </label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-sm-2 col-form-label text-right font-weight-bold">
+        I want to travel by
+      </label>
+      <div class="col-md-8">
+        <div class="row">
+          <div class="form-check form-check-inline">
+            <input
+              class="form-check-input"
+              type="radio"
+              id="radioNonAcHino"
+              value="option1"
+            />
+            <label class="form-check-label" for="radioNonAcHino">
+              Non AC Hino
+            </label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input
+              class="form-check-input"
+              type="radio"
+              id="radioAcHino"
+              value="option2"
+            />
+            <label class="form-check-label" for="radioAcHino"> AC Hino </label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input
+              class="form-check-input"
+              type="radio"
+              id="radioAcVolvo"
+              value="option3"
+            />
+            <label class="form-check-label" for="radioAcVolvo">
+              AC Volvo/Scania
+            </label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input
+              class="form-check-input"
+              type="radio"
+              id="radioAcHyundai"
+              value="option3"
+            />
+            <label class="form-check-label" for="radioAcHyundai">
+              AC Hyundai
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-sm-2 col-form-label text-right font-weight-bold">
+        I want to go with
+      </label>
+      <div class="col-md-8">
+        <div class="row border-bottom py-2">
+          <div class="col-md-3">Keari Sindabad :</div>
+
+          <div class="form-check col-md-3">
+            <input
+              class="form-check-input"
+              type="radio"
+              id="radioKeariSindabadMainDeck"
+              value="option3"
+            />
+            <label class="form-check-label" for="radioKeariSindabadMainDeck">
+              Main Deck
+            </label>
+          </div>
+
+          <div class="form-check col-md-3">
+            <input
+              class="form-check-input"
+              type="radio"
+              id="radioKeariSindabadOpenDeck"
+              value="option3"
+            />
+            <label class="form-check-label" for="radioKeariSindabadOpenDeck">
+              Open Deck
+            </label>
+          </div>
+
+          <div class="form-check col-md-3">
+            <input
+              class="form-check-input"
+              type="radio"
+              id="radioKeariSindabadBridgeDeck"
+              value="option3"
+            />
+            <label class="form-check-label" for="radioKeariSindabadBridgeDeck">
+              Bridge Deck
+            </label>
+          </div>
+        </div>
+
+        <div class="row border-bottom py-2">
+          <div class="col-md-3">Keari Cruise & Dine :</div>
+
+          <div class="form-check col-md-3">
+            <input
+              class="form-check-input"
+              type="radio"
+              id="radioKeariCruiseExclusiveLounge"
+              value="option3"
+            />
+            <label
+              class="form-check-label"
+              for="radioKeariCruiseExclusiveLounge"
+            >
+              Exclusive Lounge
+            </label>
+          </div>
+
+          <div class="form-check col-md-3">
+            <input
+              class="form-check-input"
+              type="radio"
+              id="radioKeariCruiseCoralLounge"
+              value="option3"
+            />
+            <label class="form-check-label" for="radioKeariCruiseCoralLounge">
+              Coral Lounge
+            </label>
+          </div>
+
+          <div class="form-check col-md-3">
+            <input
+              class="form-check-input"
+              type="radio"
+              id="radioKeariCruisePearlLounge"
+              value="option3"
+            />
+            <label class="form-check-label" for="radioKeariCruisePearlLounge">
+              Pearl Lounge
+            </label>
+          </div>
+        </div>
+
+        <div class="row border-bottom py-2">
+          <div class="col-md-3">Bay Cruise :</div>
+
+          <div class="form-check col-md-3">
+            <input
+              class="form-check-input"
+              type="radio"
+              id="radioBayCruiseRajanigandha"
+              value="option3"
+            />
+            <label class="form-check-label" for="radioBayCruiseRajanigandha">
+              Rajanigandha (Lower)
+            </label>
+          </div>
+
+          <div class="form-check col-md-3">
+            <input
+              class="form-check-input"
+              type="radio"
+              id="radioBayCruiseKrishnochura"
+              value="option3"
+            />
+            <label class="form-check-label" for="radioBayCruiseKrishnochura">
+              Krishnochura(Upper)
+            </label>
+          </div>
+
+          <div class="form-check col-md-3">
+            <input
+              class="form-check-input"
+              type="radio"
+              id="radioBayCruiseHasnahena"
+              value="option3"
+            />
+            <label class="form-check-label" for="radioBayCruiseHasnahena">
+              Hasnahena(Upper)
+            </label>
+          </div>
+        </div>
+
+        <div class="row border-bottom py-2">
+          <div class="col-md-3">MV Greenline :</div>
+
+          <div class="form-check col-md-3">
+            <input
+              class="form-check-input"
+              type="radio"
+              id="radioMVGreenLineEconomy"
+              value="option3"
+            />
+            <label class="form-check-label" for="radioMVGreenLineEconomy">
+              Economy Class
+            </label>
+          </div>
+
+          <div class="form-check col-md-3">
+            <input
+              class="form-check-input"
+              type="radio"
+              id="radioMVGreenLineExclusive"
+              value="option3"
+            />
+            <label class="form-check-label" for="radioMVGreenLineExclusive">
+              Exclusive Class
+            </label>
+          </div>
+        </div>
+
+        <div class="row border-bottom py-2">
+          <div class="col-md-3">LCT Kutubdia :</div>
+
+          <div class="form-check col-md-3">
+            <input
+              class="form-check-input"
+              type="radio"
+              id="radioLCTKutubdiaMain"
+              value="option3"
+            />
+            <label class="form-check-label" for="radioLCTKutubdiaMain">
+              Main Deck
+            </label>
+          </div>
+
+          <div class="form-check col-md-3">
+            <input
+              class="form-check-input"
+              type="radio"
+              id="radioLCTKutubdiaMain"
+              value="option3"
+            />
+            <label class="form-check-label" for="radioLCTKutubdiaOpen">
+              Open Deck
+            </label>
+          </div>
+        </div>
+
+        <div class="row border-bottom py-2">
+          <div class="col-md-3">LCT Kajol :</div>
+
+          <div class="form-check col-md-3">
+            <input
+              class="form-check-input"
+              type="radio"
+              id="radioLCTKajolMain"
+              value="option3"
+            />
+            <label class="form-check-label" for="radioLCTKajolMain">
+              Main Deck
+            </label>
+          </div>
+
+          <div class="form-check col-md-3">
+            <input
+              class="form-check-input"
+              type="radio"
+              id="radioLCTKajolMain"
+              value="option3"
+            />
+            <label class="form-check-label" for="radioLCTKajolMain">
+              Open Deck
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-sm-2 col-form-label text-right font-weight-bold">
+        I want to stay at
+      </label>
+      <div class="col-md-8">
+        <div class="row">
+          <div class="form-check form-check-inline">
+            <input
+              class="form-check-input"
+              type="radio"
+              id="radioThreeStarStandard"
+              value="option1"
+            />
+            <label class="form-check-label" for="radioThreeStarStandard">
+              3 star standard hotel
+            </label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input
+              class="form-check-input"
+              type="radio"
+              id="radioThreeStar"
+              value="option2"
+            />
+            <label class="form-check-label" for="radioThreeStar"
+              >3 star hotel</label
+            >
+          </div>
+          <div class="form-check form-check-inline">
+            <input
+              class="form-check-input"
+              type="radio"
+              id="radioFourStar"
+              value="option3"
+            />
+            <label class="form-check-label" for="radioFourStar">
+              4 star hotel
+            </label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input
+              class="form-check-input"
+              type="radio"
+              id="radioFiveStar"
+              value="option3"
+            />
+            <label class="form-check-label" for="radioFiveStar">
+              5 star hotel
+            </label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input
+              class="form-check-input"
+              type="radio"
+              id="radioOther"
+              value="option3"
+            />
+            <label class="form-check-label" for="radioOther"> Other </label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-control" placeholder="enter your choice" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-sm-2 col-form-label text-right font-weight-bold">
+        My room choice
+      </label>
+      <div class="col-md-8">
+        <div class="row">
+          <div class="form-check form-check-inline">
+            <input
+              class="form-check-input"
+              type="radio"
+              id="radioNonAc4Seat"
+              value="option1"
+            />
+            <label class="form-check-label" for="radioNonAc4Seat">
+              Non AC 4 Seater
+            </label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input
+              class="form-check-input"
+              type="radio"
+              id="radioNonAc3Seat"
+              value="option2"
+            />
+            <label class="form-check-label" for="radioNonAc3Seat"
+              >Non AC 3 Seater
+            </label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input
+              class="form-check-input"
+              type="radio"
+              id="radioAc3Seat"
+              value="option3"
+            />
+            <label class="form-check-label" for="radioAc3Seat">
+              AC 3 Seater
+            </label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input
+              class="form-check-input"
+              type="radio"
+              id="radioNonAc2Seat"
+              value="option3"
+            />
+            <label class="form-check-label" for="radioNonAc2Seat">
+              Non AC 2 Seater
+            </label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input
+              class="form-check-input"
+              type="radio"
+              id="radioAc2Seat"
+              value="option3"
+            />
+            <label class="form-check-label" for="radioAc2Seat">
+              AC 2 Seater
+            </label>
+          </div>
+
+          <div class="form-check form-check-inline">
+            <input
+              class="form-check-input"
+              type="radio"
+              id="radioAcSuite"
+              value="option3"
+            />
+            <label class="form-check-label" for="radioAcSuite"> AC Suite</label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label
+        for="inputExtraReq"
+        class="col-sm-2 col-form-label text-right font-weight-bold"
+      >
+        My extra requirements
+      </label>
+      <div class="col-sm-4">
+        <textarea class="form-control" id="inputExtraReq" rows="4"></textarea>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-sm-2 ml-3 "> </label>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+  </form>
+</div>

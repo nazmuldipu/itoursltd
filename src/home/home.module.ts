@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
+import { SharedModule } from '../shared/shared.module';
 import { CarouselComponent } from './components/carousel/carousel.component';
 import { EventManagementComponent } from './components/event-management/event-management.component';
 import { FloatingButtonComponent } from './components/floating-button/floating-button.component';
@@ -11,10 +12,11 @@ import { GalleryComponent } from './components/gallery/gallery.component';
 import { HotDealsComponent } from './components/hot-deals/hot-deals.component';
 import { OurPartnersComponent } from './components/our-partners/our-partners.component';
 import { PackagesComponent } from './components/packages/packages.component';
+import { CustomPackageComponent } from './containers/custom-package/custom-package.component';
 import { IndexComponent } from './containers/index/index.component';
 import { WhyUsComponent } from './containers/why-us/why-us.component';
 import { HomeComponent } from './home.component';
-import { SharedModule } from '../shared/shared.module';
+import { CustomPackageFormComponent } from './components/custom-package-form/custom-package-form.component';
 
 // import { NavbarComponent } from './components/navbar/navbar.component';
 export const ROUTES: Routes = [
@@ -26,7 +28,8 @@ export const ROUTES: Routes = [
         path: '',
         component: IndexComponent
       },
-      { path: 'why-us', component: WhyUsComponent }
+      { path: 'why-us', component: WhyUsComponent },
+      { path: 'custom-package', component: CustomPackageComponent }
     ]
   }
 ];
@@ -50,7 +53,9 @@ export const ROUTES: Routes = [
     FooterComponent,
     // NavbarComponent,
     FloatingButtonComponent,
-    WhyUsComponent
+    WhyUsComponent,
+    CustomPackageComponent,
+    CustomPackageFormComponent
   ]
 })
 export class HomeModule {}

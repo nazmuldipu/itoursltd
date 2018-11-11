@@ -12,6 +12,7 @@ import { GallerysService } from './services/gallerys.service';
 import { HotdealsService } from './services/hotdeals.service';
 import { PackagesService } from './services/packages.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CustomPackageService } from 'src/shared/services/custom-package.service';
 
 @NgModule({
   imports: [
@@ -28,7 +29,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     AuthGuard,
     PackagesService,
     HotdealsService,
-    GallerysService
+    GallerysService,
+    CustomPackageService
   ],
   exports: [
     FooterSectionComponent,

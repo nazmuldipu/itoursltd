@@ -1,25 +1,26 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { DashboardComponent } from './dashboard.component';
-import { Routes, RouterModule } from '@angular/router';
-import { IndexComponent } from './containers/index/index.component';
-import { SharedModule } from 'src/shared/shared.module';
-import { SideNavbarComponent } from './components/side-navbar/side-navbar.component';
-import { DashNavbarComponent } from './components/dash-navbar/dash-navbar.component';
-import { PackagesListComponent } from './containers/packages-list/packages-list.component';
-import { PackagesAddComponent } from './containers/packages-add/packages-add.component';
-import { HotdealsListComponent } from './containers/hotdeals-list/hotdeals-list.component';
-import { HotdealsAddComponent } from './containers/hotdeals-add/hotdeals-add.component';
-import { GalleryListComponent } from './containers/gallery-list/gallery-list.component';
-import { GalleryAddComponent } from './containers/gallery-add/gallery-add.component';
-import { PackagesFormComponent } from './components/packages-form/packages-form.component';
-import { PackageCategoryFormComponent } from './components/package-category-form/package-category-form.component';
-import { HotdealsFormComponent } from './components/hotdeals-form/hotdeals-form.component';
-import { GalleryFormComponent } from './components/gallery-form/gallery-form.component';
-import { HotdealsImageComponent } from './containers/hotdeals-image/hotdeals-image.component';
-import { PackagesImageComponent } from './containers/packages-image/packages-image.component';
-import { GalleryImageComponent } from './containers/gallery-image/gallery-image.component';
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 import { Ng2ImgMaxModule } from 'ng2-img-max';
+import { SharedModule } from 'src/shared/shared.module';
+
+import { DashNavbarComponent } from './components/dash-navbar/dash-navbar.component';
+import { GalleryFormComponent } from './components/gallery-form/gallery-form.component';
+import { HotdealsFormComponent } from './components/hotdeals-form/hotdeals-form.component';
+import { PackageCategoryFormComponent } from './components/package-category-form/package-category-form.component';
+import { PackagesFormComponent } from './components/packages-form/packages-form.component';
+import { SideNavbarComponent } from './components/side-navbar/side-navbar.component';
+import { GalleryAddComponent } from './containers/gallery-add/gallery-add.component';
+import { GalleryImageComponent } from './containers/gallery-image/gallery-image.component';
+import { GalleryListComponent } from './containers/gallery-list/gallery-list.component';
+import { HotdealsAddComponent } from './containers/hotdeals-add/hotdeals-add.component';
+import { HotdealsImageComponent } from './containers/hotdeals-image/hotdeals-image.component';
+import { HotdealsListComponent } from './containers/hotdeals-list/hotdeals-list.component';
+import { IndexComponent } from './containers/index/index.component';
+import { PackagesAddComponent } from './containers/packages-add/packages-add.component';
+import { PackagesImageComponent } from './containers/packages-image/packages-image.component';
+import { PackagesListComponent } from './containers/packages-list/packages-list.component';
+import { DashboardComponent } from './dashboard.component';
 
 export const ROUTES: Routes = [
   {
