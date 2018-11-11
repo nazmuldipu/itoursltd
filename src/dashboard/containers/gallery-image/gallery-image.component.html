@@ -1,3 +1,52 @@
-<p>
-  gallery-image works!
-</p>
+<div class="container-fluid pb-3">
+  <div class="row image-row" *ngFor="let im of imageUrls; index as i">
+    <div class="col-md-6 col-12 py-3">
+      <div *ngIf="!resizing; else: croping">
+        <img
+          class="img-thumbnail"
+          *ngIf="imageUrls[i]"
+          [src]="imageUrls[i]"
+          alt="No image yet"
+          style="height: 200px; width: auto;"
+        />
+      </div>
+      <ng-template #croping>
+        <div class="loading">
+          <i class="fa fa-refresh"></i>&nbsp; Resizing image ...
+        </div>
+      </ng-template>
+    </div>
+    <div class="col-md-6 col-12 py-3">
+      <input
+        type="file"
+        (change)="fileChange($event, i)"
+        placeholder="Upload file"
+        accept="image/x-png,image/gif,image/jpeg"
+      />
+      <div class="my-3" *ngIf="!uploading; else: sending">
+        <a
+          class="btn btn-outline-danger btn-sm mx-1"
+          routerLink="/dashboard/gallery-list"
+          >Back
+        </a>
+        <button
+          *ngIf="image[i] && uploadPercent[i] != 100"
+          type="button"
+          class="btn btn-outline-primary btn-sm mx-1"
+          (click)="startUpload(i)"
+        >
+          Upload
+        </button>
+      </div>
+      <span *ngIf="image[i] && uploadPercent[i] > 0">
+        <h2>{{ uploadPercent[i] }}% Uploaded</h2></span
+      >
+
+      <ng-template #sending>
+        <div class="loading">
+          <i class="fa fa-refresh"></i>&nbsp; Uploading image ...
+        </div>
+      </ng-template>
+    </div>
+  </div>
+</div>

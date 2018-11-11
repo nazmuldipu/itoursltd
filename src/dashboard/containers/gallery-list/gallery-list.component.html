@@ -9,24 +9,40 @@
             <th>Title</th>
             <th>Institute</th>
             <th>Active</th>
+            <th>Image</th>
             <th>Edit</th>
             <th>Delete</th>
           </tr>
         </thead>
         <tbody *ngIf="!showLoading">
           <tr *ngFor="let gallery of gallerys">
-            <td>{{gallery.eventDate}}</td>
+            <td>{{ gallery.eventDate }}</td>
 
+            <td>{{ gallery.title }}</td>
+            <td>{{ gallery.institute }}</td>
+            <td>{{ gallery.active }}</td>
             <td>
-              {{gallery.title}}
+              <a
+                class="btn btn-sm btn-primary"
+                routerLink="/dashboard/gallery-image/{{gallery.id}}"
+                >Image</a
+              >
             </td>
-            <td>{{gallery.institute}}</td>
-            <td>{{gallery.active}}</td>
             <td>
-              <button class="btn btn-sm btn-warning" (click)="onEdit(gallery.id)">Edit</button>
+              <button
+                class="btn btn-sm btn-warning"
+                (click)="onEdit(gallery.id)"
+              >
+                Edit
+              </button>
             </td>
             <td>
-              <button class="btn btn-sm btn-danger" (click)="onDelete(gallery.id)">Delete</button>
+              <button
+                class="btn btn-sm btn-danger"
+                (click)="onDelete(gallery.id)"
+              >
+                Delete
+              </button>
             </td>
           </tr>
         </tbody>

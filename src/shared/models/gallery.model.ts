@@ -10,5 +10,5 @@ export interface Gallery {
   duration: string;
   numberGuests: number;
   details: string;
-  image: string[];
+  imageUrls: string[];
 }
