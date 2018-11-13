@@ -1,0 +1,74 @@
+// @import '../../../assets/theme.scss';
+
+.side-nav-offset {
+  width: 300px;
+  overflow-y: auto;
+}
+
+.sidebar {
+  position: fixed;
+  top: 80px;
+  bottom: 15px;
+  left: 15px;
+  z-index: 100; /* Behind the navbar */
+  padding: 0;
+  background-color: #555 !important;
+}
+.level-1 {
+  font-size: 16px;
+  color: white;
+  background-color: #555;
+  cursor: pointer;
+  // padding: 0.6rem 1rem;
+  padding: 10px 15px;
+}
+.level-1:hover {
+  background-color: #333;
+}
+
+.active .level-1 {
+  background-color: #333;
+  color: white;
+  font-weight: 600;
+}
+
+.active ul li {
+  display: block !important;
+  color: black;
+  font-weight: 300;
+}
+
+.level-2 {
+  font-size: 16px;
+  color: white !important;
+  background-color: #444;
+  cursor: pointer;
+  // padding: 0.6rem 1rem;
+  padding: 10px 15px;
+}
+.level-2:hover {
+  background-color: #333;
+}
+
+.selected,
+.nav-group-item.first:hover {
+  color: white !important;
+  font-weight: 800 !important;
+  background-color: #333;
+}
+
+.list-group {
+  background-color: white;
+}
+.list-group a,
+.second-list-group a {
+  color: blue;
+  text-decoration: none;
+}
+
+.nav-group-item {
+  position: relative;
+  display: block;
+  // padding: 0.6rem 1rem;
+  margin-bottom: -1px;
+}

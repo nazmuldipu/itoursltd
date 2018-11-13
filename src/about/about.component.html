@@ -1,9 +1,9 @@
 <div class="container-fluid p-0">
-    <about-sidenav></about-sidenav>
-    <div class="row m-0">
-        <!-- <navbar></navbar> -->
-        <div [ngClass]="navCollaps? 'col-md-12 p-0' : 'side-nav-offset col-md-12'">
-            <router-outlet></router-outlet>
-        </div>
+  <about-sidenav></about-sidenav>
+  <div class="row m-0">
+    <navbar></navbar>
+    <div [ngClass]="navCollaps ? 'col-md-12 p-0' : 'side-nav-offset col-md-12'">
+      <router-outlet></router-outlet>
     </div>
+  </div>
 </div>

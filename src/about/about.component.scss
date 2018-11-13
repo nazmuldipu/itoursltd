@@ -1,0 +1,12 @@
+.side-nav-offset {
+  padding: 70px 0 0 300px;
+}
+.container-fluid {
+  font-size: 14px;
+}
+
+@media (max-width: 767px) {
+  .side-nav-offset {
+    padding-left: 0;
+  }
+}
