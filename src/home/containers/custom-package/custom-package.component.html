@@ -1,7 +1,12 @@
 <div class="container my-3 p-0">
   <div class="section-title">CREATE YOUR OWN PACKAGE</div>
 </div>
-<custom-package-form
-  (create)="onCreate($event)"
-  (update)="onUpdate($event)"
-></custom-package-form>
+<div *ngIf="!sending; else: showSending">
+  <custom-package-form (create)="onCreate($event)"></custom-package-form>
+</div>
+
+<ng-template #showSending>
+  <div class="loading">
+    <i class="fa fa-refresh"></i>&nbsp; Sending information ...
+  </div>
+</ng-template>

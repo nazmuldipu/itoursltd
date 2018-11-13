@@ -9,7 +9,16 @@ export interface CustomPackage {
   date: Date;
   locations: string[];
   places: string[];
-  duration: number[];
+  durationCoxBazar: number;
+  durationSaintMartin: number;
+  durationBandarban: number;
+  durationRangamati: number;
+  durationKhagrachari: number;
+  durationSylhet: number;
+  durationMoulovibazar: number;
+  durationSunamgonj: number;
+  durationSundarban: number;
+  durationKuakata: number;
   visitorKids: number;
   visitorChild: number;
   visitorAdult: number;

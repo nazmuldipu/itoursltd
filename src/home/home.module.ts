@@ -17,6 +17,7 @@ import { IndexComponent } from './containers/index/index.component';
 import { WhyUsComponent } from './containers/why-us/why-us.component';
 import { HomeComponent } from './home.component';
 import { CustomPackageFormComponent } from './components/custom-package-form/custom-package-form.component';
+import { ThankyouComponent } from './containers/thankyou/thankyou.component';
 
 // import { NavbarComponent } from './components/navbar/navbar.component';
 export const ROUTES: Routes = [
@@ -29,7 +30,8 @@ export const ROUTES: Routes = [
         component: IndexComponent
       },
       { path: 'why-us', component: WhyUsComponent },
-      { path: 'custom-package', component: CustomPackageComponent }
+      { path: 'custom-package', component: CustomPackageComponent },
+      { path: 'thankyou', component: ThankyouComponent }
     ]
   }
 ];
@@ -55,7 +57,8 @@ export const ROUTES: Routes = [
     FloatingButtonComponent,
     WhyUsComponent,
     CustomPackageComponent,
-    CustomPackageFormComponent
+    CustomPackageFormComponent,
+    ThankyouComponent
   ]
 })
 export class HomeModule {}

@@ -34,15 +34,6 @@ export class GalleryFormComponent implements OnChanges {
     if (this.gallery != null && this.gallery.id != null) {
       this.edit = true;
       this.form.patchValue(this.gallery);
-
-      // // Patch area array
-      // let ctrl = <FormArray>this.form.controls.taglines;
-      // ctrl.removeAt(0);
-      // this.hotdeal.taglines.forEach(ar => {
-      //   if (ar.length > 0) {
-      //     ctrl.push(new FormControl(ar));
-      //   }
-      // });
     }
   }
 

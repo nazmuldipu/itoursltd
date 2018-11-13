@@ -1,5 +1,5 @@
 <div class="container-fluid">
-  <form class="my-3 p-4 shifting-form label1 text-left ">
+  <form [formGroup]="form"  class="my-3 p-4 shifting-form label1 text-left " (ngSubmit)="submit()" (mouseleave)="mouseoverShifting=false">
     <div class="form-group row">
       <label
         for="inputName"
@@ -7,16 +7,25 @@
       >
         Name
       </label>
-      <div class="col-sm-4"><input class="form-control" id="inputName" /></div>
+      <div class="col-sm-4">
+        <input class="form-control" id="inputName" formControlName="name" />
+        <small class="text-danger" *ngIf="form.controls.name.errors?.required && (form.controls.name.dirty || mouseoverShifting)">Name required</small>
+    </div>
     </div>
     <div class="form-group row">
-      <label
+       <label
         for="inputPhone"
         class="col-sm-2 col-form-label text-right font-weight-bold"
       >
         Phone
       </label>
-      <div class="col-sm-3"><input class="form-control" id="inputPhone" /></div>
+      <div class="col-sm-3">
+        <input class="form-control" id="inputPhone" maxlength="11"  formControlName="phone" />
+        <small class="text-danger" *ngIf="form.controls.phone.errors && (form.controls.phone.touched || mouseoverShifting)">
+            <div [hidden]="!form.controls['phone'].errors.required">Phone number required</div>
+            <div [hidden]="!form.controls['phone'].errors.pattern">Phone number format 01934953023</div>
+          </small>
+      </div>
 
       <label
         for="inputEmail"
@@ -24,7 +33,13 @@
       >
         Email
       </label>
-      <div class="col-sm-3"><input class="form-control" id="inputEmail" /></div>
+      <div class="col-sm-3">
+        <input class="form-control" id="inputEmail" formControlName="email" />
+        <small class="text-danger" *ngIf="form.controls.email.errors && (form.controls.email.touched || mouseoverShifting)">
+            <div [hidden]="!form.controls['email'].errors.required">Email required</div>
+            <div [hidden]="!form.controls['email'].errors.email">Invalid email</div>
+          </small>
+      </div>
     </div>
 
     <div class="form-group row">
@@ -34,7 +49,10 @@
       >
         Date I want to start
       </label>
-      <div class="col-sm-3"><input class="form-control" id="inputDate" /></div>
+      <div class="col-sm-3">
+        <input class="form-control" id="inputDate" type="date" formControlName="date"/>
+        <small class="text-danger" *ngIf="form.controls.date.errors?.required && (form.controls.date.dirty || mouseoverShifting)">Date required</small>
+      </div>
 
       <label
         for="inputStartPlace"
@@ -43,7 +61,8 @@
         I want to go from
       </label>
       <div class="col-sm-3">
-        <input class="form-control" id="inputStartPlace" />
+        <input class="form-control" id="inputStartPlace" formControlName="startPlace"/>
+        <small class="text-danger" *ngIf="form.controls.startPlace.errors?.required && (form.controls.startPlace.dirty || mouseoverShifting)">Start place required</small>
       </div>
     </div>
 
@@ -58,6 +77,7 @@
               class="form-check-input"
               type="checkbox"
               id="locationCoxsBazar"
+              (change)="onLocationChange('cox-bazar', $event.target.checked)"
             />
             <label class="form-check-label" for="locationCoxsBazar"
               >Cox's Bazar</label
@@ -68,6 +88,7 @@
               class="form-check-input"
               type="checkbox"
               id="locationSaintMartin"
+              (change)="onLocationChange('Saint-Martin', $event.target.checked)"
             />
             <label class="form-check-label" for="locationSaintMartin"
               >Saint Martin</label
@@ -78,6 +99,7 @@
               class="form-check-input"
               type="checkbox"
               id="locationBandarban"
+              (change)="onLocationChange('Bandarban', $event.target.checked)"
             />
             <label class="form-check-label" for="locationBandarban"
               >Bandarban</label
@@ -88,6 +110,7 @@
               class="form-check-input"
               type="checkbox"
               id="locationRangamati"
+              (change)="onLocationChange('Rangamati', $event.target.checked)"
             />
             <label class="form-check-label" for="locationRangamati"
               >Rangamati</label
@@ -98,6 +121,7 @@
               class="form-check-input"
               type="checkbox"
               id="locationKhagrachari"
+              (change)="onLocationChange('Khagrachari-Sajek', $event.target.checked)"
             />
             <label class="form-check-label" for="locationKhagrachari"
               >Khagrachari-Sajek</label
@@ -108,6 +132,7 @@
               class="form-check-input"
               type="checkbox"
               id="locationSylhet"
+              (change)="onLocationChange('Sylhet', $event.target.checked)"
             />
             <label class="form-check-label" for="locationSylhet">Sylhet</label>
           </div>
@@ -116,6 +141,7 @@
               class="form-check-input"
               type="checkbox"
               id="locationMoulovibazar"
+              (change)="onLocationChange('Moulovibazar', $event.target.checked)"
             />
             <label class="form-check-label" for="locationMoulovibazar"
               >Moulovibazar</label
@@ -126,6 +152,7 @@
               class="form-check-input"
               type="checkbox"
               id="locationSunamgonj"
+              (change)="onLocationChange('Sunamganj', $event.target.checked)"
             />
             <label class="form-check-label" for="locationSunamgonj"
               >Sunamgonj</label
@@ -136,6 +163,7 @@
               class="form-check-input"
               type="checkbox"
               id="locationSundarban"
+              (change)="onLocationChange('Sundarban', $event.target.checked)"
             />
             <label class="form-check-label" for="locationSundarban"
               >Sundarban</label
@@ -146,6 +174,7 @@
               class="form-check-input"
               type="checkbox"
               id="locationKuakata"
+              (change)="onLocationChange('Kuakata', $event.target.checked)"
             />
             <label class="form-check-label" for="locationKuakata"
               >Kuakata</label
@@ -155,7 +184,7 @@
       </div>
     </div>
 
-    <div class="form-group row">
+    <div class="form-group row" *ngIf="isContain('Bandarban')">
       <label
         for="inputName"
         class="col-sm-2 col-form-label text-right font-weight-bold"
@@ -170,6 +199,7 @@
               class="form-check-input"
               type="checkbox"
               id="locationNilgiri"
+              (change)="onPlaceChange('Nilgiri, Nilachol, Meghla, Shoilopropat, Shwarna Mandir,Chimbuk', $event.target.checked)"
             />
             <label class="form-check-label" for="locationNilgiri"
               >Nilgiri, Nilachol, Meghla, Shoilopropat, Shwarna Mandir,
@@ -177,7 +207,7 @@
             >
           </div>
           <div class="form-check col-sm-5 ml-3">
-            <input class="form-check-input" type="checkbox" id="locationRuma" />
+            <input class="form-check-input" type="checkbox" id="locationRuma" (change)="onPlaceChange('Ruma, Boga Lake, Keokradong, Jadipai', $event.target.checked)"/>
             <label class="form-check-label" for="locationRuma"
               >Ruma, Boga Lake, Keokradong, Jadipai</label
             >
@@ -187,6 +217,7 @@
               class="form-check-input"
               type="checkbox"
               id="locationThanchi"
+              (change)="onPlaceChange('Thanchi, Remakri, Nafa Khum, Amia Khum, Shat vai Khum', $event.target.checked)"
             />
             <label class="form-check-label" for="locationThanchi"
               >Thanchi, Remakri, Nafa Khum, Amia Khum, Shat vai Khum</label
@@ -196,7 +227,7 @@
       </div>
     </div>
 
-    <div class="form-group row">
+    <div class="form-group row" *ngIf="isContain('cox-bazar')">
       <label
         for="nightCoxsBazarInput"
         class="col-sm-2 col-form-label text-right font-weight-bold"
@@ -204,11 +235,12 @@
         Cox's Bazar
       </label>
       <div class="col-sm-2">
-        <input class="form-control" id="nightCoxsBazarInput" />
+        <input class="form-control" id="nightCoxsBazarInput" type="number" formControlName="durationCoxBazar"/>
       </div>
       <div class="col-sm-2">Night</div>
     </div>
-    <div class="form-group row">
+
+    <div class="form-group row" *ngIf="isContain('Saint-Martin')">
       <label
         for="nightSaintMartin"
         class="col-sm-2 col-form-label text-right font-weight-bold"
@@ -216,11 +248,11 @@
         Saint Martin</label
       >
       <div class="col-sm-2">
-        <input class="form-control" id="nightSaintMartin" />
+        <input class="form-control" id="nightSaintMartin" type="number" formControlName="durationSaintMartin"/>
       </div>
       <div class="col-sm-2">Night</div>
     </div>
-    <div class="form-group row">
+    <div class="form-group row" *ngIf="isContain('Bandarban')">
       <label
         for="nightBandarban"
         class="col-sm-2 col-form-label text-right font-weight-bold"
@@ -228,11 +260,11 @@
         Bandarban</label
       >
       <div class="col-sm-2">
-        <input class="form-control" id="nightBandarban" />
+        <input class="form-control" id="nightBandarban" type="number" formControlName="durationBandarban"/>
       </div>
       <div class="col-sm-2">Night</div>
     </div>
-    <div class="form-group row">
+    <div class="form-group row" *ngIf="isContain('Rangamati')">
       <label
         for="nightRangamati"
         class="col-sm-2 col-form-label text-right font-weight-bold"
@@ -240,11 +272,11 @@
         Rangamati</label
       >
       <div class="col-sm-2">
-        <input class="form-control" id="nightRangamati" />
+        <input class="form-control" id="nightRangamati" type="number" formControlName="durationRangamati"/>
       </div>
       <div class="col-sm-2">Night</div>
     </div>
-    <div class="form-group row">
+    <div class="form-group row" *ngIf="isContain('Khagrachari-Sajek')">
       <label
         for="nightKharachari"
         class="col-sm-2 col-form-label text-right font-weight-bold"
@@ -252,11 +284,11 @@
         Kharachari</label
       >
       <div class="col-sm-2">
-        <input class="form-control" id="nightKharachari" />
+        <input class="form-control" id="nightKharachari" type="number" formControlName="durationKhagrachari"/>
       </div>
       <div class="col-sm-2">Night</div>
     </div>
-    <div class="form-group row">
+    <div class="form-group row" *ngIf="isContain('Sylhet')">
       <label
         for="nightSylhet"
         class="col-sm-2 col-form-label text-right font-weight-bold"
@@ -264,11 +296,11 @@
         Sylhet</label
       >
       <div class="col-sm-2">
-        <input class="form-control" id="nightSylhet" />
+        <input class="form-control" id="nightSylhet" type="number" formControlName="durationSylhet"/>
       </div>
       <div class="col-sm-2">Night</div>
     </div>
-    <div class="form-group row">
+    <div class="form-group row" *ngIf="isContain('Moulovibazar')">
       <label
         for="nightMoulovibazar"
         class="col-sm-2 col-form-label text-right font-weight-bold"
@@ -276,11 +308,11 @@
         Moulovibazar</label
       >
       <div class="col-sm-2">
-        <input class="form-control" id="nightMoulovibazar" />
+        <input class="form-control" id="nightMoulovibazar" type="number" formControlName="durationMoulovibazar"/>
       </div>
       <div class="col-sm-2">Night</div>
     </div>
-    <div class="form-group row">
+    <div class="form-group row" *ngIf="isContain('Sunamganj')">
       <label
         for="nightSunamganj"
         class="col-sm-2 col-form-label text-right font-weight-bold"
@@ -288,23 +320,23 @@
         Sunamganj</label
       >
       <div class="col-sm-2">
-        <input class="form-control" id="nightSunamganj" />
+        <input class="form-control" id="nightSunamganj" type="number" formControlName="durationSunamgonj"/>
       </div>
       <div class="col-sm-2">Night</div>
     </div>
-    <div class="form-group row">
+    <div class="form-group row" *ngIf="isContain('Sundarban')">
       <label
         for="nightSundarbans"
         class="col-sm-2 col-form-label text-right font-weight-bold"
       >
-        Sundarbans</label
+        Sundarban</label
       >
       <div class="col-sm-2">
-        <input class="form-control" id="nightSundarbans" />
+        <input class="form-control" id="nightSundarbans" type="number" formControlName="durationSundarban"/>
       </div>
       <div class="col-sm-2">Night</div>
     </div>
-    <div class="form-group row">
+    <div class="form-group row" *ngIf="isContain('Kuakata')">
       <label
         for="nightKuakata"
         class="col-sm-2 col-form-label text-right font-weight-bold"
@@ -312,7 +344,7 @@
         Kuakata</label
       >
       <div class="col-sm-2">
-        <input class="form-control" id="nightKuakata" />
+        <input class="form-control" id="nightKuakata" type="number" formControlName="durationKuakata"/>
       </div>
       <div class="col-sm-2">Night</div>
     </div>
@@ -325,7 +357,7 @@
         <div class="row border-bottom py-2">
           <div class="col-md-3">Less than three years</div>
           <div class="col-md-2">
-            <input class="form-control" type="number" />
+            <input class="form-control" type="number" formControlName="visitorKids"/>
           </div>
           <span class="col-md-6">
             persons (no cost, no package feature will be included)
@@ -334,7 +366,7 @@
         <div class="row border-bottom py-2">
           <div class="col-md-3">Three to six years</div>
           <div class="col-md-2">
-            <input class="form-control" type="number" />
+            <input class="form-control" type="number" formControlName="visitorChild"/>
           </div>
           <span class="col-md-6">
             persons (half cost, no extra seat in bus & hotel)
@@ -343,7 +375,7 @@
         <div class="row border-bottom py-2">
           <div class="col-md-3">Above six years</div>
           <div class="col-md-2">
-            <input class="form-control" type="number" />
+            <input class="form-control" type="number" formControlName="visitorAdult"/>
           </div>
           <span class="col-md-6">
             persons (full cost, everything will be included)
@@ -363,7 +395,8 @@
               class="form-check-input"
               type="radio"
               id="radioAllThreeMeals"
-              value="option1"
+              value="All Three meals"
+              formControlName = "mealType"
             />
             <label class="form-check-label" for="radioAllThreeMeals"
               >All Three meals
@@ -374,7 +407,8 @@
               class="form-check-input"
               type="radio"
               id="radioOnlyBreakfast"
-              value="option2"
+              value="Only breakfast"
+              formControlName = "mealType"
             />
             <label class="form-check-label" for="radioOnlyBreakfast">
               Only breakfast
@@ -385,7 +419,8 @@
               class="form-check-input"
               type="radio"
               id="radioOnlyLunch"
-              value="option3"
+              value="Only lunch"
+              formControlName = "mealType"
             />
             <label class="form-check-label" for="radioOnlyLunch">
               Only lunch
@@ -396,7 +431,8 @@
               class="form-check-input"
               type="radio"
               id="radioOnlyDinner"
-              value="option3"
+              value="Only dinner"
+              formControlName = "mealType"
             />
             <label class="form-check-label" for="radioOnlyDinner">
               Only dinner
@@ -407,10 +443,11 @@
               class="form-check-input"
               type="radio"
               id="radioOnlyLunchDinner"
-              value="option3"
+              value="Only launch and dinner"
+              formControlName = "mealType"
             />
             <label class="form-check-label" for="radioOnlyLunchDinner">
-              Only launch & dinner
+              Only launch &amp; dinner
             </label>
           </div>
           <div class="form-check form-check-inline">
@@ -418,7 +455,8 @@
               class="form-check-input"
               type="radio"
               id="radioNothing"
-              value="option3"
+              value="Nothing"
+              formControlName = "mealType"
             />
             <label class="form-check-label" for="radioNothing"> Nothing </label>
           </div>
@@ -426,7 +464,7 @@
       </div>
     </div>
 
-    <div class="form-group row">
+    <div class="form-group row" >
       <label class="col-sm-2 col-form-label text-right font-weight-bold">
         I want to travel by
       </label>
@@ -437,7 +475,8 @@
               class="form-check-input"
               type="radio"
               id="radioNonAcHino"
-              value="option1"
+              value="Non AC Hino"
+              formControlName = "travelType"
             />
             <label class="form-check-label" for="radioNonAcHino">
               Non AC Hino
@@ -448,7 +487,8 @@
               class="form-check-input"
               type="radio"
               id="radioAcHino"
-              value="option2"
+              value="AC Hino"
+              formControlName = "travelType"
             />
             <label class="form-check-label" for="radioAcHino"> AC Hino </label>
           </div>
@@ -457,7 +497,8 @@
               class="form-check-input"
               type="radio"
               id="radioAcVolvo"
-              value="option3"
+              value="AC Volvo/Scania"
+              formControlName = "travelType"
             />
             <label class="form-check-label" for="radioAcVolvo">
               AC Volvo/Scania
@@ -468,7 +509,8 @@
               class="form-check-input"
               type="radio"
               id="radioAcHyundai"
-              value="option3"
+              value="AC Hyundai"
+              formControlName = "travelType"
             />
             <label class="form-check-label" for="radioAcHyundai">
               AC Hyundai
@@ -478,7 +520,7 @@
       </div>
     </div>
 
-    <div class="form-group row">
+    <div class="form-group row" *ngIf="isContain('Saint-Martin')">
       <label class="col-sm-2 col-form-label text-right font-weight-bold">
         I want to go with
       </label>
@@ -491,7 +533,8 @@
               class="form-check-input"
               type="radio"
               id="radioKeariSindabadMainDeck"
-              value="option3"
+              value="Keari Sindabad - Main Deck"
+              formControlName = "shipName"
             />
             <label class="form-check-label" for="radioKeariSindabadMainDeck">
               Main Deck
@@ -503,7 +546,8 @@
               class="form-check-input"
               type="radio"
               id="radioKeariSindabadOpenDeck"
-              value="option3"
+              value="Keari Sindabad - Open Deck"
+              formControlName = "shipName"
             />
             <label class="form-check-label" for="radioKeariSindabadOpenDeck">
               Open Deck
@@ -515,7 +559,8 @@
               class="form-check-input"
               type="radio"
               id="radioKeariSindabadBridgeDeck"
-              value="option3"
+              value="Keari Sindabad - Bridge Deck"
+              formControlName = "shipName"
             />
             <label class="form-check-label" for="radioKeariSindabadBridgeDeck">
               Bridge Deck
@@ -531,7 +576,8 @@
               class="form-check-input"
               type="radio"
               id="radioKeariCruiseExclusiveLounge"
-              value="option3"
+              value="Keari Cruise and Dine : Exclusive Lounge"
+              formControlName = "shipName"
             />
             <label
               class="form-check-label"
@@ -546,7 +592,8 @@
               class="form-check-input"
               type="radio"
               id="radioKeariCruiseCoralLounge"
-              value="option3"
+              value="Keari Cruise and Dine : Coral Lounge"
+              formControlName = "shipName"
             />
             <label class="form-check-label" for="radioKeariCruiseCoralLounge">
               Coral Lounge
@@ -558,7 +605,8 @@
               class="form-check-input"
               type="radio"
               id="radioKeariCruisePearlLounge"
-              value="option3"
+              value="Keari Cruise and Dine : Pearl Lounge"
+              formControlName = "shipName"
             />
             <label class="form-check-label" for="radioKeariCruisePearlLounge">
               Pearl Lounge
@@ -574,7 +622,8 @@
               class="form-check-input"
               type="radio"
               id="radioBayCruiseRajanigandha"
-              value="option3"
+              value="Bay Cruise : Rajanigandha (Lower)"
+              formControlName = "shipName"
             />
             <label class="form-check-label" for="radioBayCruiseRajanigandha">
               Rajanigandha (Lower)
@@ -586,7 +635,8 @@
               class="form-check-input"
               type="radio"
               id="radioBayCruiseKrishnochura"
-              value="option3"
+              value="Bay Cruise : Krishnochura(Upper)"
+              formControlName = "shipName"
             />
             <label class="form-check-label" for="radioBayCruiseKrishnochura">
               Krishnochura(Upper)
@@ -598,7 +648,8 @@
               class="form-check-input"
               type="radio"
               id="radioBayCruiseHasnahena"
-              value="option3"
+              value="Bay Cruise : Hasnahena(Upper)"
+              formControlName = "shipName"
             />
             <label class="form-check-label" for="radioBayCruiseHasnahena">
               Hasnahena(Upper)
@@ -614,7 +665,8 @@
               class="form-check-input"
               type="radio"
               id="radioMVGreenLineEconomy"
-              value="option3"
+              value="MV Greenline : Economy Class"
+              formControlName = "shipName"
             />
             <label class="form-check-label" for="radioMVGreenLineEconomy">
               Economy Class
@@ -626,7 +678,8 @@
               class="form-check-input"
               type="radio"
               id="radioMVGreenLineExclusive"
-              value="option3"
+              value="MV Greenline : Exclusive Class"
+              formControlName = "shipName"
             />
             <label class="form-check-label" for="radioMVGreenLineExclusive">
               Exclusive Class
@@ -642,7 +695,8 @@
               class="form-check-input"
               type="radio"
               id="radioLCTKutubdiaMain"
-              value="option3"
+              value="LCT Kutubdia :  Main Deck"
+              formControlName = "shipName"
             />
             <label class="form-check-label" for="radioLCTKutubdiaMain">
               Main Deck
@@ -653,8 +707,9 @@
             <input
               class="form-check-input"
               type="radio"
-              id="radioLCTKutubdiaMain"
-              value="option3"
+              id="radioLCTKutubdiaOpen"
+              value="LCT Kutubdia :  Open Deck"
+              formControlName = "shipName"
             />
             <label class="form-check-label" for="radioLCTKutubdiaOpen">
               Open Deck
@@ -670,7 +725,8 @@
               class="form-check-input"
               type="radio"
               id="radioLCTKajolMain"
-              value="option3"
+              value="LCT Kajol : Main Deck"
+              formControlName = "shipName"
             />
             <label class="form-check-label" for="radioLCTKajolMain">
               Main Deck
@@ -681,10 +737,11 @@
             <input
               class="form-check-input"
               type="radio"
-              id="radioLCTKajolMain"
-              value="option3"
+              id="radioLCTKajolOpen"
+              value="LCT Kajol : Open Deck"
+              formControlName = "shipName"
             />
-            <label class="form-check-label" for="radioLCTKajolMain">
+            <label class="form-check-label" for="radioLCTKajolOpen">
               Open Deck
             </label>
           </div>
@@ -703,7 +760,8 @@
               class="form-check-input"
               type="radio"
               id="radioThreeStarStandard"
-              value="option1"
+              value="3 star standard hotel"
+              formControlName = "hotelType"
             />
             <label class="form-check-label" for="radioThreeStarStandard">
               3 star standard hotel
@@ -714,7 +772,8 @@
               class="form-check-input"
               type="radio"
               id="radioThreeStar"
-              value="option2"
+              value="3 star hotel"
+              formControlName = "hotelType"
             />
             <label class="form-check-label" for="radioThreeStar"
               >3 star hotel</label
@@ -725,7 +784,8 @@
               class="form-check-input"
               type="radio"
               id="radioFourStar"
-              value="option3"
+              value="4 star hotel"
+              formControlName = "hotelType"
             />
             <label class="form-check-label" for="radioFourStar">
               4 star hotel
@@ -736,7 +796,8 @@
               class="form-check-input"
               type="radio"
               id="radioFiveStar"
-              value="option3"
+              value="5 star hotel"
+              formControlName = "hotelType"
             />
             <label class="form-check-label" for="radioFiveStar">
               5 star hotel
@@ -747,12 +808,13 @@
               class="form-check-input"
               type="radio"
               id="radioOther"
-              value="option3"
+              value="Other"
+              formControlName = "hotelType"
             />
             <label class="form-check-label" for="radioOther"> Other </label>
           </div>
-          <div class="form-check form-check-inline">
-            <input class="form-control" placeholder="enter your choice" />
+          <div class="form-check form-check-inline" *ngIf="form.value.hotelType == 'Other'">
+            <input class="form-control" placeholder="enter your choice" formControlName = "hotelTypeText"/>
           </div>
         </div>
       </div>
@@ -768,7 +830,8 @@
               class="form-check-input"
               type="radio"
               id="radioNonAc4Seat"
-              value="option1"
+              value="Non AC 4 Seater"
+              formControlName = "roomType"
             />
             <label class="form-check-label" for="radioNonAc4Seat">
               Non AC 4 Seater
@@ -779,7 +842,8 @@
               class="form-check-input"
               type="radio"
               id="radioNonAc3Seat"
-              value="option2"
+              value="Non AC 3 Seater"
+              formControlName = "roomType"
             />
             <label class="form-check-label" for="radioNonAc3Seat"
               >Non AC 3 Seater
@@ -790,7 +854,8 @@
               class="form-check-input"
               type="radio"
               id="radioAc3Seat"
-              value="option3"
+              value="AC 3 Seater"
+              formControlName = "roomType"
             />
             <label class="form-check-label" for="radioAc3Seat">
               AC 3 Seater
@@ -801,7 +866,8 @@
               class="form-check-input"
               type="radio"
               id="radioNonAc2Seat"
-              value="option3"
+              value="Non AC 2 Seater"
+              formControlName = "roomType"
             />
             <label class="form-check-label" for="radioNonAc2Seat">
               Non AC 2 Seater
@@ -812,7 +878,8 @@
               class="form-check-input"
               type="radio"
               id="radioAc2Seat"
-              value="option3"
+              value="AC 2 Seater"
+              formControlName = "roomType"
             />
             <label class="form-check-label" for="radioAc2Seat">
               AC 2 Seater
@@ -824,7 +891,8 @@
               class="form-check-input"
               type="radio"
               id="radioAcSuite"
-              value="option3"
+              value="AC Suite"
+              formControlName = "roomType"
             />
             <label class="form-check-label" for="radioAcSuite"> AC Suite</label>
           </div>
@@ -840,12 +908,18 @@
         My extra requirements
       </label>
       <div class="col-sm-4">
-        <textarea class="form-control" id="inputExtraReq" rows="4"></textarea>
+        <textarea class="form-control" id="inputExtraReq" rows="4" formControlName="note"></textarea>
       </div>
     </div>
     <div class="form-group row">
       <label class="col-sm-2 ml-3 "> </label>
-      <button type="submit" class="btn btn-primary">Submit</button>
+      <span class="col-md-1 ml-1" (mouseenter)="mouseoverShifting=true; getFormValidationErrors()" >
+        <button type="submit" class="btn btn-primary" [ngClass]="{'disabled': form.invalid}">Submit</button>
+      </span>
+
+    <small class="text-danger col-md-8 ml-1" *ngIf="mouseoverShifting">{{errorMessage}}</small>
     </div>
   </form>
 </div>
+
+<!-- {{allErrors|json}} -->
