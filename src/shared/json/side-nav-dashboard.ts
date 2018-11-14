@@ -65,5 +65,19 @@ export const SideNavbarDashboard = [
         authority: 'ADMIN'
       }
     ]
+  },
+  {
+    name: 'Feedback',
+    icon: 'fa-commenting-o ',
+    url: '/dashboard/feedbacks',
+    authority: 'ADMIN',
+    secondMenu: []
+  },
+  {
+    name: 'Custom Package',
+    icon: 'fa-pencil-square-o ',
+    url: '/dashboard/customPackages',
+    authority: 'ADMIN',
+    secondMenu: []
   }
 ];

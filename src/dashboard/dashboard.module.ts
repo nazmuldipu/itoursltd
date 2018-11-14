@@ -21,6 +21,8 @@ import { PackagesAddComponent } from './containers/packages-add/packages-add.com
 import { PackagesImageComponent } from './containers/packages-image/packages-image.component';
 import { PackagesListComponent } from './containers/packages-list/packages-list.component';
 import { DashboardComponent } from './dashboard.component';
+import { CustomPackagesComponent } from './containers/custom-packages/custom-packages.component';
+import { FeedbacksComponent } from './containers/feedbacks/feedbacks.component';
 
 export const ROUTES: Routes = [
   {
@@ -42,7 +44,9 @@ export const ROUTES: Routes = [
       { path: 'gallery-list', component: GalleryListComponent },
       { path: 'gallery-image/:id', component: GalleryImageComponent },
       { path: 'gallery-add', component: GalleryAddComponent },
-      { path: 'gallery-add/:id', component: GalleryAddComponent }
+      { path: 'gallery-add/:id', component: GalleryAddComponent },
+      { path: 'feedbacks', component: FeedbacksComponent },
+      { path: 'customPackages', component: CustomPackagesComponent }
     ]
   },
 
@@ -73,7 +77,9 @@ export const ROUTES: Routes = [
     GalleryFormComponent,
     HotdealsImageComponent,
     PackagesImageComponent,
-    GalleryImageComponent
+    GalleryImageComponent,
+    CustomPackagesComponent,
+    FeedbacksComponent
   ]
 })
 export class DashboardModule {}

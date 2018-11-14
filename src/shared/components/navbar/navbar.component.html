@@ -275,7 +275,7 @@
               class="dropdown-item"
               *ngIf="(authService.user$ | async)?.uid"
               routerLink="/dashboard"
-              (click)="logout()"
+              (click)="toggleCollapse()"
             >
               DASHBOARD
             </a>

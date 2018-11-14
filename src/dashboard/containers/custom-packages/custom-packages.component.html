@@ -1,0 +1,172 @@
+<div class="container-fluid">
+  <h3 class="text-center">Custom Packages</h3>
+  <div class="row mx-1">
+    <div class="col-md-6">
+      <div class="table-responsive">
+        <table class="table table-hover">
+          <thead>
+            <tr class="table-primary">
+              <th>Date</th>
+              <th>Name</th>
+              <th>Phone</th>
+              <th>Email</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody *ngIf="!showLoading">
+            <tr *ngFor="let customPackage of customPackages">
+              <td>
+                {{
+                  customPackage.createdAt.seconds * 1000
+                    | date: 'dd-MM-yyyy h:mm a'
+                }}
+              </td>
+              <td>{{ customPackage.name }}</td>
+              <td>{{ customPackage.phone }}</td>
+              <td>{{ customPackage.email }}</td>
+              <td>
+                <button
+                  class="btn btn-sm btn-info"
+                  (click)="showDeatails(customPackage.id)"
+                >
+                  Details
+                </button>
+              </td>
+            </tr>
+          </tbody>
+          <tr *ngIf="showLoading">
+            <td colspan="7">
+              <div class="loading">
+                <i class="fa fa-refresh"></i>&nbsp; Loading information ...
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div class="col-md-6" *ngIf="customPackage">
+      <div class="table-responsive">
+        <table class="table table-striped table-hover">
+          <tr>
+            <th>Date</th>
+            <th>{{ customPackage.date }}</th>
+          </tr>
+          <tr>
+            <td>Name</td>
+            <th>{{ customPackage.name }}</th>
+          </tr>
+          <tr>
+            <td>Phone</td>
+            <th>{{ customPackage.phone }}</th>
+          </tr>
+          <tr>
+            <td>Email</td>
+            <th>{{ customPackage.email }}</th>
+          </tr>
+          <tr>
+            <td>Starting Place</td>
+            <th>{{ customPackage.startPlace }}</th>
+          </tr>
+          <tr>
+            <td>Locations</td>
+            <th>
+              <span *ngFor="let loc of customPackage.locations"
+                >{{ loc }},
+              </span>
+            </th>
+          </tr>
+          <tr *ngIf="customPackage.places.length">
+            <td>Places</td>
+            <th>
+              <small>
+                <span *ngFor="let loc of customPackage.places">
+                  - {{ loc }} <br />
+                </span>
+              </small>
+            </th>
+          </tr>
+          <tr *ngIf="customPackage.durationCoxBazar">
+            <td>Cox's Bazar duration</td>
+            <th>{{ customPackage.durationCoxBazar }}</th>
+          </tr>
+          <tr *ngIf="customPackage.durationSaintMartin">
+            <td>Saint Martin duration</td>
+            <th>{{ customPackage.durationSaintMartin }}</th>
+          </tr>
+          <tr *ngIf="customPackage.durationBandarban">
+            <td>Bandarban duration</td>
+            <th>{{ customPackage.durationBandarban }}</th>
+          </tr>
+          <tr *ngIf="customPackage.durationRangamati">
+            <td>Rangamati duration</td>
+            <th>{{ customPackage.durationRangamati }}</th>
+          </tr>
+          <tr *ngIf="customPackage.durationKhagrachari">
+            <td>Khagrachari duration</td>
+            <th>{{ customPackage.durationKhagrachari }}</th>
+          </tr>
+          <tr *ngIf="customPackage.durationSylhet">
+            <td>Sylhet duration</td>
+            <th>{{ customPackage.durationSylhet }}</th>
+          </tr>
+          <tr *ngIf="customPackage.durationMoulovibazar">
+            <td>Moulovibazar duration</td>
+            <th>{{ customPackage.durationMoulovibazar }}</th>
+          </tr>
+          <tr *ngIf="customPackage.durationSunamgonj">
+            <td>Sunamgonj duration</td>
+            <th>{{ customPackage.durationSunamgonj }}</th>
+          </tr>
+          <tr *ngIf="customPackage.durationSundarban">
+            <td>Sundarban duration</td>
+            <th>{{ customPackage.durationSundarban }}</th>
+          </tr>
+          <tr *ngIf="customPackage.durationKuakata">
+            <td>Kuakata duration</td>
+            <th>{{ customPackage.durationKuakata }}</th>
+          </tr>
+          <tr>
+            <td>Kids</td>
+            <th>{{ customPackage.visitorKids }}</th>
+          </tr>
+          <tr>
+            <td>Child</td>
+            <th>{{ customPackage.visitorChild }}</th>
+          </tr>
+          <tr>
+            <td>Adult</td>
+            <th>{{ customPackage.visitorAdult }}</th>
+          </tr>
+          <tr>
+            <td>Meal Type</td>
+            <th>{{ customPackage.mealType }}</th>
+          </tr>
+          <tr>
+            <td>Travel Type</td>
+            <th>{{ customPackage.travelType }}</th>
+          </tr>
+          <tr *ngIf="customPackage.shipName">
+            <td>Shipe Name</td>
+            <th>{{ customPackage.shipName }}</th>
+          </tr>
+          <tr>
+            <td>Hotel Type</td>
+            <th>{{ customPackage.hotelType }}</th>
+          </tr>
+          <tr *ngIf="customPackage.hotelTypeText">
+            <td>Hotel Type Text</td>
+            <th>{{ customPackage.hotelTypeText }}</th>
+          </tr>
+          <tr>
+            <td>Room Type</td>
+            <th>{{ customPackage.roomType }}</th>
+          </tr>
+          <tr>
+            <td>Note Type</td>
+            <th>{{ customPackage.note }}</th>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

@@ -28,6 +28,5 @@ export interface CustomPackage {
   hotelTypeText: string;
   roomType: string;
   note: string;
-  comments: string;
   shipName: string;
 }
