@@ -60,7 +60,7 @@ export class AuthService {
       .doc('users/' + uid)
       .valueChanges()
       .pipe(
-        take(1),
+        take(2),
         map(ref => {
           const value = { ...ref, id: uid } as User;
           return value;

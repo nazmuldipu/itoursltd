@@ -19,7 +19,7 @@ export class NavbarComponent implements OnInit {
   sticky: boolean = false;
   elementPosition: any;
   show = false;
-  constructor(private authService: AuthService) {}
+  constructor(public authService: AuthService) {}
 
   ngOnInit() {}
 

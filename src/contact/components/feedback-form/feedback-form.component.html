@@ -1,0 +1,122 @@
+<!---->
+<div class="container">
+  <form
+    [formGroup]="form"
+    class="my-3 p-4 shifting-form label1 text-left "
+    (ngSubmit)="submit()"
+    (mouseleave)="mouseoverShifting = false"
+  >
+    <div class="form-group row">
+      <label
+        for="inputName"
+        class="col-sm-2 col-form-label text-right font-weight-bold"
+      >
+        Name
+      </label>
+      <div class="col-sm-4">
+        <input class="form-control" id="inputName" formControlName="name" />
+        <small
+          class="text-danger"
+          *ngIf="
+            form.controls.name.errors?.required &&
+            (form.controls.name.dirty || mouseoverShifting)
+          "
+          >Name required</small
+        >
+      </div>
+    </div>
+    <div class="form-group row">
+      <label
+        for="inputPhone"
+        class="col-sm-2 col-form-label text-right font-weight-bold"
+      >
+        Phone
+      </label>
+      <div class="col-sm-4">
+        <input
+          class="form-control"
+          id="inputPhone"
+          maxlength="11"
+          formControlName="phone"
+        />
+        <small
+          class="text-danger"
+          *ngIf="
+            form.controls.phone.errors &&
+            (form.controls.phone.touched || mouseoverShifting)
+          "
+        >
+          <div [hidden]="!form.controls['phone'].errors.required">
+            Phone number required
+          </div>
+          <div [hidden]="!form.controls['phone'].errors.pattern">
+            Phone number format 01934953023
+          </div>
+        </small>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label
+        for="inputEmail"
+        class="col-sm-2 col-form-label text-right font-weight-bold"
+      >
+        Email
+      </label>
+      <div class="col-sm-4">
+        <input class="form-control" id="inputEmail" formControlName="email" />
+        <small
+          class="text-danger"
+          *ngIf="
+            form.controls.email.errors &&
+            (form.controls.email.touched || mouseoverShifting)
+          "
+        >
+          <div [hidden]="!form.controls['email'].errors.required">
+            Email required
+          </div>
+          <div [hidden]="!form.controls['email'].errors.email">
+            Invalid email
+          </div>
+        </small>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label
+        for="inputExtraReq"
+        class="col-sm-2 col-form-label text-right font-weight-bold"
+      >
+        Message
+      </label>
+      <div class="col-sm-8">
+        <textarea
+          class="form-control"
+          id="inputExtraReq"
+          rows="4"
+          formControlName="message"
+        ></textarea>
+        <small
+          class="text-danger"
+          *ngIf="
+            form.controls.message.errors?.required &&
+            (form.controls.message.dirty || mouseoverShifting)
+          "
+          >Message required</small
+        >
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-sm-2 ml-3 "> </label>
+      <span class="col-md-1 ml-1" (mouseenter)="mouseoverShifting = true">
+        <button
+          type="submit"
+          class="btn btn-primary"
+          [ngClass]="{ disabled: form.invalid }"
+        >
+          Send
+        </button>
+      </span>
+    </div>
+  </form>
+</div>

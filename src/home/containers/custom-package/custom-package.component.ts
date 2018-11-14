@@ -15,7 +15,7 @@ export class CustomPackageComponent {
     private customPackageService: CustomPackageService,
     private router: Router
   ) {}
-  
+
   onCreate(event: CustomPackage) {
     this.sending = true;
     this.customPackageService.create(event).then(ref => {

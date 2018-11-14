@@ -1,5 +1,22 @@
 <navbar></navbar>
 <div class="container my-3 p-0">
   <div class="section-title">FEEDBACK</div>
+  <div class="row">
+    <div class="col-sm-2"></div>
+    <div
+      class="col-sm-8 ml-3 text-danger font-weight-bold"
+      *ngIf="message.length > 0"
+    >
+      {{ message }}
+    </div>
+  </div>
 </div>
+<div *ngIf="!sending; else: showSending">
+  <feedback-form (create)="onCreate($event)"></feedback-form>
+</div>
+<ng-template #showSending>
+  <div class="loading">
+    <i class="fa fa-refresh"></i>&nbsp; Sending information ...
+  </div>
+</ng-template>
 <footer-section></footer-section>

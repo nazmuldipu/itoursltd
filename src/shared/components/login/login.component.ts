@@ -22,14 +22,13 @@ export class LoginComponent {
     this.login = false;
   }
 
-  onLogin(event) {
+  async onLogin(event) {
     this.showBusy = true;
     this.errorMessage = '';
-    this.auth
+    await this.auth
       .loginWithEmail(event.email, event.password)
-      .then(ref => {
-        this.auth.getRegisteredUsers(ref.user.uid).subscribe(data => {
-          this.showBusy = false;
+      .then(async ref => {
+        await this.auth.getRegisteredUsers(ref.user.uid).subscribe(data => {
           localStorage.setItem('username', data.name);
           let role = data.roles[0];
           localStorage.setItem('role', role);
@@ -39,6 +38,7 @@ export class LoginComponent {
             this.errorMessage =
               'You do not have permission to access the dashboard';
           }
+          // this.showBusy = false;
         });
       })
       .catch(error => {

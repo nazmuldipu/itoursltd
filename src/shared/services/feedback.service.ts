@@ -1,18 +1,18 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { map, tap, take } from 'rxjs/operators';
 import { OrderByDirection } from '@firebase/firestore-types';
-import { map, take } from 'rxjs/operators';
-
-import { CustomPackage } from '../models/custom-package.model';
+import { Feedback } from 'src/shared/models/feedback.model';
+// import { Gallery } from '../models/gallery.model';
 
 @Injectable({
   providedIn: 'root'
 })
-export class CustomPackageService {
-  serviceUrl = 'customPackages';
+export class FeedbackService {
+  serviceUrl = 'feedbacks';
   constructor(private afs: AngularFirestore) {}
 
-  create(pack: CustomPackage) {
+  create(pack: Feedback) {
     const value = {
       ...pack,
       createdAt: new Date(),
@@ -32,7 +32,7 @@ export class CustomPackageService {
         take(1),
         map(actions =>
           actions.map(a => {
-            const data = a.payload.doc.data() as CustomPackage;
+            const data = a.payload.doc.data() as Feedback;
             const id = a.payload.doc.id;
             return { id, ...data };
           })
@@ -47,13 +47,14 @@ export class CustomPackageService {
       .pipe(
         take(1),
         map(ref => {
-          const value = { ...ref, id: sid } as CustomPackage;
+          const value = { ...ref, id: sid } as Feedback;
           return value;
         })
       );
   }
 
   getPaginatedStartAfter(order: OrderByDirection = 'asc', limit, startAfter) {
+    // console.log(companyId, order, limit, startAfter);
     return this.afs
       .collection(this.serviceUrl, ref =>
         ref
@@ -63,12 +64,14 @@ export class CustomPackageService {
       )
       .snapshotChanges()
       .pipe(
+        // take(1),
         map(actions => {
           if (order === 'asc') {
             actions.reverse();
           }
+          // console.log(actions);
           return actions.map(a => {
-            const data = a.payload.doc.data() as CustomPackage;
+            const data = a.payload.doc.data() as Feedback;
             const id = a.payload.doc.id;
             return { id, ...data };
           });
@@ -76,10 +79,10 @@ export class CustomPackageService {
       );
   }
 
-  update(sid, cust: CustomPackage) {
-    delete cust['id'];
+  update(sid, session: Feedback) {
+    delete session['id'];
     return this.afs.doc(this.serviceUrl + '/' + sid).update({
-      ...cust,
+      ...session,
       updatedAt: new Date()
     });
   }

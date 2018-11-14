@@ -35,4 +35,4 @@ chmod u+x ./deploy.sh
 > > git push -u deploy master
 
 > > ng build --prod --base-href "/"
-> > ngh --dir dist/monitbd --no-silent --repo=git@github.com:nazmuldipu/monitbd.git
+> > ngh --dir dist/itoursltd --no-silent --repo=git@github.com:nazmuldipu/itoursltd.git

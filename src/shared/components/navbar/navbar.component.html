@@ -1,108 +1,321 @@
 <div>
-  <nav class="navbar navbar-expand-md navbar-light bg-transparent" #stickyMenu [class.sticky]="sticky">
+  <nav
+    class="navbar navbar-expand-md navbar-light bg-transparent"
+    #stickyMenu
+    [class.sticky]="sticky"
+  >
     <a class="navbar-brand navbar-link custom-brand" routerLink="/">
-      <img class="company-logo" src="assets/images/logo.jpg" alt="logo">
+      <img class="company-logo" src="assets/images/logo.jpg" alt="logo" />
     </a>
     <!-- <a class="navbar-brand" href="#">Carousel</a> -->
-    <button class="navbar-toggler" (click)="toggleCollapse()" type="button" data-toggle="collapse" data-target="#navbarCollapse"
-      aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+    <button
+      class="navbar-toggler"
+      (click)="toggleCollapse()"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarCollapse"
+      aria-controls="navbarCollapse"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse show" id="navbarCollapse" [class.show]="show">
+    <div
+      class="collapse navbar-collapse show"
+      id="navbarCollapse"
+      [class.show]="show"
+    >
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
           <a class="nav-link sliding-middle-out" routerLink="/why-us">WHY US</a>
         </li>
         <li ngbDropdown placement="bottom-left" class="nav-item dropdown">
-          <a ngbDropdownToggle class="nav-link dropdown-toggle sliding-middle-out" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
-            aria-expanded="false">PACKAGES</a>
-          <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="dropdown01">
-            <a class="dropdown-item" routerLink="/dashboard/users/profile" (click)="toggleCollapse()">
-              DOMESTIC</a>
-            <a class="dropdown-item" routerLink="/dashboard/users/changePassword" (click)="toggleCollapse()">
-              INDIA</a>
-            <a class="dropdown-item">
-              NEPAL</a>
+          <a
+            ngbDropdownToggle
+            class="nav-link dropdown-toggle sliding-middle-out"
+            id="dropdown01"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+            >PACKAGES</a
+          >
+          <div
+            ngbDropdownMenu
+            class="dropdown-menu"
+            aria-labelledby="dropdown01"
+          >
+            <a
+              class="dropdown-item"
+              routerLink="/dashboard/users/profile"
+              (click)="toggleCollapse()"
+            >
+              DOMESTIC</a
+            >
+            <a
+              class="dropdown-item"
+              routerLink="/dashboard/users/changePassword"
+              (click)="toggleCollapse()"
+            >
+              INDIA</a
+            >
+            <a class="dropdown-item"> NEPAL</a>
           </div>
         </li>
         <li ngbDropdown placement="bottom-left" class="nav-item dropdown">
-          <a ngbDropdownToggle class="nav-link dropdown-toggle sliding-middle-out" id="dropdown02" data-toggle="dropdown" aria-haspopup="true"
-            aria-expanded="false">EVENT MANAGEMENT</a>
-          <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="dropdown02">
-            <a class="dropdown-item" routerLink="/event/corporate" (click)="toggleCollapse()">
-              CORPORATE EVENTS</a>
-            <a class="dropdown-item" routerLink="/event/brand" (click)="toggleCollapse()">
-              BRAND PROMOTION</a>
-            <a class="dropdown-item" routerLink="/event/ceremonies" (click)="toggleCollapse()">
-              CEREMONIES</a>
-            <a class="dropdown-item" routerLink="/event/artist" (click)="toggleCollapse()">
-              ARTIST MANAGEMENT</a>
-            <a class="dropdown-item" routerLink="/event/exhibition" (click)="toggleCollapse()">
-              EXIBITION</a>
-            <a class="dropdown-item" routerLink="/event/photography" (click)="toggleCollapse()">
-              PHOTOGRAPHY</a>
+          <a
+            ngbDropdownToggle
+            class="nav-link dropdown-toggle sliding-middle-out"
+            id="dropdown02"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+            >EVENT MANAGEMENT</a
+          >
+          <div
+            ngbDropdownMenu
+            class="dropdown-menu"
+            aria-labelledby="dropdown02"
+          >
+            <a
+              class="dropdown-item"
+              routerLink="/event/corporate"
+              (click)="toggleCollapse()"
+            >
+              CORPORATE EVENTS</a
+            >
+            <a
+              class="dropdown-item"
+              routerLink="/event/brand"
+              (click)="toggleCollapse()"
+            >
+              BRAND PROMOTION</a
+            >
+            <a
+              class="dropdown-item"
+              routerLink="/event/ceremonies"
+              (click)="toggleCollapse()"
+            >
+              CEREMONIES</a
+            >
+            <a
+              class="dropdown-item"
+              routerLink="/event/artist"
+              (click)="toggleCollapse()"
+            >
+              ARTIST MANAGEMENT</a
+            >
+            <a
+              class="dropdown-item"
+              routerLink="/event/exhibition"
+              (click)="toggleCollapse()"
+            >
+              EXIBITION</a
+            >
+            <a
+              class="dropdown-item"
+              routerLink="/event/photography"
+              (click)="toggleCollapse()"
+            >
+              PHOTOGRAPHY</a
+            >
           </div>
         </li>
         <li class="nav-item">
-          <a class="nav-link sliding-middle-out" href="//www.hotelswave.com" target="_blank">HOTELS
+          <a
+            class="nav-link sliding-middle-out"
+            href="//www.hotelswave.com"
+            target="_blank"
+            >HOTELS
           </a>
         </li>
         <li ngbDropdown placement="bottom-left" class="nav-item dropdown">
-          <a ngbDropdownToggle class="nav-link dropdown-toggle sliding-middle-out" id="dropdown03" data-toggle="dropdown" aria-haspopup="true"
-            aria-expanded="false">TRANSPORT</a>
-          <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="dropdown03">
-            <a class="dropdown-item" routerLink="/dashboard/users/profile" (click)="toggleCollapse()">
-              BUS</a>
-            <a class="dropdown-item" routerLink="/dashboard/users/changePassword" (click)="toggleCollapse()">
-              SHIP</a>
+          <a
+            ngbDropdownToggle
+            class="nav-link dropdown-toggle sliding-middle-out"
+            id="dropdown03"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+            >TRANSPORT</a
+          >
+          <div
+            ngbDropdownMenu
+            class="dropdown-menu"
+            aria-labelledby="dropdown03"
+          >
+            <a
+              class="dropdown-item"
+              routerLink="/dashboard/users/profile"
+              (click)="toggleCollapse()"
+            >
+              BUS</a
+            >
+            <a
+              class="dropdown-item"
+              routerLink="/dashboard/users/changePassword"
+              (click)="toggleCollapse()"
+            >
+              SHIP</a
+            >
           </div>
         </li>
         <li ngbDropdown placement="bottom-left" class="nav-item dropdown">
-          <a ngbDropdownToggle class="nav-link dropdown-toggle sliding-middle-out" id="dropdown04" data-toggle="dropdown" aria-haspopup="true"
-            aria-expanded="false">DESTINATIONS</a>
-          <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="dropdown04">
-            <a class="dropdown-item" routerLink="/destinations/bangladesh/coxs-bazar" (click)="toggleCollapse()">
-              BANGLADESH</a>
-            <a class="dropdown-item" routerLink="/destinations/india/kolkata" (click)="toggleCollapse()">
-              INDIA</a>
-            <a class="dropdown-item" routerLink="/destinations/nepal" (click)="toggleCollapse()">
-              NEPAL</a>
-            <a class="dropdown-item" routerLink="/destinations/bhutan" (click)="toggleCollapse()">
-              BHUTAN</a>
-            <a class="dropdown-item" routerLink="/destinations/thailand" (click)="toggleCollapse()">
-              THAILAND</a>
-            <a class="dropdown-item" routerLink="/destinations/malaysia" (click)="toggleCollapse()">
-              MALAYSIA</a>
-            <a class="dropdown-item" routerLink="/destinations/maldives" (click)="toggleCollapse()">
-              MALDIVES</a>
-            <a class="dropdown-item" routerLink="/destinations/srilanka" (click)="toggleCollapse()">
-              SRILANKA</a>
-            <a class="dropdown-item" routerLink="/destinations/china" (click)="toggleCollapse()">
-              CHINA</a>
-            <a class="dropdown-item" routerLink="/destinations/indonesia" (click)="toggleCollapse()">
-              INDONESIA</a>
+          <a
+            ngbDropdownToggle
+            class="nav-link dropdown-toggle sliding-middle-out"
+            id="dropdown04"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+            >DESTINATIONS</a
+          >
+          <div
+            ngbDropdownMenu
+            class="dropdown-menu"
+            aria-labelledby="dropdown04"
+          >
+            <a
+              class="dropdown-item"
+              routerLink="/destinations/bangladesh/coxs-bazar"
+              (click)="toggleCollapse()"
+            >
+              BANGLADESH</a
+            >
+            <a
+              class="dropdown-item"
+              routerLink="/destinations/india/kolkata"
+              (click)="toggleCollapse()"
+            >
+              INDIA</a
+            >
+            <a
+              class="dropdown-item"
+              routerLink="/destinations/nepal"
+              (click)="toggleCollapse()"
+            >
+              NEPAL</a
+            >
+            <a
+              class="dropdown-item"
+              routerLink="/destinations/bhutan"
+              (click)="toggleCollapse()"
+            >
+              BHUTAN</a
+            >
+            <a
+              class="dropdown-item"
+              routerLink="/destinations/thailand"
+              (click)="toggleCollapse()"
+            >
+              THAILAND</a
+            >
+            <a
+              class="dropdown-item"
+              routerLink="/destinations/malaysia"
+              (click)="toggleCollapse()"
+            >
+              MALAYSIA</a
+            >
+            <a
+              class="dropdown-item"
+              routerLink="/destinations/maldives"
+              (click)="toggleCollapse()"
+            >
+              MALDIVES</a
+            >
+            <a
+              class="dropdown-item"
+              routerLink="/destinations/srilanka"
+              (click)="toggleCollapse()"
+            >
+              SRILANKA</a
+            >
+            <a
+              class="dropdown-item"
+              routerLink="/destinations/china"
+              (click)="toggleCollapse()"
+            >
+              CHINA</a
+            >
+            <a
+              class="dropdown-item"
+              routerLink="/destinations/indonesia"
+              (click)="toggleCollapse()"
+            >
+              INDONESIA</a
+            >
           </div>
         </li>
         <li class="nav-item">
-          <a class="nav-link sliding-middle-out" href="#">GALLERY
-          </a>
+          <a class="nav-link sliding-middle-out" href="#">GALLERY </a>
         </li>
         <li ngbDropdown placement="bottom-left" class="nav-item dropdown">
-          <a ngbDropdownToggle class="nav-link dropdown-toggle sliding-middle-out" id="dropdown05" data-toggle="dropdown" aria-haspopup="true"
-            aria-expanded="false">CONTACT US</a>
-          <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="dropdown05">
-            <a class="dropdown-item" routerLink="/contact/our-address" (click)="toggleCollapse()">
-              ADDRESS</a>
-            <a class="dropdown-item" *ngIf="(authService.user$|async)?.uid" (click)="logout()">
-              LOGOUT {{(authService.user$|async)?.uid}}</a>
-            <a class="dropdown-item" *ngIf="!(authService.user$|async)?.uid" routerLink="/login" (click)="toggleCollapse()">
-              LOGIN </a>
-            <a class="dropdown-item" routerLink="/about/company-overview" (click)="toggleCollapse()">
-              ABOUT US</a>
-            <a class="dropdown-item" routerLink="/contact/feedback" (click)="toggleCollapse()">
-              FEEDBACK</a>
-            <a class="dropdown-item" routerLink="/contact/faq" (click)="toggleCollapse()">
-              FAQ</a>
+          <a
+            ngbDropdownToggle
+            class="nav-link dropdown-toggle sliding-middle-out"
+            id="dropdown05"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+            >CONTACT US</a
+          >
+          <div
+            ngbDropdownMenu
+            class="dropdown-menu"
+            aria-labelledby="dropdown05"
+          >
+            <a
+              class="dropdown-item"
+              routerLink="/contact/our-address"
+              (click)="toggleCollapse()"
+            >
+              ADDRESS</a
+            >
+            <a
+              class="dropdown-item"
+              *ngIf="(authService.user$ | async)?.uid"
+              routerLink="/dashboard"
+              (click)="logout()"
+            >
+              DASHBOARD
+            </a>
+
+            <a
+              class="dropdown-item"
+              *ngIf="!(authService.user$ | async)?.uid"
+              routerLink="/login"
+              (click)="toggleCollapse()"
+            >
+              LOGIN
+            </a>
+            <a
+              class="dropdown-item"
+              routerLink="/about/company-overview"
+              (click)="toggleCollapse()"
+            >
+              ABOUT US</a
+            >
+            <a
+              class="dropdown-item"
+              routerLink="/contact/feedback"
+              (click)="toggleCollapse()"
+            >
+              FEEDBACK</a
+            >
+            <a
+              class="dropdown-item"
+              routerLink="/contact/faq"
+              (click)="toggleCollapse()"
+            >
+              FAQ</a
+            >
+            <a
+              class="dropdown-item"
+              *ngIf="(authService.user$ | async)?.uid"
+              (click)="logout()"
+            >
+              LOGOUT
+            </a>
           </div>
         </li>
       </ul>
@@ -122,7 +335,6 @@
             <i class="fa fa-linkedin-square" aria-hidden="true"></i>
           </a>
         </li>
-
       </ul>
     </div>
   </nav>

@@ -6,6 +6,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SharedModule } from '../shared/shared.module';
 import { FeedbackComponent } from './containers/feedback/feedback.component';
 import { FaqComponent } from './containers/faq/faq.component';
+import { FeedbackFormComponent } from './components/feedback-form/feedback-form.component';
 
 export const ROUTES: Routes = [
   { path: 'our-address', component: OurAddressComponent },
@@ -21,6 +22,6 @@ export const ROUTES: Routes = [
     NgbModule,
     RouterModule.forChild(ROUTES)
   ],
-  declarations: [OurAddressComponent, FeedbackComponent, FaqComponent]
+  declarations: [OurAddressComponent, FeedbackComponent, FaqComponent, FeedbackFormComponent]
 })
 export class ContactModule {}
