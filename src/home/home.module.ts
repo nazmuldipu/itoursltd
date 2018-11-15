@@ -18,6 +18,7 @@ import { WhyUsComponent } from './containers/why-us/why-us.component';
 import { HomeComponent } from './home.component';
 import { CustomPackageFormComponent } from './components/custom-package-form/custom-package-form.component';
 import { ThankyouComponent } from './containers/thankyou/thankyou.component';
+import { HotdealsDetailsComponent } from './containers/hotdeals-details/hotdeals-details.component';
 
 // import { NavbarComponent } from './components/navbar/navbar.component';
 export const ROUTES: Routes = [
@@ -31,7 +32,9 @@ export const ROUTES: Routes = [
       },
       { path: 'why-us', component: WhyUsComponent },
       { path: 'custom-package', component: CustomPackageComponent },
-      { path: 'thankyou', component: ThankyouComponent }
+      { path: 'thankyou', component: ThankyouComponent },
+      { path: 'hotdeals', component: HotdealsDetailsComponent },
+      { path: 'hotdeals/:id', component: HotdealsDetailsComponent }
     ]
   }
 ];
@@ -58,7 +61,8 @@ export const ROUTES: Routes = [
     WhyUsComponent,
     CustomPackageComponent,
     CustomPackageFormComponent,
-    ThankyouComponent
+    ThankyouComponent,
+    HotdealsDetailsComponent
   ]
 })
 export class HomeModule {}

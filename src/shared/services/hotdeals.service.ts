@@ -3,13 +3,41 @@ import { AngularFirestore } from '@angular/fire/firestore';
 import { map, tap, take } from 'rxjs/operators';
 import { OrderByDirection } from '@firebase/firestore-types';
 import { Hotdeal } from '../models/hotdeal.model';
+import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
 
 @Injectable({
   providedIn: 'root'
 })
 export class HotdealsService {
   serviceUrl = 'hotdeals';
-  constructor(private afs: AngularFirestore) {}
+
+  private _hotdealsSource = new BehaviorSubject<Hotdeal[]>([]);
+  hotdeals$ = this._hotdealsSource.asObservable();
+  hotdeals: Hotdeal[] = [];
+
+  constructor(private afs: AngularFirestore) {
+    this.getAllAndStore();
+  }
+
+  getAllAndStore() {
+    this.afs
+      .collection(this.serviceUrl, ref => ref.orderBy('createdAt'))
+      .snapshotChanges()
+      .pipe(
+        take(1),
+        map(actions =>
+          actions.map(a => {
+            const data = a.payload.doc.data() as Hotdeal;
+            const id = a.payload.doc.id;
+            return { id, ...data };
+          })
+        )
+      )
+      .subscribe(data => {
+        this.hotdeals = data;
+        this._hotdealsSource.next(this.hotdeals);
+      });
+  }
 
   create(pack: Hotdeal) {
     const value = {

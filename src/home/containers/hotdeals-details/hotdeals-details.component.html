@@ -1,0 +1,64 @@
+<div class="container-fluid hotdeals my-3 p-0">
+  <div class="row" *ngIf="hotdeals.length">
+    <div class="col-md-2">
+      <ul class="list-group">
+        <li class="list-group-item text-center"><b> HOT DEALS </b></li>
+
+        <a
+          class="list-group-item list-group-item-action"
+          *ngFor="let ht of hotdeals"
+          (click)="getHotdeal(ht.id)"
+        >
+          <i class="fa fa-fire"></i> {{ ht.headline }}
+        </a>
+      </ul>
+    </div>
+    <div class="col-md-5">
+      <img
+        class="img-thumbnail"
+        *ngIf="hotdeal.imageUrl"
+        [src]="hotdeal.imageUrl"
+        alt=""
+        style="width: 100%;"
+      />
+    </div>
+    <div class="col-md-5">
+      <table class="table">
+        <tr>
+          <th class="text-center" colspan="2">{{ hotdeal?.headline }}</th>
+        </tr>
+        <tr>
+          <th>Tag Lines</th>
+          <td>
+            <span *ngFor="let tag of hotdeal.taglines"> {{ tag }}, </span>
+          </td>
+        </tr>
+        <tr>
+          <th>Description</th>
+          <td>{{ hotdeal?.description }}</td>
+        </tr>
+        <tr>
+          <th>Duration</th>
+          <td>{{ hotdeal?.duration }}</td>
+        </tr>
+        <tr>
+          <th>Tour Date</th>
+          <td>{{ hotdeal?.tourDate }}</td>
+        </tr>
+        <tr>
+          <th>Last Booking Date</th>
+          <td>{{ hotdeal?.lastBookingDate }}</td>
+        </tr>
+
+        <tr>
+          <th>Price</th>
+          <td>{{ hotdeal?.price }}</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><a href="{{hotdeal?.url}}">more</a></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>

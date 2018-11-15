@@ -39,10 +39,10 @@ export const ROUTES: Routes = [
     path: 'event',
     loadChildren: '../event/event.module#EventModule'
   },
-  {
-    path: 'hotdeals',
-    loadChildren: '../hotdeals/hotdeals.module#HotdealsModule'
-  },
+  // {
+  //   path: 'hotdeals',
+  //   loadChildren: '../hotdeals/hotdeals.module#HotdealsModule'
+  // },
   { path: 'login', component: LoginComponent },
   {
     path: '',

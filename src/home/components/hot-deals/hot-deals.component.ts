@@ -30,7 +30,7 @@ export class HotDealsComponent implements OnInit {
 
   async getAllHotDeals() {
     this.showLoading = true;
-    await this.hotdealService.getAll().subscribe(
+    await this.hotdealService.hotdeals$.subscribe(
       data => {
         this.hotdeals = data;
         this.showLoading = false;
@@ -40,6 +40,16 @@ export class HotDealsComponent implements OnInit {
         this.showLoading = false;
       }
     );
+    // await this.hotdealService.getAll().subscribe(
+    //   data => {
+    //     this.hotdeals = data;
+    //     this.showLoading = false;
+    //   },
+    //   error => {
+    //     console.log('hotdeals loading error');
+    //     this.showLoading = false;
+    //   }
+    // );
   }
 
   onHotdealsDetails(id: string) {
