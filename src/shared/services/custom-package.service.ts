@@ -4,13 +4,41 @@ import { OrderByDirection } from '@firebase/firestore-types';
 import { map, take } from 'rxjs/operators';
 
 import { CustomPackage } from '../models/custom-package.model';
+import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CustomPackageService {
   serviceUrl = 'customPackages';
-  constructor(private afs: AngularFirestore) {}
+
+  private _customPackagesSource = new BehaviorSubject<CustomPackage[]>([]);
+  customPackages$ = this._customPackagesSource.asObservable();
+  customPackages: CustomPackage[] = [];
+
+  constructor(private afs: AngularFirestore) {
+    this.getAllAndStore();
+  }
+
+  getAllAndStore() {
+    this.afs
+      .collection(this.serviceUrl, ref => ref.orderBy('createdAt'))
+      .snapshotChanges()
+      .pipe(
+        take(1),
+        map(actions =>
+          actions.map(a => {
+            const data = a.payload.doc.data() as CustomPackage;
+            const id = a.payload.doc.id;
+            return { id, ...data };
+          })
+        )
+      )
+      .subscribe(data => {
+        this.customPackages = data;
+        this._customPackagesSource.next(this.customPackages);
+      });
+  }
 
   create(pack: CustomPackage) {
     const value = {

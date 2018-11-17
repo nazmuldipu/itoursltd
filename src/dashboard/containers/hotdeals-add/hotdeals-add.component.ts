@@ -24,8 +24,8 @@ export class HotdealsAddComponent implements OnInit {
   async ngOnInit() {
     if (this.id) {
       this.showBusy = true;
-      await this.hotdealService.get(this.id).subscribe(data => {
-        this.hotdeal = data as Hotdeal;
+      await this.hotdealService.hotdeals$.subscribe(data => {
+        this.hotdeal = data.find(hd => hd.id == this.id);
         this.showBusy = false;
       });
     }

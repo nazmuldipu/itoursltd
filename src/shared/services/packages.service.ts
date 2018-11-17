@@ -3,13 +3,41 @@ import { AngularFirestore } from '@angular/fire/firestore';
 import { map, tap, take } from 'rxjs/operators';
 import { OrderByDirection } from '@firebase/firestore-types';
 import { Package } from 'src/shared/models/package.model';
+import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PackagesService {
   serviceUrl = 'packages';
-  constructor(private afs: AngularFirestore) {}
+
+  private _packagesSource = new BehaviorSubject<Package[]>([]);
+  packages$ = this._packagesSource.asObservable();
+  packages: Package[] = [];
+
+  constructor(private afs: AngularFirestore) {
+    this.getAllAndStore();
+  }
+
+  getAllAndStore() {
+    this.afs
+      .collection(this.serviceUrl, ref => ref.orderBy('createdAt'))
+      .snapshotChanges()
+      .pipe(
+        take(1),
+        map(actions =>
+          actions.map(a => {
+            const data = a.payload.doc.data() as Package;
+            const id = a.payload.doc.id;
+            return { id, ...data };
+          })
+        )
+      )
+      .subscribe(data => {
+        this.packages = data;
+        this._packagesSource.next(this.packages);
+      });
+  }
 
   create(pack: Package) {
     const value = {

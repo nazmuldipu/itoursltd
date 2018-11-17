@@ -23,6 +23,7 @@ export class GalleryImageComponent implements OnInit {
   downloadURL: Observable<string>;
   resizing = false;
   uploading = false;
+  showBusy = false;
 
   constructor(
     private gallerysService: GallerysService,
@@ -42,21 +43,41 @@ export class GalleryImageComponent implements OnInit {
   }
 
   async ngOnInit() {
-    await this.gallerysService.get(this.id).subscribe(
-      data => {
-        this.gallery = data as Gallery;
-        if (this.gallery.imageUrls) {
-          this.gallery.imageUrls.forEach((ar, i) => {
-            this.imageUrls[i] = ar;
-          });
-        } else {
-          for (let i = 0; i < 10; i++) {
-            this.gallery.imageUrls = this.imageUrls;
+    if (this.id) {
+      this.showBusy = true;
+      await this.gallerysService.gallerys$.subscribe(
+        data => {
+          this.gallery = data.find(hd => hd.id == this.id) as Gallery;
+          if (this.gallery.imageUrls) {
+            this.gallery.imageUrls.forEach((ar, i) => {
+              this.imageUrls[i] = ar;
+            });
+          } else {
+            for (let i = 0; i < 10; i++) {
+              this.gallery.imageUrls = this.imageUrls;
+            }
           }
-        }
-      },
-      error => console.log(error)
-    );
+          this.showBusy = false;
+        },
+        error => console.log(error)
+      );
+    }
+
+    // await this.gallerysService.get(this.id).subscribe(
+    //   data => {
+    //     this.gallery = data as Gallery;
+    //     if (this.gallery.imageUrls) {
+    //       this.gallery.imageUrls.forEach((ar, i) => {
+    //         this.imageUrls[i] = ar;
+    //       });
+    //     } else {
+    //       for (let i = 0; i < 10; i++) {
+    //         this.gallery.imageUrls = this.imageUrls;
+    //       }
+    //     }
+    //   },
+    //   error => console.log(error)
+    // );
   }
 
   fileChange(event, i: number) {

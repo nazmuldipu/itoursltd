@@ -3,6 +3,7 @@ import { AngularFirestore } from '@angular/fire/firestore';
 import { map, tap, take } from 'rxjs/operators';
 import { OrderByDirection } from '@firebase/firestore-types';
 import { Feedback } from 'src/shared/models/feedback.model';
+import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
 // import { Gallery } from '../models/gallery.model';
 
 @Injectable({
@@ -10,7 +11,34 @@ import { Feedback } from 'src/shared/models/feedback.model';
 })
 export class FeedbackService {
   serviceUrl = 'feedbacks';
-  constructor(private afs: AngularFirestore) {}
+
+  private _feedbacksSource = new BehaviorSubject<Feedback[]>([]);
+  feedbacks$ = this._feedbacksSource.asObservable();
+  feedbacks: Feedback[] = [];
+
+  constructor(private afs: AngularFirestore) {
+    this.getAllAndStore();
+  }
+
+  getAllAndStore() {
+    this.afs
+      .collection(this.serviceUrl, ref => ref.orderBy('createdAt'))
+      .snapshotChanges()
+      .pipe(
+        take(1),
+        map(actions =>
+          actions.map(a => {
+            const data = a.payload.doc.data() as Feedback;
+            const id = a.payload.doc.id;
+            return { id, ...data };
+          })
+        )
+      )
+      .subscribe(data => {
+        this.feedbacks = data;
+        this._feedbacksSource.next(this.feedbacks);
+      });
+  }
 
   create(pack: Feedback) {
     const value = {

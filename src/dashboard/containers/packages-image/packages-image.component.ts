@@ -20,6 +20,7 @@ export class PackagesImageComponent implements OnInit {
   url;
   image;
   uploadPercent: any;
+  showBusy = false;
   downloadURL: Observable<string>;
 
   constructor(
@@ -34,13 +35,25 @@ export class PackagesImageComponent implements OnInit {
   }
 
   async ngOnInit() {
-    await this.packageService.get(this.id).subscribe(
-      data => {
-        this.package = data as Package;
-        this.imageUrl = this.package.imageUrl;
-      },
-      error => console.log(error)
-    );
+    if (this.id) {
+      this.showBusy = true;
+      await this.packageService.packages$.subscribe(
+        data => {
+          this.package = data.find(pk => pk.id == this.id);
+          this.imageUrl = this.package.imageUrl;
+          this.showBusy = false;
+        },
+        error => console.log(error)
+      );
+    }
+
+    // await this.packageService.get(this.id).subscribe(
+    //   data => {
+    //     this.package = data as Package;
+    //     this.imageUrl = this.package.imageUrl;
+    //   },
+    //   error => console.log(error)
+    // );
   }
 
   fileChange(event) {

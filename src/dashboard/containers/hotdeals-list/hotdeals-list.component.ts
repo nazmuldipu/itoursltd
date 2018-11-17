@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class HotdealsListComponent implements OnInit {
   hotdeals: Hotdeal[];
-  showLoading = true;
+  showLoading = false;
 
   constructor(
     private hotdealService: HotdealsService,
@@ -21,18 +21,25 @@ export class HotdealsListComponent implements OnInit {
     this.getAllHotDeals();
   }
 
+  // async getAllHotDeals() {
+  //   this.showLoading = true;
+  //   await this.hotdealService.getAll().subscribe(
+  //     data => {
+  //       this.hotdeals = data;
+  //       this.showLoading = false;
+  //     },
+  //     error => {
+  //       console.log('hotdeals loading error');
+  //       this.showLoading = false;
+  //     }
+  //   );
+  // }
   async getAllHotDeals() {
     this.showLoading = true;
-    await this.hotdealService.getAll().subscribe(
-      data => {
-        this.hotdeals = data;
-        this.showLoading = false;
-      },
-      error => {
-        console.log('hotdeals loading error');
-        this.showLoading = false;
-      }
-    );
+    await this.hotdealService.hotdeals$.subscribe(data => {
+      this.hotdeals = data;
+      this.showLoading = false;
+    });
   }
 
   onEdit(id: string) {

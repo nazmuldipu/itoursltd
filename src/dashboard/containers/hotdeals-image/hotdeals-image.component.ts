@@ -20,6 +20,7 @@ export class HotdealsImageComponent implements OnInit {
   url;
   image;
   uploadPercent: any;
+  showBusy = false;
   downloadURL: Observable<string>;
 
   constructor(
@@ -34,13 +35,17 @@ export class HotdealsImageComponent implements OnInit {
   }
 
   async ngOnInit() {
-    await this.hotdealsService.get(this.id).subscribe(
-      data => {
-        this.hotdeal = data as Hotdeal;
-        this.imageUrl = this.hotdeal.imageUrl;
-      },
-      error => console.log(error)
-    );
+    if (this.id) {
+      this.showBusy = true;
+      await this.hotdealsService.hotdeals$.subscribe(
+        data => {
+          this.hotdeal = data.find(hd => hd.id == this.id);
+          this.imageUrl = this.hotdeal.imageUrl;
+          this.showBusy = false;
+        },
+        error => console.log(error)
+      );
+    }
   }
 
   fileChange(event) {

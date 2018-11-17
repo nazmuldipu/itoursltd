@@ -17,11 +17,12 @@ export class PackagesListComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.getPackages();
+    this.getAllPackages();
   }
-  async getPackages() {
+
+  async getAllPackages() {
     this.showLoading = true;
-    await this.packageService.getAll().subscribe(
+    await this.packageService.packages$.subscribe(
       data => {
         this.packages = data;
         this.showLoading = false;

@@ -23,20 +23,13 @@ export class GalleryListComponent implements OnInit {
 
   async getAllGallery() {
     this.showLoading = true;
-    await this.galleryService.getAll().subscribe(
-      data => {
-        this.gallerys = data;
-        this.showLoading = false;
-      },
-      error => {
-        console.log('hotdeals loading error');
-        this.showLoading = false;
-      }
-    );
+    await this.galleryService.gallerys$.subscribe(data => {
+      this.gallerys = data;
+      this.showLoading = false;
+    });
   }
 
   onEdit(id: string) {
-    console.log('on edit', id);
     this.router.navigate(['/dashboard/gallery-add', id]);
   }
 

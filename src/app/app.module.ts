@@ -15,7 +15,6 @@ import { AuthGuard } from '../shared/services/auth-guard.service';
 import { SharedModule } from '../shared/shared.module';
 import { AppComponent } from './app.component';
 
-// import { NavbarComponent } from 'src/home/components/navbar/navbar.component';
 // routes
 export const ROUTES: Routes = [
   {
@@ -39,10 +38,6 @@ export const ROUTES: Routes = [
     path: 'event',
     loadChildren: '../event/event.module#EventModule'
   },
-  // {
-  //   path: 'hotdeals',
-  //   loadChildren: '../hotdeals/hotdeals.module#HotdealsModule'
-  // },
   { path: 'login', component: LoginComponent },
   {
     path: '',

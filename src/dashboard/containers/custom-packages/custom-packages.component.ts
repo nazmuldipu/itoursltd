@@ -20,7 +20,7 @@ export class CustomPackagesComponent implements OnInit {
 
   async getAllCustomPackages() {
     this.showLoading = true;
-    await this.customPackageService.getAll().subscribe(data => {
+    await this.customPackageService.customPackages$.subscribe(data => {
       this.customPackages = data;
       this.showLoading = false;
     });

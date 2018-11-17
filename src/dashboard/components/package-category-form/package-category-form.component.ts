@@ -79,7 +79,8 @@ export class PackageCategoryFormComponent implements OnChanges {
   }
 
   getDescriptoin(form) {
-    return this.parent.get(this.group).get('description');
+    return (this.parent.get(this.group).get('description') as FormArray)
+      .controls;
   }
 
   createDescriptionArray(head: string = '', texts: string[] = ['']) {

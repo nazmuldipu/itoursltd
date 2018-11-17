@@ -24,11 +24,18 @@ export class GalleryAddComponent implements OnInit {
   async ngOnInit() {
     if (this.id) {
       this.showBusy = true;
-      await this.galleryService.get(this.id).subscribe(data => {
-        this.gallery = data as Gallery;
+      await this.galleryService.gallerys$.subscribe(data => {
+        this.gallery = data.find(hd => hd.id == this.id);
         this.showBusy = false;
       });
     }
+    // if (this.id) {
+    //   this.showBusy = true;
+    //   await this.galleryService.get(this.id).subscribe(data => {
+    //     this.gallery = data as Gallery;
+    //     this.showBusy = false;
+    //   });
+    // }
   }
 
   onCreate(event) {

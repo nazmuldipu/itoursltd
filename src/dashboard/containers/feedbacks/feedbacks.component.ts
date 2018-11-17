@@ -19,9 +19,13 @@ export class FeedbacksComponent implements OnInit {
 
   async getAllFeedbacks() {
     this.showLoading = true;
-    await this.feedbackService.getAll().subscribe(data => {
+    await this.feedbackService.feedbacks$.subscribe(data => {
       this.feedbacks = data;
       this.showLoading = false;
     });
+    // await this.feedbackService.getAll().subscribe(data => {
+    //   this.feedbacks = data;
+    //   this.showLoading = false;
+    // });
   }
 }
