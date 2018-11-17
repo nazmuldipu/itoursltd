@@ -28,6 +28,9 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 
 > > npm install ng2-img-max blueimp-canvas-to-blob --save
 
+# ngx-image-gallery
+    https://github.com/thatisuday/ngx-image-gallery
+    
 ## Deploy server
 
 chmod u+x ./deploy.sh

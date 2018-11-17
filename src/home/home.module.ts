@@ -19,7 +19,7 @@ import { HomeComponent } from './home.component';
 import { CustomPackageFormComponent } from './components/custom-package-form/custom-package-form.component';
 import { ThankyouComponent } from './containers/thankyou/thankyou.component';
 import { HotdealsDetailsComponent } from './containers/hotdeals-details/hotdeals-details.component';
-
+import { GallerysComponent } from './containers/gallerys/gallerys.component';
 // import { NavbarComponent } from './components/navbar/navbar.component';
 export const ROUTES: Routes = [
   {
@@ -34,7 +34,9 @@ export const ROUTES: Routes = [
       { path: 'custom-package', component: CustomPackageComponent },
       { path: 'thankyou', component: ThankyouComponent },
       { path: 'hotdeals', component: HotdealsDetailsComponent },
-      { path: 'hotdeals/:id', component: HotdealsDetailsComponent }
+      { path: 'hotdeals/:id', component: HotdealsDetailsComponent },
+      { path: 'gallerys/', component: GallerysComponent },
+      { path: 'gallerys/:id', component: GallerysComponent }
     ]
   }
 ];
@@ -62,7 +64,8 @@ export const ROUTES: Routes = [
     CustomPackageComponent,
     CustomPackageFormComponent,
     ThankyouComponent,
-    HotdealsDetailsComponent
+    HotdealsDetailsComponent,
+    GallerysComponent
   ]
 })
 export class HomeModule {}

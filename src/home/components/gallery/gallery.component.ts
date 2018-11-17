@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Gallery } from 'src/shared/models/gallery.model';
+import { GallerysService } from 'src/shared/services/gallerys.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'gallery',
@@ -6,7 +9,34 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./gallery.component.scss']
 })
 export class GalleryComponent implements OnInit {
-  constructor() {}
+  gallerys: Gallery[];
+  showLoading = true;
 
-  ngOnInit() {}
+  constructor(
+    private galleryService: GallerysService,
+    private router: Router
+  ) {}
+
+  ngOnInit() {
+    this.getAllGallery();
+  }
+
+  async getAllGallery() {
+    this.showLoading = true;
+    await this.galleryService.gallerys$.subscribe(
+      data => {
+        this.gallerys = data;
+        this.showLoading = false;
+      },
+      error => {
+        console.log('gallerys loading error');
+        this.showLoading = false;
+      }
+    );
+  }
+
+  onGalleryDetails(id: string) {
+    console.log('details', id);
+    this.router.navigate(['/gallerys', id]);
+  }
 }

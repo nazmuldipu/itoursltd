@@ -1,0 +1,58 @@
+<div class="container-fluid galleries my-3 p-0">
+  <div class="row" *ngIf="gallerys?.length">
+    <div class="col-md-2">
+      <ul class="list-group">
+        <li class="list-group-item text-center bg-dark text-white">
+          <b> GALLERIES </b>
+        </li>
+
+        <a
+          class="list-group-item list-group-item-action bg-dark text-white"
+          *ngFor="let gl of gallerys"
+          (click)="getGallery(gl.id)"
+        >
+          <i class="fa fa-fire"></i> {{ gl.title }}
+        </a>
+      </ul>
+    </div>
+
+    <div class="col-md-8">
+      <div class="row">
+        <div class="col-md-4" *ngIf="(gallery?.imageUrls)[0]">
+          <img class="gallery-image1" [src]="(gallery?.imageUrls)[0]" alt="" />
+        </div>
+        <div class="col-md-4" *ngIf="(gallery?.imageUrls)[1]">
+          <img class="gallery-image1" [src]="(gallery?.imageUrls)[1]" alt="" />
+        </div>
+        <div class="col-md-4" *ngIf="(gallery?.imageUrls)[2]">
+          <img class="gallery-image1" [src]="(gallery?.imageUrls)[2]" alt="" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-8" *ngIf="(gallery?.imageUrls)[3]">
+          <img class="gallery-image2" [src]="(gallery?.imageUrls)[3]" alt="" />
+        </div>
+        <div class="col-md-4" *ngIf="(gallery?.imageUrls)[4]">
+          <img class="gallery-image1" [src]="(gallery?.imageUrls)[4]" alt="" />
+          <img class="gallery-image1" [src]="(gallery?.imageUrls)[5]" alt="" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6" *ngIf="(gallery?.imageUrls)[6]">
+          <img class="gallery-image3" [src]="(gallery?.imageUrls)[6]" alt="" />
+        </div>
+        <div class="col-md-6" *ngIf="(gallery?.imageUrls)[7]">
+          <img class="gallery-image3" [src]="(gallery?.imageUrls)[7]" alt="" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6" *ngIf="(gallery?.imageUrls)[8]">
+          <img class="gallery-image3" [src]="(gallery?.imageUrls)[8]" alt="" />
+        </div>
+        <div class="col-md-6" *ngIf="(gallery?.imageUrls)[9]">
+          <img class="gallery-image3" [src]="(gallery?.imageUrls)[9]" alt="" />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

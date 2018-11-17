@@ -1,0 +1,40 @@
+@import '../../containers/index/index.component.scss';
+
+.galleries {
+  padding-top: 70px !important;
+}
+.list-group-item-action {
+  cursor: pointer;
+}
+.gallery {
+  &-image1 {
+    width: 100%;
+    height: 180px;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+    transition: box-shadow 0.2s ease-in-out;
+  }
+  &-image1:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  }
+  &-image2 {
+    width: 100%;
+    height: 380px;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+    transition: box-shadow 0.2s ease-in-out;
+  }
+  &-image2:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  }
+  &-image3 {
+    width: 100%;
+    height: 260px;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+    transition: box-shadow 0.2s ease-in-out;
+  }
+  &-image3:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  }
+}

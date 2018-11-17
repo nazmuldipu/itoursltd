@@ -1,47 +1,90 @@
 <div class="container-fluid p-0">
   <div class="section-title">GALLERY</div>
   <div class="row mx-0 my-5">
-    <div class="col-md-4 myCard">
-      <img class="gallery-img" src="assets/images/gallery/gallery1.jpg" alt="Card image cap">
-      <div class="myCard-text">INDIA</div>
+    <div
+      class="col-md-4 myCard"
+      (click)="onGalleryDetails(gallerys[0]?.id)"
+      *ngIf="gallerys[0]"
+    >
+      <img
+        *ngIf="(gallerys[0]?.imageUrls)[0]"
+        class="gallery-img"
+        [src]="(gallerys[0]?.imageUrls)[0]"
+        alt="Card image cap"
+      />
+      <div class="myCard-text">{{ gallerys[0]?.title }}</div>
     </div>
-    <div class="col-md-4">
+
+    <div class="col-md-4" *ngIf="gallerys[1]">
       <div class="row">
-        <div class="col-6 myCard-2">
-          <img class="gallery-img-2" src="assets/images/gallery/gallery2.jpg" alt="Card image cap">
-          <div class="myCard-2-text">BANGLADESH</div>
+        <div class="col-6 myCard-2" *ngIf="gallerys[1]">
+          <img
+            class="gallery-img"
+            [src]="(gallerys[1]?.imageUrls)[0]"
+            alt="Card image cap"
+          />
+          <div class="myCard-2-text">{{ gallerys[1]?.title }}</div>
         </div>
-        <div class="col-6 myCard-2">
-          <img class="gallery-img-2" src="assets/images/gallery/gallery3.jpg" alt="Card image cap">
-          <div class="myCard-2-text">NEPAL</div>
+        <div class="col-6 myCard-2" *ngIf="gallerys[2]">
+          <img
+            class="gallery-img"
+            [src]="(gallerys[2]?.imageUrls)[0]"
+            alt="Card image cap"
+          />
+          <div class="myCard-2-text">{{ gallerys[2]?.title }}</div>
         </div>
-        <div class="col-6 myCard-2">
-          <img class="gallery-img-2" src="assets/images/gallery/gallery4.jpg" alt="Card image cap">
-          <div class="myCard-2-text">BHUTAN</div>
+        <div class="col-6 myCard-2" *ngIf="gallerys[3]">
+          <img
+            class="gallery-img"
+            [src]="(gallerys[3]?.imageUrls)[0]"
+            alt="Card image cap"
+          />
+          <div class="myCard-2-text">{{ gallerys[3]?.title }}</div>
         </div>
-        <div class="col-6 myCard-2">
-          <img class="gallery-img-2" src="assets/images/gallery/gallery5.jpg" alt="Card image cap">
-          <div class="myCard-2-text">PAKISTAN</div>
+        <div class="col-6 myCard-2" *ngIf="gallerys[4]">
+          <img
+            class="gallery-img"
+            [src]="(gallerys[4]?.imageUrls)[2]"
+            alt="Card image cap"
+          />
+          <div class="myCard-2-text">{{ gallerys[4]?.title }}</div>
         </div>
       </div>
     </div>
-    <div class="col-md-4">
+
+    <div class="col-md-4" *ngIf="gallerys[5]">
       <div class="row">
-        <div class="col-6 myCard-2">
-          <img class="gallery-img-2" src="assets/images/gallery/gallery6.jpg" alt="Card image cap">
-          <div class="myCard-2-text">SRILANKA</div>
+        <div class="col-6 myCard-2" *ngIf="gallerys[5]">
+          <img
+            class="gallery-img"
+            [src]="(gallerys[5]?.imageUrls)[0]"
+            alt="Card image cap"
+          />
+          <div class="myCard-2-text">{{ gallerys[5]?.title }}</div>
         </div>
-        <div class="col-6 myCard-2">
-          <img class="gallery-img-2" src="assets/images/gallery/gallery7.jpg" alt="Card image cap">
-          <div class="myCard-2-text">MALDIV</div>
+        <div class="col-6 myCard-2" *ngIf="gallerys[6]">
+          <img
+            class="gallery-img"
+            [src]="(gallerys[6]?.imageUrls)[0]"
+            alt="Card image cap"
+          />
+          <div class="myCard-2-text">{{ gallerys[6]?.title }}</div>
         </div>
-        <div class="col-6 myCard-2">
-          <img class="gallery-img-2" src="assets/images/gallery/gallery8.jpg" alt="Card image cap">
-          <div class="myCard-2-text">CHILI</div>
+        <div class="col-6 myCard-2" *ngIf="gallerys[7]">
+          <img
+            class="gallery-img"
+            [src]="(gallerys[7]?.imageUrls)[0]"
+            alt="Card image cap"
+          />
+          <div class="myCard-2-text">{{ gallerys[7]?.title }}</div>
         </div>
-        <div class="col-6 myCard-2">
-          <img class="gallery-img-2" src="assets/images/gallery/gallery9.jpg" alt="Card image cap">
-          <div class="myCard-2-text">INDONESIA</div>
+        <div class="col-6 myCard-2" *ngIf="gallerys[8]">
+          <img
+            class="gallery-img"
+            [src]="(gallerys[8]?.imageUrls)[2]"
+            alt="Card image cap"
+          />
+          <div class="myCard-2-text">{{ gallerys[8]?.title }}</div>
         </div>
       </div>
     </div>

@@ -40,16 +40,6 @@ export class HotDealsComponent implements OnInit {
         this.showLoading = false;
       }
     );
-    // await this.hotdealService.getAll().subscribe(
-    //   data => {
-    //     this.hotdeals = data;
-    //     this.showLoading = false;
-    //   },
-    //   error => {
-    //     console.log('hotdeals loading error');
-    //     this.showLoading = false;
-    //   }
-    // );
   }
 
   onHotdealsDetails(id: string) {

@@ -21,7 +21,7 @@ export class GallerysService {
 
   getAllAndStore() {
     this.afs
-      .collection(this.serviceUrl, ref => ref.orderBy('createdAt'))
+      .collection(this.serviceUrl, ref => ref.orderBy('createdAt', 'desc'))
       .snapshotChanges()
       .pipe(
         take(1),
