@@ -37,6 +37,7 @@ export class HotdealsDetailsComponent implements OnInit {
   }
 
   getHotdeal(id: string) {
+    this.hotdeal = null;
     this.hotdeal = this.hotdeals.find(hd => hd.id == id);
   }
 }

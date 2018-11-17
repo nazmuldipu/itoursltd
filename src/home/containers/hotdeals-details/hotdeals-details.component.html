@@ -2,10 +2,12 @@
   <div class="row" *ngIf="hotdeals.length">
     <div class="col-md-2">
       <ul class="list-group">
-        <li class="list-group-item text-center"><b> HOT DEALS </b></li>
+        <li class="list-group-item text-center bg-dark text-white">
+          <b> HOT DEALS </b>
+        </li>
 
         <a
-          class="list-group-item list-group-item-action"
+          class="list-group-item list-group-item-action bg-dark text-white"
           *ngFor="let ht of hotdeals"
           (click)="getHotdeal(ht.id)"
         >
