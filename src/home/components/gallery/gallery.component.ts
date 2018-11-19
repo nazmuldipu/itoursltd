@@ -25,6 +25,9 @@ export class GalleryComponent implements OnInit {
     this.showLoading = true;
     await this.galleryService.gallerys$.subscribe(
       data => {
+        if (data.length) {
+          data = data.filter(dat => dat.active == true);
+        }
         this.gallerys = data;
         this.showLoading = false;
       },
@@ -36,7 +39,6 @@ export class GalleryComponent implements OnInit {
   }
 
   onGalleryDetails(id: string) {
-    console.log('details', id);
     this.router.navigate(['/gallerys', id]);
   }
 }

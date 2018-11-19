@@ -35,7 +35,7 @@ export const ROUTES: Routes = [
       { path: 'thankyou', component: ThankyouComponent },
       { path: 'hotdeals', component: HotdealsDetailsComponent },
       { path: 'hotdeals/:id', component: HotdealsDetailsComponent },
-      { path: 'gallerys/', component: GallerysComponent },
+      { path: 'gallerys', component: GallerysComponent },
       { path: 'gallerys/:id', component: GallerysComponent }
     ]
   }

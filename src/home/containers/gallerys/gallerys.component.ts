@@ -27,8 +27,12 @@ export class GallerysComponent implements OnInit {
 
   async getAllGalleries() {
     await this.gallerySService.gallerys$.subscribe(data => {
+      if (data.length) {
+        data = data.filter(dat => dat.active == true); //only active gallries should be displayed
+      }
       this.gallerys = data;
       if (this.id) {
+        //if a gallery pre - selected then it should display
         this.getGallery(this.id);
       } else if (data.length) {
         this.getGallery(data[0].id);

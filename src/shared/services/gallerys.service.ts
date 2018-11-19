@@ -24,7 +24,7 @@ export class GallerysService {
       .collection(this.serviceUrl, ref => ref.orderBy('createdAt', 'desc'))
       .snapshotChanges()
       .pipe(
-        take(1),
+        // take(1),
         map(actions =>
           actions.map(a => {
             const data = a.payload.doc.data() as Gallery;
