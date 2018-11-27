@@ -20,6 +20,8 @@ import { CustomPackageFormComponent } from './components/custom-package-form/cus
 import { ThankyouComponent } from './containers/thankyou/thankyou.component';
 import { HotdealsDetailsComponent } from './containers/hotdeals-details/hotdeals-details.component';
 import { GallerysComponent } from './containers/gallerys/gallerys.component';
+import { PackageListComponent } from './containers/package-list/package-list.component';
+import { PackageDetailsComponent } from './containers/package-details/package-details.component';
 // import { NavbarComponent } from './components/navbar/navbar.component';
 export const ROUTES: Routes = [
   {
@@ -33,6 +35,9 @@ export const ROUTES: Routes = [
       { path: 'why-us', component: WhyUsComponent },
       { path: 'custom-package', component: CustomPackageComponent },
       { path: 'thankyou', component: ThankyouComponent },
+      { path: 'package-list', component: PackageListComponent },
+      { path: 'package-list/:id', component: PackageListComponent },
+      { path: 'package-details/:id', component: PackageDetailsComponent },
       { path: 'hotdeals', component: HotdealsDetailsComponent },
       { path: 'hotdeals/:id', component: HotdealsDetailsComponent },
       { path: 'gallerys', component: GallerysComponent },
@@ -65,7 +70,9 @@ export const ROUTES: Routes = [
     CustomPackageFormComponent,
     ThankyouComponent,
     HotdealsDetailsComponent,
-    GallerysComponent
+    GallerysComponent,
+    PackageListComponent,
+    PackageDetailsComponent
   ]
 })
 export class HomeModule {}

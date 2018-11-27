@@ -35,11 +35,13 @@ export class PackagesListComponent implements OnInit {
   }
 
   onEdit(id: string) {
-    console.log('on edit ', id);
-    //
     this.router.navigate(['/dashboard/packages-add', id]);
   }
   onDelete(id: string) {
-    console.log('on Delete ', id);
+    if (confirm('Are you sure to delete')) {
+      this.packageService.delete(id).then(ref => {
+        console.log('Package Deleted successfully');
+      });
+    }
   }
 }

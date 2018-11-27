@@ -4,7 +4,7 @@ export interface Package {
   updatedAt: Date;
   active: boolean;
   domestic: boolean;
-  country: string;
+  country: string[];
   title: string;
   area: string[];
   subArea: string[];

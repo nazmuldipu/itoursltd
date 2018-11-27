@@ -1,19 +1,23 @@
-import { Injectable } from '@angular/core';
-import { AngularFirestore } from '@angular/fire/firestore';
-import { map, tap, take } from 'rxjs/operators';
-import { OrderByDirection } from '@firebase/firestore-types';
-import { Package } from 'src/shared/models/package.model';
-import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
+import { Injectable } from "@angular/core";
+import { AngularFirestore } from "@angular/fire/firestore";
+import { map } from "rxjs/operators";
+import { OrderByDirection } from "@firebase/firestore-types";
+import { Package } from "src/shared/models/package.model";
+import { BehaviorSubject } from "rxjs/internal/BehaviorSubject";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root"
 })
 export class PackagesService {
-  serviceUrl = 'packages';
+  serviceUrl = "packages";
 
   private _packagesSource = new BehaviorSubject<Package[]>([]);
   packages$ = this._packagesSource.asObservable();
   packages: Package[] = [];
+
+  private _packageSideNavSource = new BehaviorSubject<any>([]);
+  packageSideNav$ = this._packageSideNavSource.asObservable();
+  packageSideNav: any = [];
 
   constructor(private afs: AngularFirestore) {
     this.getAllAndStore();
@@ -21,10 +25,9 @@ export class PackagesService {
 
   getAllAndStore() {
     this.afs
-      .collection(this.serviceUrl, ref => ref.orderBy('createdAt'))
+      .collection(this.serviceUrl, ref => ref.orderBy("createdAt"))
       .snapshotChanges()
       .pipe(
-        take(1),
         map(actions =>
           actions.map(a => {
             const data = a.payload.doc.data() as Package;
@@ -36,6 +39,15 @@ export class PackagesService {
       .subscribe(data => {
         this.packages = data;
         this._packagesSource.next(this.packages);
+        const side = [];
+        const country = [];
+        this.packages.forEach(pac => {
+          if (!country.includes(pac.country)) {
+            country.push(pac.country);
+          }
+        });
+        this.packageSideNav = country;
+        this._packageSideNavSource.next(this.packageSideNav);
       });
   }
 
@@ -53,7 +65,7 @@ export class PackagesService {
 
   getAll() {
     return this.afs
-      .collection(this.serviceUrl, ref => ref.orderBy('createdAt'))
+      .collection(this.serviceUrl, ref => ref.orderBy("createdAt"))
       .snapshotChanges()
       .pipe(
         take(1),
@@ -69,7 +81,7 @@ export class PackagesService {
 
   get(sid: string) {
     return this.afs
-      .doc(this.serviceUrl + '/' + sid)
+      .doc(this.serviceUrl + "/" + sid)
       .valueChanges()
       .pipe(
         take(1),
@@ -80,12 +92,12 @@ export class PackagesService {
       );
   }
 
-  getPaginatedStartAfter(order: OrderByDirection = 'asc', limit, startAfter) {
+  getPaginatedStartAfter(order: OrderByDirection = "asc", limit, startAfter) {
     // console.log(companyId, order, limit, startAfter);
     return this.afs
       .collection(this.serviceUrl, ref =>
         ref
-          .orderBy('createdAt', order)
+          .orderBy("createdAt", order)
           .limit(limit)
           .startAfter(startAfter)
       )
@@ -93,7 +105,7 @@ export class PackagesService {
       .pipe(
         // take(1),
         map(actions => {
-          if (order === 'asc') {
+          if (order === "asc") {
             actions.reverse();
           }
           // console.log(actions);
@@ -107,14 +119,14 @@ export class PackagesService {
   }
 
   update(sid, session: Package) {
-    delete session['id'];
-    return this.afs.doc(this.serviceUrl + '/' + sid).update({
+    delete session["id"];
+    return this.afs.doc(this.serviceUrl + "/" + sid).update({
       ...session,
       updatedAt: new Date()
     });
   }
 
   delete(sid) {
-    return this.afs.doc(this.serviceUrl + '/' + sid).delete();
+    return this.afs.doc(this.serviceUrl + "/" + sid).delete();
   }
 }

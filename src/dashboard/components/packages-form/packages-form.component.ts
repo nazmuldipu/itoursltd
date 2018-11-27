@@ -75,7 +75,7 @@ export class PackagesFormComponent implements OnChanges {
 
   createForm() {
     this.form = this.fb.group({
-      country: ['', Validators.required],
+      country: this.fb.array([''], Validators.required),
       title: ['', Validators.required],
       domestic: false,
       active: false,
@@ -106,6 +106,16 @@ export class PackagesFormComponent implements OnChanges {
       texts: this.fb.array([''])
     });
   }
+
+  get country(): FormArray {
+    return this.form.get('country') as FormArray;
+  }
+  addCountry() {
+    let control = this.form.get('country') as FormArray;
+    console.log(control.controls.values);
+    control.push(new FormControl(''));
+  }
+
   get area(): FormArray {
     return this.form.get('area') as FormArray;
   }
@@ -137,11 +147,18 @@ export class PackagesFormComponent implements OnChanges {
   }
 
   onDomesticChange(event) {
+    let control = this.form.get('country') as FormArray;
     if (event) {
-      this.form.controls.country.setValue('Bangladesh');
+      for(let i = control.length - 1; i >= 0; i--){
+        control.removeAt(i);
+      }
+      control.push(new FormControl('Bangladesh'));
       this.domestic = true;
     } else {
-      this.form.controls.country.setValue('');
+      for(let i = control.length - 1; i >= 0; i--){
+        control.removeAt(i);
+      }
+      control.push(new FormControl(''));
       this.domestic = false;
     }
   }
