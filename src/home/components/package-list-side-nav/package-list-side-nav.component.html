@@ -1,0 +1,54 @@
+<!--
+  <div class="brand mb-3 bg-dark shadow-sm">
+    <a routerLink="/" style="text-decoration: none; color: whitesmoke;">
+      <img src="assets/images/logo.jpg" />
+    </a>
+  </div>
+-->
+
+<nav id="sideNav">
+  <div>
+    <ul class="list-group">
+      <span *ngFor="let menu of menuList">
+        <li
+          class="nav-group-item"
+          [ngClass]="{ active: isActive(menu.country) }"
+        >
+          <div class="row menu">
+            <div class="col menu-item" (click)="select(menu.country)">
+              <!-- <i class="fa" [ngClass]="menu.icon"></i> -->
+              <span class="menu-item-text"> {{ menu.country }}</span>
+            </div>
+            <small
+              class="pull-right px-2"
+              *ngIf="menu.city.length > 0"
+              style="cursor: pointer;"
+            >
+              <i
+                class="fa"
+                [ngClass]="
+                  isActive(menu.city) ? ' fa-chevron-down' : 'fa-chevron-right'
+                "
+                (click)="minimize(menu.country)"
+              >
+              </i>
+            </small>
+          </div>
+
+          <ul class="list-group">
+            <span *ngFor="let child of menu.city">
+              <li
+                style="display:none;"
+                (click)="navigateTo(child)"
+                class="nav-group-item first pl-3"
+                [ngClass]="{ selected: child == navUrl }"
+              >
+                <span>{{ child }} </span>
+              </li>
+            </span>
+          </ul>
+        </li>
+      </span>
+    </ul>
+  </div>
+</nav>

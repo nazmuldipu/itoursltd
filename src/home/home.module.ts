@@ -22,6 +22,7 @@ import { HotdealsDetailsComponent } from './containers/hotdeals-details/hotdeals
 import { GallerysComponent } from './containers/gallerys/gallerys.component';
 import { PackageListComponent } from './containers/package-list/package-list.component';
 import { PackageDetailsComponent } from './containers/package-details/package-details.component';
+import { PackageListSideNavComponent } from './components/package-list-side-nav/package-list-side-nav.component';
 // import { NavbarComponent } from './components/navbar/navbar.component';
 export const ROUTES: Routes = [
   {
@@ -72,7 +73,8 @@ export const ROUTES: Routes = [
     HotdealsDetailsComponent,
     GallerysComponent,
     PackageListComponent,
-    PackageDetailsComponent
+    PackageDetailsComponent,
+    PackageListSideNavComponent
   ]
 })
 export class HomeModule {}

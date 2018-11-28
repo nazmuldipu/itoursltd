@@ -1,15 +1,15 @@
-import { Injectable } from "@angular/core";
-import { AngularFirestore } from "@angular/fire/firestore";
-import { map } from "rxjs/operators";
-import { OrderByDirection } from "@firebase/firestore-types";
-import { Package } from "src/shared/models/package.model";
-import { BehaviorSubject } from "rxjs/internal/BehaviorSubject";
+import { Injectable } from '@angular/core';
+import { AngularFirestore } from '@angular/fire/firestore';
+import { map, take } from 'rxjs/operators';
+import { OrderByDirection } from '@firebase/firestore-types';
+import { Package } from 'src/shared/models/package.model';
+import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
 
 @Injectable({
-  providedIn: "root"
+  providedIn: 'root'
 })
 export class PackagesService {
-  serviceUrl = "packages";
+  serviceUrl = 'packages';
 
   private _packagesSource = new BehaviorSubject<Package[]>([]);
   packages$ = this._packagesSource.asObservable();
@@ -25,7 +25,7 @@ export class PackagesService {
 
   getAllAndStore() {
     this.afs
-      .collection(this.serviceUrl, ref => ref.orderBy("createdAt"))
+      .collection(this.serviceUrl, ref => ref.orderBy('createdAt'))
       .snapshotChanges()
       .pipe(
         map(actions =>
@@ -37,16 +37,35 @@ export class PackagesService {
         )
       )
       .subscribe(data => {
+        // update saved packages list
         this.packages = data;
         this._packagesSource.next(this.packages);
+
         const side = [];
-        const country = [];
+        let country = [];
+        let city = [];
         this.packages.forEach(pac => {
-          if (!country.includes(pac.country)) {
-            country.push(pac.country);
+          city = [];
+          pac.area.forEach(ar => {
+            //create a city list
+            city.push(ar);
+          });
+          if (country.includes(pac.country[0])) {
+            // if this country already exists
+            let i = side.findIndex(ob => ob.country == pac.country[0]); // find index of existing country
+            city.forEach(ci => {
+              if (!side[i].city.includes(ci)) {
+                side[i].city.push(ci); // push current cities to existing list
+              }
+            });
+          } else {
+            // if this country doen't exists
+            const value = { country: pac.country[0], city: city }; // create a object of country and cities
+            side.push(value);
+            country.push(pac.country[0]); // update country list
           }
         });
-        this.packageSideNav = country;
+        this.packageSideNav = side;
         this._packageSideNavSource.next(this.packageSideNav);
       });
   }
@@ -65,7 +84,7 @@ export class PackagesService {
 
   getAll() {
     return this.afs
-      .collection(this.serviceUrl, ref => ref.orderBy("createdAt"))
+      .collection(this.serviceUrl, ref => ref.orderBy('createdAt'))
       .snapshotChanges()
       .pipe(
         take(1),
@@ -81,7 +100,7 @@ export class PackagesService {
 
   get(sid: string) {
     return this.afs
-      .doc(this.serviceUrl + "/" + sid)
+      .doc(this.serviceUrl + '/' + sid)
       .valueChanges()
       .pipe(
         take(1),
@@ -92,12 +111,12 @@ export class PackagesService {
       );
   }
 
-  getPaginatedStartAfter(order: OrderByDirection = "asc", limit, startAfter) {
+  getPaginatedStartAfter(order: OrderByDirection = 'asc', limit, startAfter) {
     // console.log(companyId, order, limit, startAfter);
     return this.afs
       .collection(this.serviceUrl, ref =>
         ref
-          .orderBy("createdAt", order)
+          .orderBy('createdAt', order)
           .limit(limit)
           .startAfter(startAfter)
       )
@@ -105,7 +124,7 @@ export class PackagesService {
       .pipe(
         // take(1),
         map(actions => {
-          if (order === "asc") {
+          if (order === 'asc') {
             actions.reverse();
           }
           // console.log(actions);
@@ -119,14 +138,14 @@ export class PackagesService {
   }
 
   update(sid, session: Package) {
-    delete session["id"];
-    return this.afs.doc(this.serviceUrl + "/" + sid).update({
+    delete session['id'];
+    return this.afs.doc(this.serviceUrl + '/' + sid).update({
       ...session,
       updatedAt: new Date()
     });
   }
 
   delete(sid) {
-    return this.afs.doc(this.serviceUrl + "/" + sid).delete();
+    return this.afs.doc(this.serviceUrl + '/' + sid).delete();
   }
 }

@@ -1,5 +1,50 @@
-<div class="package-list">
-  package list<br />
-  {{ packageSideNav | json }} <br />
-  yes sa
+<div class="menu menu-open">
+  <package-list-side-nav
+    class="menu-side"
+    (city)="onCityChange($event)"
+  ></package-list-side-nav>
+  <div class="content">
+    <div class="row m-0 pr-3 package-list">
+      <div class="col-md-4 pr-0 pb-3" *ngFor="let package of packages">
+        <div class="package-list-card" (click)="onPackageClick(package.id)">
+          <img
+            class="package-list-card-image"
+            *ngIf="package?.imageUrl"
+            [src]="package.imageUrl"
+            alt="image not found"
+          />
+          <div class="package-list-card-caption">
+            <div class="row m-0">
+              <div class="col-7 px-1">
+                <div class="package-list-card-caption-title">
+                  {{ package.title }}
+                </div>
+                <div class="package-list-card-caption-spots">
+                  <span *ngFor="let ar of package.area">{{ ar }}, </span>
+                </div>
+                <div class="package-list-card-caption-duration">
+                  {{ package.regularPackage.duration }}
+                </div>
+              </div>
+              <div class="col-5 px-1 package-list-card-caption-price">
+                <div class="package-list-card-caption-price-title">
+                  Starts from
+                </div>
+                <div class="package-list-card-caption-price-text">
+                  <span class="package-list-card-caption-price-text-amount"
+                    >৳{{ package.regularPackage.price }}</span
+                  >
+                </div>
+                <div class="package-list-card-caption-price-category">
+                  <span *ngFor="let cate of package.category"
+                    >{{ cate }},
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
