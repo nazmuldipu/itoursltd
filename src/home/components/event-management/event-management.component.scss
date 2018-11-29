@@ -7,6 +7,10 @@
 .carousel-caption {
   text-align: left;
 }
+.event-link {
+  text-decoration: none;
+  color: white;
+}
 @media (max-width: 767px) {
   .carousel-image {
     height: 300px;

@@ -22,6 +22,7 @@ export class GallerysComponent implements OnInit {
   }
 
   ngOnInit() {
+    window.scrollTo(0, 0);
     this.getAllGalleries();
   }
 

@@ -23,6 +23,7 @@ export class HotdealsDetailsComponent implements OnInit {
 
   ngOnInit() {
     this.getAllHotDeals();
+    window.scrollTo(0, 0);
   }
 
   async getAllHotDeals() {

@@ -6,10 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./thankyou.component.scss']
 })
 export class ThankyouComponent implements OnInit {
-
-  constructor() { }
+  constructor() {}
 
   ngOnInit() {
+    window.scrollTo(0, 0);
   }
-
 }

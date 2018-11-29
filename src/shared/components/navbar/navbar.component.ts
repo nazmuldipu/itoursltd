@@ -6,6 +6,7 @@ import {
   HostListener
 } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
+import { PackagesService } from '../../services/packages.service';
 
 @Component({
   selector: 'navbar',
@@ -16,12 +17,20 @@ export class NavbarComponent implements OnInit {
   @ViewChild('stickyMenu')
   menuElement: ElementRef;
 
+  packages;
   sticky: boolean = false;
   elementPosition: any;
   show = false;
-  constructor(public authService: AuthService) {}
+  constructor(
+    public authService: AuthService,
+    private packageService: PackagesService
+  ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.packageService.packageSideNav$.subscribe(data => {
+      this.packages = data;
+    });
+  }
 
   ngAfterViewInit() {
     this.elementPosition = this.menuElement.nativeElement.offsetTop;

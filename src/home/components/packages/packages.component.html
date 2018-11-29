@@ -1,70 +1,26 @@
 <div class="container-fluid p-0">
   <div class="section-title">PACKAGES</div>
-
   <div class="packages-content">
     <div class="blur-background">
       <div #widgetsContent class="middle">
-        <div class="info-widget">
+        <div
+          *ngFor="let pac of packages"
+          class="info-widget"
+          (click)="onPackageClick(pac.id)"
+        >
           <div class="myCard">
-            <img class="myCard-img" src="assets/images/0rome.jpg" alt="Card image cap">
+            <img
+              class="myCard-img"
+              *ngIf="pac?.imageUrl"
+              [src]="pac.imageUrl"
+              alt="image not found"
+            />
             <div class="myCard-text">
-              <div class="myCard-text-left">
-                Italy
-              </div>
+              <div class="myCard-text-left">{{ pac.country }}</div>
             </div>
           </div>
         </div>
-        <div class="info-widget">
-          <div class="myCard">
-            <img class="myCard-img" src="assets/images/0paris.jpg" alt="Card image cap">
-            <div class="myCard-text">
-              <div class="myCard-text-left">
-                France
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="info-widget">
-          <div class="myCard">
-            <img class="myCard-img" src="assets/images/0barcelona.jpg" alt="Card image cap">
-            <div class="myCard-text">
-              <div class="myCard-text-left">
-                Spain
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="info-widget">
-          <div class="myCard">
-            <img class="myCard-img" src="assets/images/0prague.jpg" alt="Card image cap">
-            <div class="myCard-text">
-              <div class="myCard-text-left">
-                Czech Republic
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="info-widget">
-          <div class="myCard">
-            <img class="myCard-img" src="assets/images/0amsterdam.jpg" alt="Card image cap">
-            <div class="myCard-text">
-              <div class="myCard-text-left">
-                Netherlands
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="info-widget">
-          <div class="myCard">
-            <img class="myCard-img" src="assets/images/0stuttgart.jpg" alt="Card image cap">
-            <div class="myCard-text">
-              <div class="myCard-text-left">
-                Germany
-              </div>
-            </div>
-          </div>
-        </div>
-
+ 
       </div>
     </div>
   </div>

@@ -6,10 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./why-us.component.scss']
 })
 export class WhyUsComponent implements OnInit {
-
-  constructor() { }
+  constructor() {}
 
   ngOnInit() {
+    window.scrollTo(0, 0);
   }
-
 }

@@ -22,6 +22,7 @@ export class PackageDetailsComponent implements OnInit {
   }
 
   ngOnInit() {
+    window.scrollTo(0, 0);
     if (this.id) {
       this.loadPackge(this.id);
     }

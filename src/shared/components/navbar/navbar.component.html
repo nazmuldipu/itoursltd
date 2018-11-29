@@ -45,20 +45,14 @@
             aria-labelledby="dropdown01"
           >
             <a
+              *ngFor="let pac of packages"
               class="dropdown-item"
-              routerLink="/dashboard/users/profile"
+              routerLink="/package-list"
               (click)="toggleCollapse()"
+              style="text-transform: uppercase"
             >
-              DOMESTIC</a
+              {{ pac.country }}</a
             >
-            <a
-              class="dropdown-item"
-              routerLink="/dashboard/users/changePassword"
-              (click)="toggleCollapse()"
-            >
-              INDIA</a
-            >
-            <a class="dropdown-item"> NEPAL</a>
           </div>
         </li>
         <li ngbDropdown placement="bottom-left" class="nav-item dropdown">

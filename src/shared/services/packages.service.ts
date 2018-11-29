@@ -60,7 +60,12 @@ export class PackagesService {
             });
           } else {
             // if this country doen't exists
-            const value = { country: pac.country[0], city: city }; // create a object of country and cities
+            const value = {
+              id: pac.id,
+              country: pac.country[0],
+              city: city,
+              imageUrl: pac.imageUrl
+            }; // create a object of country and cities
             side.push(value);
             country.push(pac.country[0]); // update country list
           }
