@@ -1,0 +1,40 @@
+<div class="package">
+  <div class="package-head">{{ packageName }}</div>
+  <ul class="package-list">
+    <li class="package-list-head">{{ packageType?.headline }}</li>
+    <li class="package-list-taglines">
+      <span *ngFor="let tag of packageType?.taglines">
+        <span class="badge badge-info">{{ tag }}</span> &nbsp;
+      </span>
+    </li>
+    <li class="package-list-duration">{{ packageType?.duration }}</li>
+    <li class="package-list-description">
+      <div class="text-center font-weight-bold">Tour itinerary</div>
+      <span *ngFor="let des of packageType?.description">
+        <span class="package-list-description-head">{{ des.head }}</span>
+        <span
+          class="package-list-description-texts"
+          *ngFor="let tex of des.texts"
+          >{{ tex }}</span
+        >
+      </span>
+      <!-- {{ packageType?.description }} -->
+    </li>
+    <li class="package-list-inclusions">
+      <div class="text-center font-weight-bold">Includes</div>
+      <span *ngFor="let inc of packageType?.inclusions">
+        <span>-{{ inc }}</span>
+      </span>
+    </li>
+    <li class="package-list-exclusions">
+      <div class="text-center font-weight-bold">Excludes</div>
+      <span *ngFor="let exc of packageType?.exclusions">
+        <span>-{{ exc }}</span>
+      </span>
+    </li>
+    <li class="package-list-price">
+      <span style="color: black; font-size: 20px;">Price : </span
+      >{{ packageType?.price }} BDT
+    </li>
+  </ul>
+</div>

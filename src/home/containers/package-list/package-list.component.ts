@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { Package } from 'src/shared/models/package.model';
 import { PackagesService } from 'src/shared/services/packages.service';
 
@@ -10,14 +10,18 @@ import { PackagesService } from 'src/shared/services/packages.service';
 })
 export class PackageListComponent implements OnInit {
   packages: Package[];
+  city;
 
   constructor(
     private packageService: PackagesService,
-    private router: Router
-  ) {}
+    private router: Router,
+    private activeRoute: ActivatedRoute
+  ) {
+    this.city = activeRoute.snapshot.paramMap.get('city');
+  }
 
   ngOnInit() {
-    this.loadPackge();
+    this.loadPackge(this.city);
   }
 
   async loadPackge(city: string = null) {
@@ -36,7 +40,6 @@ export class PackageListComponent implements OnInit {
   }
 
   onPackageClick(id: string) {
-    console.log('bad', id);
     this.router.navigate(['package-details', id]);
   }
 }

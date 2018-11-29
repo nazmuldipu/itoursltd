@@ -1,3 +1,75 @@
-<p>
-  package-details works!
-</p>
+<div class="menu menu-open">
+  <package-list-side-nav class="menu-side" (city)="onCityChange($event)">
+  </package-list-side-nav>
+  <div class="content">
+    <div class="package-details">
+      <img
+        class="package-details-image"
+        *ngIf="package?.imageUrl"
+        [src]="package.imageUrl"
+        alt="image not found"
+      />
+      <div class="package-details-head">
+        {{ package?.title }} (
+        <span *ngFor="let ar of package?.area">{{ ar }}, </span> )
+      </div>
+    </div>
+    <div class="row m-0">
+      <div class="col-md-6 package-details-info">
+        <table class="table table-striped">
+          <tr>
+            <td><strong>Location</strong></td>
+            <td colspan="2"></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td><strong>Spots</strong></td>
+            <td>
+              <span *ngFor="let sar of package?.subArea">{{ sar }}, </span>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td><strong>Area</strong></td>
+            <td>
+              <span *ngFor="let ar of package?.area">{{ ar }}, </span>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td><strong>Country</strong></td>
+            <td>{{ (package?.country)[0] }}</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td><strong>Category</strong></td>
+            <td>{{ package?.category }}</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div class="row m-0">
+      <div class="col-md-4">
+        <package-features
+          [packageType]="package?.regularPackage"
+          [packageName]="packageType[0]"
+        >
+        </package-features>
+      </div>
+      <div class="col-md-4">
+        <package-features
+          [packageType]="package?.deluxePackage"
+          [packageName]="packageType[1]"
+        >
+        </package-features>
+      </div>
+      <div class="col-md-4">
+        <package-features
+          [packageType]="package?.crownPackage"
+          [packageName]="packageType[2]"
+        >
+        </package-features>
+      </div>
+    </div>
+  </div>
+</div>

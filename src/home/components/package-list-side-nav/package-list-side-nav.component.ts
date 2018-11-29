@@ -37,10 +37,8 @@ export class PackageListSideNavComponent implements OnInit {
     this.selected = smenu == this.selected ? null : smenu;
   }
 
-  navigateTo(city: string) {
+  navigateTo(city: string = null) {
     this.navUrl = city;
-    // console.log('city', city);
-    // this.router.navigate([this.navUrl]);
     this.city.emit(city);
   }
 

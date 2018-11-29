@@ -9,6 +9,13 @@
 <nav id="sideNav">
   <div>
     <ul class="list-group">
+      <li class="nav-group-item">
+        <div class="row menu">
+          <div class="col menu-item" (click)="navigateTo()">
+            <span class="menu-item-text"> All </span>
+          </div>
+        </div>
+      </li>
       <span *ngFor="let menu of menuList">
         <li
           class="nav-group-item"

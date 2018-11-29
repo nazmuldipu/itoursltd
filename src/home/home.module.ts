@@ -23,6 +23,7 @@ import { GallerysComponent } from './containers/gallerys/gallerys.component';
 import { PackageListComponent } from './containers/package-list/package-list.component';
 import { PackageDetailsComponent } from './containers/package-details/package-details.component';
 import { PackageListSideNavComponent } from './components/package-list-side-nav/package-list-side-nav.component';
+import { PackageFeaturesComponent } from './components/package-features/package-features.component';
 // import { NavbarComponent } from './components/navbar/navbar.component';
 export const ROUTES: Routes = [
   {
@@ -37,7 +38,7 @@ export const ROUTES: Routes = [
       { path: 'custom-package', component: CustomPackageComponent },
       { path: 'thankyou', component: ThankyouComponent },
       { path: 'package-list', component: PackageListComponent },
-      { path: 'package-list/:id', component: PackageListComponent },
+      { path: 'package-list/:city', component: PackageListComponent },
       { path: 'package-details/:id', component: PackageDetailsComponent },
       { path: 'hotdeals', component: HotdealsDetailsComponent },
       { path: 'hotdeals/:id', component: HotdealsDetailsComponent },
@@ -74,7 +75,8 @@ export const ROUTES: Routes = [
     GallerysComponent,
     PackageListComponent,
     PackageDetailsComponent,
-    PackageListSideNavComponent
+    PackageListSideNavComponent,
+    PackageFeaturesComponent
   ]
 })
 export class HomeModule {}

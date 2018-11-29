@@ -1,0 +1,31 @@
+.content {
+  -webkit-transition: margin-left 0.8s;
+  -moz-transition: margin-left 0.8s;
+  transition: margin-left 0.8s;
+}
+.menu-side {
+  width: 260px;
+  left: -260px;
+  transition: 0.8s;
+}
+.menu-open .menu-side {
+  top: 15px;
+  left: 0;
+}
+.menu-open .content {
+  margin-left: 260px;
+}
+.package-details {
+  padding-top: 70px !important;
+  &-image {
+    padding: 0 15px;
+    width: 100%;
+  }
+  &-head {
+    margin-top: 40px;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 25px;
+    font-weight: 600;
+  }
+}
