@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Gallery } from 'src/shared/models/gallery.model';
 import { GallerysService } from '../../../shared/services/gallerys.service';
 import { Router } from '@angular/router';
+import { AngularFireStorage } from '@angular/fire/storage';
 
 @Component({
   selector: 'app-gallery-list',
@@ -14,7 +15,8 @@ export class GalleryListComponent implements OnInit {
 
   constructor(
     private galleryService: GallerysService,
-    private router: Router
+    private router: Router,
+    private storage: AngularFireStorage
   ) {}
 
   ngOnInit() {
@@ -35,6 +37,10 @@ export class GalleryListComponent implements OnInit {
 
   onDelete(id: string) {
     if (confirm('Are you sure to delete')) {
+      const hd = this.gallerys.find(ggg => ggg.id === id).imageUrls;
+      for (let i = 0; i < hd.length; i++) {
+        this.storage.storage.refFromURL(hd[i]).delete();
+      }
       this.galleryService.delete(id).then(ref => {
         console.log('Gallery Deleted successfully');
       });

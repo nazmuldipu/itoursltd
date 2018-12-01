@@ -62,22 +62,6 @@ export class GalleryImageComponent implements OnInit {
         error => console.log(error)
       );
     }
-
-    // await this.gallerysService.get(this.id).subscribe(
-    //   data => {
-    //     this.gallery = data as Gallery;
-    //     if (this.gallery.imageUrls) {
-    //       this.gallery.imageUrls.forEach((ar, i) => {
-    //         this.imageUrls[i] = ar;
-    //       });
-    //     } else {
-    //       for (let i = 0; i < 10; i++) {
-    //         this.gallery.imageUrls = this.imageUrls;
-    //       }
-    //     }
-    //   },
-    //   error => console.log(error)
-    // );
   }
 
   fileChange(event, i: number) {

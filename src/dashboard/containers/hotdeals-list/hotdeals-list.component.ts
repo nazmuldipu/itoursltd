@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Hotdeal } from 'src/shared/models/hotdeal.model';
 import { HotdealsService } from 'src/shared/services/hotdeals.service';
 import { Router } from '@angular/router';
+import { AngularFireStorage } from '@angular/fire/storage';
 
 @Component({
   selector: 'app-hotdeals-list',
@@ -14,26 +15,14 @@ export class HotdealsListComponent implements OnInit {
 
   constructor(
     private hotdealService: HotdealsService,
-    private router: Router
+    private router: Router,
+    private storage: AngularFireStorage
   ) {}
 
   ngOnInit() {
     this.getAllHotDeals();
   }
 
-  // async getAllHotDeals() {
-  //   this.showLoading = true;
-  //   await this.hotdealService.getAll().subscribe(
-  //     data => {
-  //       this.hotdeals = data;
-  //       this.showLoading = false;
-  //     },
-  //     error => {
-  //       console.log('hotdeals loading error');
-  //       this.showLoading = false;
-  //     }
-  //   );
-  // }
   async getAllHotDeals() {
     this.showLoading = true;
     await this.hotdealService.hotdeals$.subscribe(data => {
@@ -48,7 +37,13 @@ export class HotdealsListComponent implements OnInit {
 
   onDelete(id: string) {
     if (confirm('Are you sure to delete')) {
-      console.log(id);
+      const hd = this.hotdeals.find(hdd => hdd.id === id).imageUrl;
+      //remove image first
+      this.storage.storage.refFromURL(hd).delete();
+
+      this.hotdealService.delete(id).then(rf => {
+        console.log('Delete hotdels success');
+      });
     }
   }
 }
