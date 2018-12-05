@@ -7,7 +7,7 @@ import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
   styleUrls: ['./event-management.component.scss']
 })
 export class EventManagementComponent {
-  images = [1, 2, 3, 4, 5].map(i => `assets/images/events/events-${i}.jpg`);
+  images = [1, 2, 3, 4, 5].map(i => `assets/images/events/images/events-${i}.jpg`);
   constructor(config: NgbCarouselConfig) {
     config.interval = 5000;
     config.keyboard = false;

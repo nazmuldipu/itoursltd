@@ -26,6 +26,7 @@ import { Component, OnInit } from '@angular/core';
       .menu-open .menu-side {
         top: 15px;
         left: 0;
+        z-index: 0;
       }
       .menu-open .content {
         margin-left: 245px;

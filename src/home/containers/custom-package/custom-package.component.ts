@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CustomPackageService } from 'src/shared/services/custom-package.service';
 import { CustomPackage } from 'src/shared/models/custom-package.model';
 import { Router } from '@angular/router';
+import { EmailService } from '../../../shared/services/email.service';
 
 @Component({
   selector: 'app-custom-package',
@@ -13,7 +14,8 @@ export class CustomPackageComponent {
 
   constructor(
     private customPackageService: CustomPackageService,
-    private router: Router
+    private router: Router,
+    private email: EmailService
   ) {}
 
   onCreate(event: CustomPackage) {
@@ -23,5 +25,10 @@ export class CustomPackageComponent {
       this.sending = false;
       this.router.navigate(['/thankyou']);
     });
+  }
+
+  sendEmail() {
+    this.email.sendEmail(' This is a send message to you');
+    console.log('Email send from component');
   }
 }

@@ -41,20 +41,23 @@
   border: 1px solid #dee2e6;
   border-radius: 0.25rem;
   width: 100%;
-  height: 330px;
+  height: 360px;
   &-img {
     width: 100%;
     height: 260px;
   }
   &-text {
-    padding: 5px 10px 0 10px;
+    padding: 10px 10px 0 10px;
     &-left {
-      width: 50%;
+      width: 70%;
       display: inline-block;
       //   font-size: 30px;
       &-place {
+        height: 60px;
         font-size: 20px;
         font-weight: 800;
+        word-wrap: break-word;
+        white-space: initial;
         text-transform: uppercase;
       }
       &-duration {
@@ -65,7 +68,7 @@
       }
     }
     &-right {
-      width: 50%;
+      width: 30%;
       text-align: right;
       display: inline-block;
       font-size: 30px;

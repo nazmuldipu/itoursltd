@@ -14,6 +14,7 @@ import { PackagesService } from './services/packages.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CustomPackageService } from 'src/shared/services/custom-package.service';
 import { FeedbackService } from 'src/shared/services/feedback.service';
+import { EmailService } from './services/email.service';
 
 @NgModule({
   imports: [
@@ -32,7 +33,8 @@ import { FeedbackService } from 'src/shared/services/feedback.service';
     HotdealsService,
     GallerysService,
     CustomPackageService,
-    FeedbackService
+    FeedbackService,
+    EmailService
   ],
   exports: [
     FooterSectionComponent,
