@@ -52,7 +52,7 @@ export const ROUTES: Routes = [
     ReactiveFormsModule,
     SharedModule,
     RouterModule.forRoot(ROUTES),
-    NgbModule.forRoot(),
+    NgbModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     AngularFireStorageModule

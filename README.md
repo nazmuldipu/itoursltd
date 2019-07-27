@@ -14,3 +14,5 @@ chmod u+x ./deploy.sh
 
 > > ng build --prod --base-href "/"
 > > ngh --dir dist/itoursltd --no-silent --repo=git@github.com:nazmuldipu/itoursltd.git
+
+npm install typescript@">=3.4.0 <3.5.0"

@@ -1,24 +1,31 @@
 .bg-transparent {
   background: rgba(0, 0, 0, 0.4);
   padding-bottom: -15px !important;
-  position: fixed;
-  top: 15px;
-  right: 15px;
-  left: 15px;
+  // position: fixed;
+  // top: 15px;
+  // right: 15px;
+  // left: 15px;
   z-index: 10;
 }
 
 .sticky {
   background-color: rgba(255, 255, 255, 0.7) !important;
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  left: 15px;
 }
 
 .content {
   height: 200vh;
 }
 
+.fa {
+  color: black;
+}
 .company-logo {
   max-width: 120px;
-  border: 6px solid #333;
+  // border: 6px solid #333;
 }
 .dropdown-toggle {
   cursor: pointer;
@@ -27,16 +34,18 @@
   // content: none;
   border: none; // remove triangle from dropdown name
 }
+
 .nav-link {
-  color: black;
+  color: #7f7f7f !important;
 }
 .sliding-middle-out:hover {
-  color: blue !important;
+  color: rgb(87, 87, 255) !important;
 }
 
 /*sliding underline*/
 .sliding-middle-out {
-  color: black !important;
+  color: #7f7f7f !important;
+  font-weight: 500;
   display: inline-block;
   position: relative;
   padding-bottom: 3px;
@@ -56,9 +65,14 @@
   background: #343baa;
 }
 /*end sliding*/
-
+.nav {
+  display: block;
+}
 .navbar-expand-md .navbar-nav .dropdown-menu {
   background: rgba(255, 255, 255, 0.7);
+}
+.navbar-brand {
+  padding-bottom: 15px;
 }
 @media (max-width: 767px) {
   // .bg-transparent {

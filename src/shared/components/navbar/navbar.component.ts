@@ -14,7 +14,7 @@ import { PackagesService } from '../../services/packages.service';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
-  @ViewChild('stickyMenu')
+  // @ViewChild('stickyMenu')
   menuElement: ElementRef;
 
   packages;

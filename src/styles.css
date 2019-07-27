@@ -2,6 +2,30 @@
 @import '~bootstrap/dist/css/bootstrap.css';
 @import '~font-awesome/css/font-awesome.min.css';
 
+@font-face {
+  font-family: 'Carter_One';
+  src: url('assets/fonts/Carter_One/CarterOne-Regular.ttf');
+}
+@font-face {
+  font-family: 'Berkshire_Swash';
+  src: url('assets/fonts/Berkshire_Swash/BerkshireSwash-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Merienda_One';
+  src: url('assets/fonts/Merienda_One/MeriendaOne-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Josefin_Sans';
+  src: url('assets/fonts/Josefin_Sans/JosefinSans-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Niconne';
+  src: url('assets/fonts/Niconne/Niconne-Regular.ttf');
+}
+
 .raised {
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08);
 }

@@ -28,7 +28,9 @@ export class LoginComponent {
     await this.auth
       .loginWithEmail(event.email, event.password)
       .then(async ref => {
+        console.log('Login success', ref.user.uid);
         await this.auth.getRegisteredUsers(ref.user.uid).subscribe(data => {
+          console.log(data);
           localStorage.setItem('username', data.name);
           let role = data.roles[0];
           localStorage.setItem('role', role);

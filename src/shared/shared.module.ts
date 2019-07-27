@@ -22,7 +22,7 @@ import { EmailService } from './services/email.service';
     RouterModule,
     FormsModule,
     ReactiveFormsModule,
-    NgbModule.forRoot()
+    NgbModule
   ],
   declarations: [FooterSectionComponent, NavbarComponent],
   providers: [
