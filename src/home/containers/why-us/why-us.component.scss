@@ -1,4 +1,10 @@
 @import '../../containers/index/index.component.scss';
+:host{
+  position: absolute;
+  width: calc(100% - 30px);
+  height: 100%;
+  background: url(/assets/images/background.jpg);
+}
 
 .section-title {
   padding-top: 70px;

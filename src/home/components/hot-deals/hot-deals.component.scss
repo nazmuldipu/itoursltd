@@ -41,44 +41,49 @@
   border: 1px solid #dee2e6;
   border-radius: 0.25rem;
   width: 100%;
-  height: 360px;
+  height: 350px;
+  transition: transform .2s;
+  &:hover{
+    transform: scale(1.1);
+  }
   &-img {
     width: 100%;
     height: 260px;
+    
+    
   }
   &-text {
     padding: 10px 10px 0 10px;
-    &-left {
-      width: 70%;
-      display: inline-block;
-      //   font-size: 30px;
-      &-place {
-        height: 60px;
-        font-size: 20px;
-        font-weight: 800;
-        word-wrap: break-word;
-        white-space: initial;
-        text-transform: uppercase;
-      }
-      &-duration {
-        margin-bottom: 9px;
-        font-weight: 500;
-        font-size: 14px;
-        color: #777777;
-      }
+    &-place {
+      font-size: 16px;
+      font-family: 'Carter_One';
+      width: calc((100vw/4) - 20px);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      // font-weight: 800;
+      // word-wrap: break-word;
+      // white-space: initial;
+      text-transform: uppercase;
     }
+    &-duration {
+      // margin-bottom: 9px;
+      font-weight: 600;
+      font-size: 16px;
+      color: #777777;
+    }
+    
     &-right {
-      width: 30%;
-      text-align: right;
-      display: inline-block;
-      font-size: 30px;
+      // width: 30%;
+      // text-align: right;
+      display: block;
       &-text {
-        font-size: 15px;
-        color: grey;
+        font-size: 10px;
+        color: rgb(68, 68, 68);
       }
       &-price {
         color: #4692e7;
-        font-size: 22px;
+        font-size: 16px;
         font-weight: 800;
         line-height: 1;
       }
@@ -124,34 +129,56 @@
 
 @media (max-width: 767px) {
   .info-widget {
-    width: 50%;
+    width: 100%;
   }
   .myCard {
-    height: 200px;
+    height: 250px;
     &-img {
-      height: 150px;
+      height: 190px;
     }
     &-text {
-      padding: 2px 5px 0 5px;
-      &-left {
-        &-place {
-          font-size: 16px;
-        }
-        &-duration {
-          margin-bottom: 5px;
-          font-size: 10px;
-        }
+      padding: 2px 2px 0 2px;
+      &-place {
+        font-size: 14px;
+        width: calc(100vw - 20px);        
+      }
+      &-duration {
+        font-size: 12px;
       }
       &-right {
-        &-text {
-          font-size: 10px;
-        }
         &-price {
-          font-size: 16px;
+          font-size: 14px;
+          float: right;
         }
       }
     }
   }
+  // .myCard {
+  //   height: 200px;
+  //   &-img {
+  //     height: 150px;
+  //   }
+  //   &-text {
+  //     padding: 2px 5px 0 5px;
+  //     &-left {
+  //       &-place {
+  //         font-size: 16px;
+  //       }
+  //       &-duration {
+  //         margin-bottom: 5px;
+  //         font-size: 10px;
+  //       }
+  //     }
+  //     &-right {
+  //       &-text {
+  //         font-size: 10px;
+  //       }
+  //       &-price {
+  //         font-size: 16px;
+  //       }
+  //     }
+  //   }
+  // }
   .hot-button {
     margin-top: -140px;
     &-left {

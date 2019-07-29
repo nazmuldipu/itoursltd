@@ -15,7 +15,9 @@ import { PackagesService } from '../../services/packages.service';
 })
 export class NavbarComponent implements OnInit {
   // @ViewChild('stickyMenu')
-  menuElement: ElementRef;
+  // menuElement: ElementRef;
+
+  @ViewChild('stickyMenu',{static: false}) menuElement: ElementRef;
 
   packages;
   sticky: boolean = false;
@@ -33,6 +35,7 @@ export class NavbarComponent implements OnInit {
   }
 
   ngAfterViewInit() {
+    // this.elementPosition = this.menuElement.nativeElement.offsetTop;
     this.elementPosition = this.menuElement.nativeElement.offsetTop;
   }
 
@@ -54,5 +57,13 @@ export class NavbarComponent implements OnInit {
     console.log('log out');
     this.authService.logout();
     this.toggleCollapse();
+  }
+
+  addClass(event): void {
+    event.target.className += 'myClass';
+  }
+
+  removeClass(event): void {
+    event.target.className = event.target.className.replace('myClass', '');
   }
 }

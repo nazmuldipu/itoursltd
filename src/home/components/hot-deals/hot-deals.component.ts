@@ -23,9 +23,10 @@ export class HotDealsComponent implements OnInit {
   ngOnInit() {
     this.getAllHotDeals();
     this.innerWidth = window.innerWidth;
-    this.divWidth = Math.round(
-      this.widgetsContent.nativeElement.offsetWidth / 4
-    );
+    this.divWidth = Math.floor(window.innerWidth/4)
+    // this.divWidth = Math.round(
+    //   this.widgetsContent.nativeElement.offsetWidth / 4
+    // );
   }
 
   async getAllHotDeals() {

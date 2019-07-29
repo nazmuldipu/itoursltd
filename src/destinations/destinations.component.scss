@@ -1,5 +1,5 @@
 .side-nav-offset {
-  padding: 70px 0 0 300px;
+  padding: 00px 0 0 300px;
 }
 .container-fluid {
   font-size: 14px;
@@ -11,17 +11,23 @@
   }
 }
 
+.row-location{
+padding: 10px 0;
+}
+
 .destination-content {
   padding-left: 15px;
+  font-size: 16px;
 }
 .destination-title {
   text-align: center;
   text-transform: uppercase;
   font-size: 25px;
+  padding-top: 20px;
   font-weight: 600;
 }
 .location-title {
-  text-align: center;
+  text-align: left;
   font-size: 20px;
 }
 .location-image img {

@@ -24,9 +24,10 @@ export class PackagesComponent implements OnInit {
     this.packageService.packageSideNav$.subscribe(data => {
       this.packages = data;
     });
-    this.divWidth = Math.round(
-      this.widgetsContent.nativeElement.offsetWidth / 3
-    );
+    this.divWidth = Math.floor(window.innerWidth/4)
+    // this.divWidth = Math.round(
+    //   this.widgetsContent.nativeElement.offsetWidth / 3
+    // );
   }
 
   scrollRight() {
