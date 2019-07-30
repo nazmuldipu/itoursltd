@@ -12,7 +12,7 @@ export class PackagesComponent implements OnInit {
   divWidth: number;
   packages;
 
-  // @ViewChild('widgetsContent', { read: ElementRef })
+  @ViewChild('widgetsContent', { read: ElementRef, static: false })
   public widgetsContent: ElementRef<any>;
 
   constructor(

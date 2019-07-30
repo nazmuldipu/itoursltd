@@ -47,7 +47,7 @@ export class HotDealsComponent implements OnInit {
     this.router.navigate(['/hotdeals', id]);
   }
 
-  // @ViewChild('widgetsContent', { read: ElementRef })
+  @ViewChild('widgetsContent', { read: ElementRef, static:false })
   public widgetsContent: ElementRef<any>;
 
   scrollRight() {

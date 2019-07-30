@@ -1,10 +1,4 @@
-import {
-  Component,
-  OnInit,
-  ViewChild,
-  ElementRef,
-  HostListener
-} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 import { PackagesService } from '../../services/packages.service';
 
@@ -17,10 +11,9 @@ export class NavbarComponent implements OnInit {
   // @ViewChild('stickyMenu')
   // menuElement: ElementRef;
 
-  @ViewChild('stickyMenu',{static: false}) menuElement: ElementRef;
+  // @ViewChild('stickyMenu',{static: false}) menuElement: ElementRef;
 
   packages;
-  sticky: boolean = false;
   elementPosition: any;
   show = false;
   constructor(
@@ -36,18 +29,18 @@ export class NavbarComponent implements OnInit {
 
   ngAfterViewInit() {
     // this.elementPosition = this.menuElement.nativeElement.offsetTop;
-    this.elementPosition = this.menuElement.nativeElement.offsetTop;
+    // this.elementPosition = this.menuElement.nativeElement.offsetTop;
   }
 
-  @HostListener('window:scroll', ['$event'])
-  handleScroll() {
-    const windowScroll = window.pageYOffset;
-    if (windowScroll >= this.elementPosition) {
-      this.sticky = true;
-    } else {
-      this.sticky = false;
-    }
-  }
+  // @HostListener('window:scroll', ['$event'])
+  // handleScroll() {
+  //   const windowScroll = window.pageYOffset;
+  //   if (windowScroll >= this.elementPosition) {
+  //     this.sticky = true;
+  //   } else {
+  //     this.sticky = false;
+  //   }
+  // }
 
   toggleCollapse() {
     this.show = !this.show;
@@ -59,11 +52,4 @@ export class NavbarComponent implements OnInit {
     this.toggleCollapse();
   }
 
-  addClass(event): void {
-    event.target.className += 'myClass';
-  }
-
-  removeClass(event): void {
-    event.target.className = event.target.className.replace('myClass', '');
-  }
 }
