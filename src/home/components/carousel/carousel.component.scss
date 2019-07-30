@@ -1,5 +1,6 @@
 .carousel-image {
   width: 100%;
+  margin-top: 73px;
   height: calc(100vh - 100px) !important;
 }
 
@@ -8,8 +9,8 @@
   bottom: 18%;
   color: white;
   z-index: 1;
-// background: #1a1a1a;
-text-shadow: 0 0 15px rgb(19, 75, 228), 0 0 15px rgb(255, 41, 41);
+  // background: #1a1a1a;
+  text-shadow: 0 0 15px rgb(19, 75, 228), 0 0 15px rgb(255, 41, 41);
   & h2 {
     font-family: 'Niconne';
     font-size: 60px;

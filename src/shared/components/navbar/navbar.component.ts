@@ -8,11 +8,6 @@ import { PackagesService } from '../../services/packages.service';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
-  // @ViewChild('stickyMenu')
-  // menuElement: ElementRef;
-
-  // @ViewChild('stickyMenu',{static: false}) menuElement: ElementRef;
-
   packages;
   elementPosition: any;
   show = false;
@@ -27,21 +22,6 @@ export class NavbarComponent implements OnInit {
     });
   }
 
-  ngAfterViewInit() {
-    // this.elementPosition = this.menuElement.nativeElement.offsetTop;
-    // this.elementPosition = this.menuElement.nativeElement.offsetTop;
-  }
-
-  // @HostListener('window:scroll', ['$event'])
-  // handleScroll() {
-  //   const windowScroll = window.pageYOffset;
-  //   if (windowScroll >= this.elementPosition) {
-  //     this.sticky = true;
-  //   } else {
-  //     this.sticky = false;
-  //   }
-  // }
-
   toggleCollapse() {
     this.show = !this.show;
   }
@@ -51,5 +31,4 @@ export class NavbarComponent implements OnInit {
     this.authService.logout();
     this.toggleCollapse();
   }
-
 }
